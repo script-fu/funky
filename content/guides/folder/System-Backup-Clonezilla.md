@@ -1,12 +1,8 @@
 ---
 type: docs
-prev: guides/first-page
-next: guides/folder/A-Linux-System-Overview.md
-sidebar:
-  open: true
 ---
 
-# Introduction
+### Introduction
 
 It's common to back up your important files to return to earlier versions or replace corrupted data. However, another essential type of backup is a **disk clone**, a complete backup of your system's state. 
 
@@ -17,16 +13,16 @@ Once you have your system set up and working well, creating a full backup is cru
 It's always better to have a backup and not need it than to need a backup and not have it.
 
 
-## Key Features of Clonezilla
+### Key Features of Clonezilla
 
 - **Disk Imaging**: Clonezilla creates an exact copy of a hard drive, including the operating system, applications, and data.
 - **Backup and Restore**: It enables you to create a backup image of a hard drive and restore it in case of failure or migration to a new drive.
 - **Free and Open Source**: Clonezilla is completely free to use, and the source code is available for modification and customization.
 
 
-## Using Clonezilla to Backup and Restore a Debian Partition
+### Using Clonezilla to Backup and Restore a Debian Partition
 
-### Preparation Steps
+#### Preparation Steps
 
 You will need a USB drive for Clonezilla and an external hard drive that is larger than the internal drive you intend to clone.
 
@@ -42,7 +38,7 @@ These steps simplify the process based on the [official guide](https://clonezill
 
 
 
-### Backup with Clonezilla
+#### Backup with Clonezilla
 
 1. **Select Backup Mode**: Once Clonezilla boots up, choose "device-device" mode. This mode allows you to directly clone your internal drive to an external device.
 
@@ -56,7 +52,7 @@ These steps simplify the process based on the [official guide](https://clonezill
   
 ---
 
-### Restoring from Backup
+#### Restoring from Backup
 
 If you need to restore your Debian system from the backup, follow these steps:
 
@@ -72,7 +68,7 @@ If you need to restore your Debian system from the backup, follow these steps:
 
 ---
 
-### Final Notes
+#### Final Notes
 
 Disk backups with Clonezilla ensure that your entire system—operating system, settings, and applications—is preserved. With minimal effort, you can safeguard your system from catastrophic failure and minimize downtime in the event of a crash.
 

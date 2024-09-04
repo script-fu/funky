@@ -1,0 +1,61 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artbox – Blog</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blog on Artbox</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <lastBuildDate>Tue, 03 Sep 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Article C</title>
+      <link>http://localhost:1313/blog/post-2024-09-03/</link>
+      <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/post-2024-09-03/</guid>
+      <description>
+        
+        
+        &lt;p&gt;That article&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Article B</title>
+      <link>http://localhost:1313/blog/post-2024-09-02/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/post-2024-09-02/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This article&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Article A</title>
+      <link>http://localhost:1313/blog/post-2024-09-01/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/post-2024-09-01/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This article&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

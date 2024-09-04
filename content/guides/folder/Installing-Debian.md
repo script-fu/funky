@@ -1,28 +1,25 @@
 ---
 type: docs
-prev: guides/first-page
-next: guides/folder/A-Linux-System-Overview.md
-sidebar:
-  open: true
 ---
 
-# Introduction
+### Introduction
+
 This document outlines the steps I took to install [Debian](https://www.debian.org/) Stable as the [Artbox](https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/home) OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.
 
-## Backup Your Data
+### Backup Your Data
 Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost.
 
-## Create a Partition
+### Create a Partition
 Create a disk partition on your primary hard drive to install Debian onto. This process has many online guides and various tools, such as GParted. You may need to create a partition from Windows to create a dual-boot machine or reuse an existing partition for Linux. Understand the process specific to your system and needs before proceeding.
 
-## Create a USB to Install Debian Stable
+### Create a USB to Install Debian Stable
 Assuming you have created a partition on your primary hard drive for Debian and an appropriate-sized swap partition:
 
 1. Download the Debian ISO from the official [website](https://www.debian.org/).
 2. On Windows, we can use [BalenaEtcher](https://etcher.balena.io/) to put the ISO on a USB drive.
 3. On Linux, we can use a command-line tool to create a bootable USB from the ISO.
 
-## Install
+### Install
 
 1. Insert the USB drive into a main USB port.
 2. Restart and press F2 on the initial screen to access the boot options.
@@ -40,9 +37,9 @@ Assuming you have created a partition on your primary hard drive for Debian and 
 7. Add Cinnamon to the install section for a traditional desktop interface.
 8. The installation will proceed, and you should have a new Debian Stable OS to set up.
 
-## Setup the System
+### Setup the System
 
-### Display Scaling
+#### Display Scaling
 You may have purchased a 4K monitor to use 4K worth of display, at the moment, Debian Stable does not do fractional scaling in a way that allows this.
 
 An ideal approach to display scaling would be, where the display resolution is retained, and only the GUI elements are scaled up or down to match the desired size. This is often referred to as "resolution-independent" or "high-DPI" scaling.
@@ -61,7 +58,7 @@ Unfortunately, Linux desktop environments have been slower to adopt this approac
     + Right-click the 4K monitor Desktop -> Customize: Icon Size Larger
     + Firefox: in the address bar -> about:config -> search: layout.css.devPixelsPerPx -> set the value to 1
 
-## Terminal
+### Terminal
 
 Configure your terminal to your liking:
 
@@ -70,7 +67,7 @@ Configure your terminal to your liking:
 3. Text -> Custom font: 140: Monospace 10
 4. Colours -> Built-in-schemes -> Solarized Dark
 
-## Restore Data - User Specific
+### Restore Data - User Specific
 
 Restore your backed-up data to the Home directory. For example:
 
@@ -80,12 +77,12 @@ Restore your backed-up data to the Home directory. For example:
 * Backup/Home/.ssh (GitLab keys) -> Home/.ssh (GitLab keys)
 * Backup/Home/.config/GIMP -> Home/.config/GIMP
 
-## Git
+### Git
 
 Install Git using the terminal command: `sudo apt install git`
 Configure your Git email: `git config --global --edit`
 
-### GitLab Access
+#### GitLab Access
 
 Restore repository access to GitLab or GitHub:
 

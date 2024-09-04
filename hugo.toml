@@ -1,4 +1,97 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-uk'
+languageCode = 'en-GB'
 title = 'Artbox'
 theme = 'hextra'
+
+[params]
+description = "Art, Painting, Illustration"
+
+[params.theme]
+default = "system"
+displayToggle = true
+		
+[navbar]
+displayTitle = true
+displayLogo = true
+width = "wide"
+
+[navbar.logo]
+path = "images/logo.svg"
+dark = "images/logo-dark.svg"
+
+[page]
+width = "normal"
+
+[footer]
+enable = false
+displayCopyright = true
+displayPoweredBy = false
+width = "normal"
+
+[metadata]
+displayUpdatedDate = true
+dateFormat = "January 2, 2006"
+
+[search]
+enable = true
+type = "flexsearch"
+
+[search.flexsearch]
+index = "content"
+tokenize = "forward"
+
+[blog.list]
+displayTags = true
+sortBy = "date"
+sortOrder = "desc"
+# date | lastmod | publishDate | title | weight
+
+[highlight.copy]
+enable = true
+display = "hover"
+
+[comments]
+enable = false
+type = "giscus"
+
+[menu]
+
+[[menu.main]]
+name = "Documentation"
+pageRef = "/docs/folder/"
+weight = 1
+
+[[menu.main]]
+name = "Installation"
+pageRef = "/docs/folder/Artbox-Installing"
+weight = 1
+
+[[menu.main]]
+name = "Features"
+pageRef = "/test/folder/"
+weight = 1
+
+[[menu.main]]
+name = "Blog"
+pageRef = "/blog"
+weight = 2
+
+[[menu.main]]
+name = "Guides"
+pageRef = "/guides/folder/"
+weight = 3
+
+[[menu.main]]
+name = "Search"
+weight = 4
+
+  [menu.main.params]
+  type = "search"
+
+[[menu.main]]
+name = "GitLab"
+weight = 5
+url = "https://gitlab.gnome.org/pixelmixer/artbox"
+
+  [menu.main.params]
+  icon = "gitlab"

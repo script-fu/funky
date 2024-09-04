@@ -3,6 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/post-2024-09-03/</loc>
+    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/test/</loc>
+    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/post-2024-09-02/</loc>
+    <lastmod>2024-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/post-2024-09-01/</loc>
+    <lastmod>2024-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/artbox-docs/folder/data/</loc>
+  </url><url>
+    <loc>http://localhost:1313/docs/folder/Artbox-Installing/</loc>
+  </url><url>
+    <loc>http://localhost:1313/artbox-docs/folder/technical-guide/</loc>
+  </url><url>
+    <loc>http://localhost:1313/artbox-docs/folder/troubleshooting/</loc>
   </url><url>
     <loc>http://localhost:1313/example/folder/example-page/</loc>
   </url><url>
@@ -14,11 +41,25 @@
   </url><url>
     <loc>http://localhost:1313/guides/folder/using-git-on-linux/</loc>
   </url><url>
+    <loc>http://localhost:1313/test/folder/filter-restores-last-tool/</loc>
+  </url><url>
+    <loc>http://localhost:1313/test/folder/paint-tool/</loc>
+  </url><url>
+    <loc>http://localhost:1313/test/folder/paintbrush-high-quality-force/</loc>
+  </url><url>
+    <loc>http://localhost:1313/test/folder/paintbrush-options/</loc>
+  </url><url>
+    <loc>http://localhost:1313/test/folder/presets-restore/</loc>
+  </url><url>
+    <loc>http://localhost:1313/test/folder/resource-control/</loc>
+  </url><url>
+    <loc>http://localhost:1313/test/folder/script-fu/</loc>
+  </url><url>
+    <loc>http://localhost:1313/test/folder/toolbox/</loc>
+  </url><url>
     <loc>http://localhost:1313/themes/folder/dark/</loc>
   </url><url>
     <loc>http://localhost:1313/themes/folder/default/</loc>
-  </url><url>
-    <loc>http://localhost:1313/themes/folder/example-page/</loc>
   </url><url>
     <loc>http://localhost:1313/themes/folder/high-contrast/</loc>
   </url><url>
@@ -26,7 +67,9 @@
   </url><url>
     <loc>http://localhost:1313/themes/folder/warm/</loc>
   </url><url>
-    <loc>http://localhost:1313/first-page/</loc>
+    <loc>http://localhost:1313/artbox-docs/folder/</loc>
+  </url><url>
+    <loc>http://localhost:1313/artbox-docs/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
@@ -34,11 +77,13 @@
   </url><url>
     <loc>http://localhost:1313/example/</loc>
   </url><url>
+    <loc>http://localhost:1313/test/folder/</loc>
+  </url><url>
     <loc>http://localhost:1313/guides/</loc>
   </url><url>
     <loc>http://localhost:1313/guides/folder/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/test/</loc>
   </url><url>
     <loc>http://localhost:1313/themes/</loc>
   </url><url>

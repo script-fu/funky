@@ -4,7 +4,7 @@
     <link>http://localhost:1313/guides/folder/</link>
     <description>Recent content in Guides on Artbox</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-uk</language>
+    <language>en-GB</language>
     
 	  <atom:link href="http://localhost:1313/guides/folder/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,9 +23,10 @@
       <description>
         
         
-        &lt;p&gt;Linux is a powerful and versatile operating system with a vast community of developers. At its core, a Linux system consists of several key components that work together to provide a seamless user experience. This overview will outline the essential parts of a Linux system, including the kernel, distribution, package manager, display manager, desktop environment, and display server (X11 or Wayland).&lt;/p&gt;
-&lt;h2&gt;Examples of Linux Distribution Configurations&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;examples-of-linux-distribution-configurations&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#examples-of-linux-distribution-configurations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Linux is a powerful and versatile operating system with a vast community of developers. At its core, a Linux system consists of several key components that work together to provide a seamless user experience. This overview will outline the essential parts of a Linux system, including the kernel, distribution, package manager, display manager, desktop environment, and display server (X11 or Wayland).&lt;/p&gt;
+&lt;h3&gt;Examples of Linux Distribution Configurations&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;examples-of-linux-distribution-configurations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#examples-of-linux-distribution-configurations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
           &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Distribution&lt;/strong&gt;&lt;/th&gt;
@@ -73,19 +74,19 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2&gt;Explanation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;explanation&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#explanation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Kernel&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kernel&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#kernel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The core of the operating system that interfaces directly with the hardware, usually Linux.&lt;/p&gt;
-&lt;h3&gt;Distribution&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;distribution&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#distribution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Linux distribution, which packages the kernel along with user space tools, libraries, and software. Examples include Debian, Arch Linux, and Fedora.&lt;/p&gt;
-&lt;h3&gt;Package Manager&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;package-manager&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#package-manager&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A tool used to install, update, and remove software applications from repositories. Examples include APT for Debian-based distributions, DNF for Fedora, and Pacman for Arch Linux.&lt;/p&gt;
-&lt;h3&gt;Display Manager&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-manager&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#display-manager&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Manages the graphical login screen and session initiation. Examples include GDM (GNOME Display Manager), LightDM, and SDDM (Simple Desktop Display Manager).&lt;/p&gt;
-&lt;h3&gt;Desktop Environment&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;desktop-environment&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#desktop-environment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Provides the graphical user interface (GUI) and manages the overall appearance and user experience. Examples include GNOME, Cinnamon, and KDE Plasma.&lt;/p&gt;
-&lt;h3&gt;Display Server&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-server&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#display-server&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Manages the display output and input events. Examples include X11 (X Window System) and Wayland. X11 is a traditional display server, while Wayland is a newer, more secure alternative.&lt;/p&gt;
+&lt;h3&gt;Explanation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;explanation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#explanation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Kernel&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kernel&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kernel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The core of the operating system that interfaces directly with the hardware, usually Linux.&lt;/p&gt;
+&lt;h4&gt;Distribution&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;distribution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#distribution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The Linux distribution, which packages the kernel along with user space tools, libraries, and software. Examples include Debian, Arch Linux, and Fedora.&lt;/p&gt;
+&lt;h4&gt;Package Manager&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;package-manager&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#package-manager&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;A tool used to install, update, and remove software applications from repositories. Examples include APT for Debian-based distributions, DNF for Fedora, and Pacman for Arch Linux.&lt;/p&gt;
+&lt;h4&gt;Display Manager&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-manager&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#display-manager&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Manages the graphical login screen and session initiation. Examples include GDM (GNOME Display Manager), LightDM, and SDDM (Simple Desktop Display Manager).&lt;/p&gt;
+&lt;h4&gt;Desktop Environment&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;desktop-environment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#desktop-environment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Provides the graphical user interface (GUI) and manages the overall appearance and user experience. Examples include GNOME, Cinnamon, and KDE Plasma.&lt;/p&gt;
+&lt;h4&gt;Display Server&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-server&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#display-server&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Manages the display output and input events. Examples include X11 (X Window System) and Wayland. X11 is a traditional display server, while Wayland is a newer, more secure alternative.&lt;/p&gt;
 
       </description>
     </item>
@@ -99,20 +100,21 @@
       <description>
         
         
-        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;This document outlines the steps I took to install &lt;a href=&#34;https://www.debian.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Debian&lt;/a&gt; Stable as the &lt;a href=&#34;https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/home&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Artbox&lt;/a&gt; OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.&lt;/p&gt;
-&lt;h2&gt;Backup Your Data&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;backup-your-data&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#backup-your-data&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost.&lt;/p&gt;
-&lt;h2&gt;Create a Partition&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-a-partition&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#create-a-partition&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Create a disk partition on your primary hard drive to install Debian onto. This process has many online guides and various tools, such as GParted. You may need to create a partition from Windows to create a dual-boot machine or reuse an existing partition for Linux. Understand the process specific to your system and needs before proceeding.&lt;/p&gt;
-&lt;h2&gt;Create a USB to Install Debian Stable&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-a-usb-to-install-debian-stable&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#create-a-usb-to-install-debian-stable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Assuming you have created a partition on your primary hard drive for Debian and an appropriate-sized swap partition:&lt;/p&gt;
+        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This document outlines the steps I took to install &lt;a href=&#34;https://www.debian.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Debian&lt;/a&gt; Stable as the &lt;a href=&#34;https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/home&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Artbox&lt;/a&gt; OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.&lt;/p&gt;
+&lt;h3&gt;Backup Your Data&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;backup-your-data&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#backup-your-data&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost.&lt;/p&gt;
+&lt;h3&gt;Create a Partition&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-a-partition&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-a-partition&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create a disk partition on your primary hard drive to install Debian onto. This process has many online guides and various tools, such as GParted. You may need to create a partition from Windows to create a dual-boot machine or reuse an existing partition for Linux. Understand the process specific to your system and needs before proceeding.&lt;/p&gt;
+&lt;h3&gt;Create a USB to Install Debian Stable&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-a-usb-to-install-debian-stable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-a-usb-to-install-debian-stable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Assuming you have created a partition on your primary hard drive for Debian and an appropriate-sized swap partition:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Download the Debian ISO from the official &lt;a href=&#34;https://www.debian.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;website&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;On Windows, we can use &lt;a href=&#34;https://etcher.balena.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BalenaEtcher&lt;/a&gt; to put the ISO on a USB drive.&lt;/li&gt;
 &lt;li&gt;On Linux, we can use a command-line tool to create a bootable USB from the ISO.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;Install&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;install&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#install&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h3&gt;Install&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;install&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#install&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Insert the USB drive into a main USB port.&lt;/li&gt;
 &lt;li&gt;Restart and press F2 on the initial screen to access the boot options.&lt;/li&gt;
 &lt;li&gt;Select the USB drive to boot from.&lt;/li&gt;
@@ -132,9 +134,9 @@
 &lt;li&gt;Add Cinnamon to the install section for a traditional desktop interface.&lt;/li&gt;
 &lt;li&gt;The installation will proceed, and you should have a new Debian Stable OS to set up.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;Setup the System&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setup-the-system&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#setup-the-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Display Scaling&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-scaling&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#display-scaling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You may have purchased a 4K monitor to use 4K worth of display, at the moment, Debian Stable does not do fractional scaling in a way that allows this.&lt;/p&gt;
+&lt;h3&gt;Setup the System&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setup-the-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setup-the-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Display Scaling&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-scaling&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#display-scaling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;You may have purchased a 4K monitor to use 4K worth of display, at the moment, Debian Stable does not do fractional scaling in a way that allows this.&lt;/p&gt;
 &lt;p&gt;An ideal approach to display scaling would be, where the display resolution is retained, and only the GUI elements are scaled up or down to match the desired size. This is often referred to as &amp;ldquo;resolution-independent&amp;rdquo; or &amp;ldquo;high-DPI&amp;rdquo; scaling.&lt;/p&gt;
 &lt;p&gt;In this approach, the display resolution remains the same (e.g., 4K), and the GUI elements, such as text, icons, and graphics, are scaled up or down to match the desired size. This way, the display resolution is not compromised, and the GUI elements are rendered at a size that&amp;rsquo;s comfortable for the user.&lt;/p&gt;
 &lt;p&gt;Unfortunately, Linux desktop environments have been slower to adopt this approach, and many still use the older method of scaling the display resolution itself, which can lead to the blurriness.&lt;/p&gt;
@@ -152,16 +154,16 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Terminal&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;terminal&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#terminal&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Configure your terminal to your liking:&lt;/p&gt;
+&lt;h3&gt;Terminal&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;terminal&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#terminal&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Configure your terminal to your liking:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Menu -&amp;gt; Search -&amp;gt; Terminal -&amp;gt; Edit -&amp;gt; Preferences&lt;/li&gt;
 &lt;li&gt;Text -&amp;gt; Initial Size 140: columns 40 rows&lt;/li&gt;
 &lt;li&gt;Text -&amp;gt; Custom font: 140: Monospace 10&lt;/li&gt;
 &lt;li&gt;Colours -&amp;gt; Built-in-schemes -&amp;gt; Solarized Dark&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;Restore Data - User Specific&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;restore-data---user-specific&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#restore-data---user-specific&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Restore your backed-up data to the Home directory. For example:&lt;/p&gt;
+&lt;h3&gt;Restore Data - User Specific&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;restore-data---user-specific&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#restore-data---user-specific&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Restore your backed-up data to the Home directory. For example:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Backup/Home/Artwork -&amp;gt; Home/Artwork&lt;/li&gt;
 &lt;li&gt;Backup/Home/code -&amp;gt; Home/code&lt;/li&gt;
@@ -169,11 +171,11 @@
 &lt;li&gt;Backup/Home/.ssh (GitLab keys) -&amp;gt; Home/.ssh (GitLab keys)&lt;/li&gt;
 &lt;li&gt;Backup/Home/.config/GIMP -&amp;gt; Home/.config/GIMP&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Git&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#git&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Install Git using the terminal command: &lt;code&gt;sudo apt install git&lt;/code&gt;
+&lt;h3&gt;Git&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Install Git using the terminal command: &lt;code&gt;sudo apt install git&lt;/code&gt;
 Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;GitLab Access&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;gitlab-access&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#gitlab-access&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Restore repository access to GitLab or GitHub:&lt;/p&gt;
+&lt;h4&gt;GitLab Access&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;gitlab-access&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#gitlab-access&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Restore repository access to GitLab or GitHub:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Change the permissions on the SSH key file: &lt;code&gt;chmod 600 ~/.ssh/id_rsa&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Add the user to the new Git install: &lt;code&gt;ssh-add ~/.ssh/id_rsa&lt;/code&gt;&lt;/li&gt;
@@ -211,19 +213,20 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
       <description>
         
         
-        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;It&amp;rsquo;s common to back up your important files to return to earlier versions or replace corrupted data. However, another essential type of backup is a &lt;strong&gt;disk clone&lt;/strong&gt;, a complete backup of your system&amp;rsquo;s state.&lt;/p&gt;
+        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;It&amp;rsquo;s common to back up your important files to return to earlier versions or replace corrupted data. However, another essential type of backup is a &lt;strong&gt;disk clone&lt;/strong&gt;, a complete backup of your system&amp;rsquo;s state.&lt;/p&gt;
 &lt;p&gt;Once you have your system set up and working well, creating a full backup is crucial for restoring your environment in case disaster strikes. This backup complements regularly saving your working data.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://clonezilla.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clonezilla&lt;/a&gt; is a free and open-source disk imaging and cloning software. It allows users to create and restore full backups of their computer&amp;rsquo;s hard drive, making it a popular tool for IT professionals and home users alike.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s always better to have a backup and not need it than to need a backup and not have it.&lt;/p&gt;
-&lt;h2&gt;Key Features of Clonezilla&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;key-features-of-clonezilla&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#key-features-of-clonezilla&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h3&gt;Key Features of Clonezilla&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;key-features-of-clonezilla&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-features-of-clonezilla&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Disk Imaging&lt;/strong&gt;: Clonezilla creates an exact copy of a hard drive, including the operating system, applications, and data.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Backup and Restore&lt;/strong&gt;: It enables you to create a backup image of a hard drive and restore it in case of failure or migration to a new drive.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Free and Open Source&lt;/strong&gt;: Clonezilla is completely free to use, and the source code is available for modification and customization.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Using Clonezilla to Backup and Restore a Debian Partition&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-clonezilla-to-backup-and-restore-a-debian-partition&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#using-clonezilla-to-backup-and-restore-a-debian-partition&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Preparation Steps&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;preparation-steps&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#preparation-steps&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You will need a USB drive for Clonezilla and an external hard drive that is larger than the internal drive you intend to clone.&lt;/p&gt;
+&lt;h3&gt;Using Clonezilla to Backup and Restore a Debian Partition&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-clonezilla-to-backup-and-restore-a-debian-partition&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-clonezilla-to-backup-and-restore-a-debian-partition&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Preparation Steps&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;preparation-steps&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#preparation-steps&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;You will need a USB drive for Clonezilla and an external hard drive that is larger than the internal drive you intend to clone.&lt;/p&gt;
 &lt;p&gt;These steps simplify the process based on the &lt;a href=&#34;https://clonezilla.org//fine-print-live-doc.php?path=./clonezilla-live/doc/01_Save_disk_image/00-boot-clonezilla-live-cd.doc#00-boot-clonezilla-live-cd.doc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;official guide&lt;/a&gt;. It&amp;rsquo;s a good idea to review the full guide, which includes screenshots for added clarity.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -239,8 +242,8 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
 &lt;p&gt;&lt;strong&gt;Boot from Clonezilla Live USB Drive&lt;/strong&gt;: Restart your computer and boot from the Clonezilla media you created. You may need to access your BIOS/UEFI settings (usually by pressing F2, F12, ESC, or DEL during boot) and adjust the boot order to prioritize the USB drive.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;Backup with Clonezilla&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;backup-with-clonezilla&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#backup-with-clonezilla&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;h4&gt;Backup with Clonezilla&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;backup-with-clonezilla&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#backup-with-clonezilla&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Select Backup Mode&lt;/strong&gt;: Once Clonezilla boots up, choose &amp;ldquo;device-device&amp;rdquo; mode. This mode allows you to directly clone your internal drive to an external device.&lt;/p&gt;
 &lt;/li&gt;
@@ -258,8 +261,8 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h3&gt;Restoring from Backup&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;restoring-from-backup&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#restoring-from-backup&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you need to restore your Debian system from the backup, follow these steps:&lt;/p&gt;
+&lt;h4&gt;Restoring from Backup&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;restoring-from-backup&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#restoring-from-backup&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;If you need to restore your Debian system from the backup, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Boot from Clonezilla Media&lt;/strong&gt;: Insert the Clonezilla USB and boot from it, following the same steps as during the backup process.&lt;/p&gt;
@@ -278,8 +281,8 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h3&gt;Final Notes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;final-notes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#final-notes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Disk backups with Clonezilla ensure that your entire system—operating system, settings, and applications—is preserved. With minimal effort, you can safeguard your system from catastrophic failure and minimize downtime in the event of a crash.&lt;/p&gt;
+&lt;h4&gt;Final Notes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;final-notes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#final-notes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Disk backups with Clonezilla ensure that your entire system—operating system, settings, and applications—is preserved. With minimal effort, you can safeguard your system from catastrophic failure and minimize downtime in the event of a crash.&lt;/p&gt;
 &lt;p&gt;Remember, &lt;strong&gt;backups are essential&lt;/strong&gt;. Regularly update your backups and periodically test them to ensure you can restore your system when needed.&lt;/p&gt;
 &lt;p&gt;After booting, you can plug in your external backup drive and inspect its partition structure using the Disks utility in Linux. The backup drive should mirror the internal drive’s structure, with the same partitions and some unused space if the external drive is larger.&lt;/p&gt;
 
@@ -295,13 +298,14 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
       <description>
         
         
-        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;Welcome to this beginner&amp;rsquo;s guide to using Git on Linux! This guide is designed to help you get started with Git and GitLab, and to provide a basic understanding of how to use these tools.&lt;/p&gt;
-&lt;h2&gt;Git Overview&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git-overview&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#git-overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The code used for making applications is kept in a collection of folders and files on your system. Git is an application that allows us to backup, share, and copy that collection. Git is known as a version control system that allows you to track changes to your code and collaborate with others. It&amp;rsquo;s a powerful tool that&amp;rsquo;s widely used in the open-source community. GitLab is a web-based platform that allows you to host and manage your Git repositories online, making it easy to collaborate with others and track changes to your code.&lt;/p&gt;
-&lt;h2&gt;What is a Repository?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;what-is-a-repository&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#what-is-a-repository&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A &lt;em&gt;repo&lt;/em&gt;, short for repository, is a Git-managed local folder with an online copy. A Git Lab repo is a collection of files and folders that make up a project. It can have &lt;em&gt;branches&lt;/em&gt; that are independent copies of the same project. A branch is a separate version of your project that allows you to make changes without affecting the main version. This is useful for testing new features or fixing bugs without disrupting the main project. There is your local repo, stored on your hard drive, and the remote repo, stored online using Git and GitLab.&lt;/p&gt;
-&lt;h2&gt;Using Git&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-git&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#using-git&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You&amp;rsquo;ll need to install Git on your system. On Debian-based systems, you can use the apt command to install software packages. In this case, we&amp;rsquo;re using it to install Git, which is a package that provides the Git version control system. The sudo command gives the installer permission to install on your system.&lt;/p&gt;
+        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Welcome to this beginner&amp;rsquo;s guide to using Git on Linux! This guide is designed to help you get started with Git and GitLab, and to provide a basic understanding of how to use these tools.&lt;/p&gt;
+&lt;h3&gt;Git Overview&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git-overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The code used for making applications is kept in a collection of folders and files on your system. Git is an application that allows us to backup, share, and copy that collection. Git is known as a version control system that allows you to track changes to your code and collaborate with others. It&amp;rsquo;s a powerful tool that&amp;rsquo;s widely used in the open-source community. GitLab is a web-based platform that allows you to host and manage your Git repositories online, making it easy to collaborate with others and track changes to your code.&lt;/p&gt;
+&lt;h3&gt;What is a Repository?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;what-is-a-repository&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-a-repository&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A &lt;em&gt;repo&lt;/em&gt;, short for repository, is a Git-managed local folder with an online copy. A Git Lab repo is a collection of files and folders that make up a project. It can have &lt;em&gt;branches&lt;/em&gt; that are independent copies of the same project. A branch is a separate version of your project that allows you to make changes without affecting the main version. This is useful for testing new features or fixing bugs without disrupting the main project. There is your local repo, stored on your hard drive, and the remote repo, stored online using Git and GitLab.&lt;/p&gt;
+&lt;h3&gt;Using Git&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-git&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-git&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You&amp;rsquo;ll need to install Git on your system. On Debian-based systems, you can use the apt command to install software packages. In this case, we&amp;rsquo;re using it to install Git, which is a package that provides the Git version control system. The sudo command gives the installer permission to install on your system.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -317,8 +321,8 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
 
   
 &lt;/div&gt;
-&lt;h2&gt;Access GitLab&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;access-gitlab&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#access-gitlab&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you can use &lt;a href=&#34;https://gitlab.com/users/sign_up&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitLab&lt;/a&gt;, you&amp;rsquo;ll need to create an account by visiting the GitLab website and completing the registration process.&lt;/p&gt;
+&lt;h3&gt;Access GitLab&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;access-gitlab&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#access-gitlab&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Before you can use &lt;a href=&#34;https://gitlab.com/users/sign_up&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitLab&lt;/a&gt;, you&amp;rsquo;ll need to create an account by visiting the GitLab website and completing the registration process.&lt;/p&gt;
 &lt;p&gt;GitLab requires &lt;em&gt;SSH&lt;/em&gt; for secure and authenticated communication between a client (you, for instance) and the GitLab server when performing Git operations like &lt;em&gt;cloning&lt;/em&gt;, &lt;em&gt;pushing&lt;/em&gt;, and &lt;em&gt;fetching&lt;/em&gt; repositories. Cloning is making a local copy of the repo, fetching is bringing any changes made in the repo to your local copy, and pushing is sending changes and content to the server repository. SSH (Secure Shell) is a network protocol that allows secure remote access and uses &lt;em&gt;key pairs&lt;/em&gt; to authenticate and establish secure connections. To generate an SSH key pair, you can use the ssh-keygen command in your terminal.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
