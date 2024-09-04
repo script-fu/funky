@@ -12,3 +12,5 @@ These are experimental features have been added to Artbox. As with any new code,
 
 [Digital Painting](https://gitlab.gnome.org/americo_gobbo/digital-painting/-/wikis/home)  
 [Design Proposals for Digital Art](https://gitlab.gnome.org/americo_gobbo/GIMPBrushwork/-/wikis/home)
+
+![beep-beep](/images/gallery/red-rock_final.webp)

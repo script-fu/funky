@@ -3,33 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/post-2024-09-03/</loc>
-    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/test/</loc>
-    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/post-2024-09-02/</loc>
-    <lastmod>2024-09-02T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/blog/post-2024-09-04/</loc>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/post-2024-09-01/</loc>
-    <lastmod>2024-09-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/boxdocs/folder/data/</loc>
   </url><url>
-    <loc>http://localhost:1313/artbox-docs/folder/data/</loc>
+    <loc>http://localhost:1313/boxdocs/folder/Installation/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/folder/Artbox-Installing/</loc>
+    <loc>http://localhost:1313/boxdocs/folder/technical-guide/</loc>
   </url><url>
-    <loc>http://localhost:1313/artbox-docs/folder/technical-guide/</loc>
-  </url><url>
-    <loc>http://localhost:1313/artbox-docs/folder/troubleshooting/</loc>
+    <loc>http://localhost:1313/boxdocs/folder/troubleshooting/</loc>
   </url><url>
     <loc>http://localhost:1313/example/folder/example-page/</loc>
   </url><url>
@@ -67,9 +61,11 @@
   </url><url>
     <loc>http://localhost:1313/themes/folder/warm/</loc>
   </url><url>
-    <loc>http://localhost:1313/artbox-docs/folder/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/artbox-docs/</loc>
+    <loc>http://localhost:1313/boxdocs/folder/</loc>
+  </url><url>
+    <loc>http://localhost:1313/boxdocs/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>

@@ -7,24 +7,26 @@ theme = 'hextra'
 description = "Art, Painting, Illustration"
 
 [params.theme]
-default = "system"
-displayToggle = true
-		
-[navbar]
-displayTitle = true
-displayLogo = true
-width = "wide"
+default = "dark"  # light | dark | system
+displayToggle = false
 
-[navbar.logo]
+[params.navbar]
+displayTitle = true
+displayLogo = false
+
+[params.navbar.logo]
 path = "images/logo.svg"
 dark = "images/logo-dark.svg"
+link = "/"
+width = 40
+height = 20
 
 [page]
 width = "normal"
 
 [footer]
 enable = false
-displayCopyright = true
+displayCopyright = false
 displayPoweredBy = false
 width = "normal"
 
@@ -50,20 +52,31 @@ sortOrder = "desc"
 enable = true
 display = "hover"
 
-[comments]
+[params.comments]
 enable = false
 type = "giscus"
+
+[params.comments.giscus]
+repo = "<repository>"
+repoId = "<repository ID>"
+category = "<category>"
+categoryId = "<category ID>"
 
 [menu]
 
 [[menu.main]]
-name = "Documentation"
-pageRef = "/docs/folder/"
+name = "About"
+pageRef = "/about/"
 weight = 1
 
 [[menu.main]]
 name = "Installation"
-pageRef = "/docs/folder/Artbox-Installing"
+pageRef = "/boxdocs/folder/Installation"
+weight = 1
+[[menu.main]]
+
+name = "Documentation"
+pageRef = "/boxdocs/folder/"
 weight = 1
 
 [[menu.main]]
@@ -88,6 +101,13 @@ weight = 4
   [menu.main.params]
   type = "search"
 
+[params.search]
+enable = true
+type = "flexsearch"
+
+[params.search.flexsearch]
+index = "content"  # index page by: content | summary | heading | title
+
 [[menu.main]]
 name = "GitLab"
 weight = 5
@@ -95,3 +115,7 @@ url = "https://gitlab.gnome.org/pixelmixer/artbox"
 
   [menu.main.params]
   icon = "gitlab"
+
+[services.googleAnalytics]
+ID = "G-MEASUREMENT_ID"
+
