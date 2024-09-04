@@ -1,0 +1,131 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artbox – Themes</title>
+    <link>http://localhost:1313/themes-copy/folder/</link>
+    <description>Recent content in Themes on Artbox</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    
+	  <atom:link href="http://localhost:1313/themes-copy/folder/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/themes-copy/folder/dark/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes-copy/folder/dark/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/themes/themes_6.jpg&#34; alt=&#34;dark-mid&#34; loading=&#34;lazy&#34; /&gt;
+&lt;img src=&#34;http://localhost:1313/images/themes/themes_7.jpg&#34; alt=&#34;dark-dark&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/themes-copy/folder/default/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes-copy/folder/default/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/themes/themes_1.jpg&#34; alt=&#34;default-mid&#34; loading=&#34;lazy&#34; /&gt;
+&lt;img src=&#34;http://localhost:1313/images/themes/themes_2.jpg&#34; alt=&#34;default-dark&#34; loading=&#34;lazy&#34; /&gt;
+&lt;img src=&#34;http://localhost:1313/images/themes/themes_3.jpg&#34; alt=&#34;default-light&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/themes-copy/folder/high-contrast/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes-copy/folder/high-contrast/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/themes/themes_4.jpg&#34; alt=&#34;high-contrast&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/themes-copy/folder/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes-copy/folder/installation/</guid>
+      <description>
+        
+        
+        &lt;h3&gt;Installing Themes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;installing-themes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#installing-themes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&amp;lsquo;Download Zip&amp;rsquo;.&lt;/li&gt;
+&lt;li&gt;Once downloaded, extract the themes directory someplace.&lt;/li&gt;
+&lt;li&gt;Point Artbox at the folder by adding it here: &lt;strong&gt;Edit-&amp;gt;Preferences-&amp;gt;Folders-&amp;gt;Themes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Restart Artbox and find the new themes in &lt;strong&gt;Edit-&amp;gt;Preferences-&amp;gt;Interface-&amp;gt;Theme&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/themes-copy/folder/structure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes-copy/folder/structure/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Inside the default theme folder are CSS files and assets. Color definitions for the theme are in &amp;lsquo;color-definitions.css&amp;rsquo;. Assets for a theme are in the assets folder, they are assigned by the CSS file &amp;lsquo;color.css&amp;rsquo; in the&amp;rsquo;stylesheets&amp;rsquo; folder. The stylesheets folder contains:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Color, assignments for color, borders and opacity.&lt;/li&gt;
+&lt;li&gt;Layout, assignments for margins, padding and sizing.&lt;/li&gt;
+&lt;li&gt;Font, assignments for size, style and weight.&lt;/li&gt;
+&lt;li&gt;Round, assignments for rounded corners.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/themes-copy/folder/system/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes-copy/folder/system/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/themes/themes_5.jpg&#34; alt=&#34;system&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/themes-copy/folder/warm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/themes-copy/folder/warm/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/themes/themes_8.jpg&#34; alt=&#34;warm&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artbox – example/folder/_index.md</title>
+    <link>http://localhost:1313/example/folder/</link>
+    <description>Recent content in example/folder/_index.md on Artbox</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    
+	  <atom:link href="http://localhost:1313/example/folder/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/example/folder/example-page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/example/folder/example-page/</guid>
+      <description>
+        
+        
+        &lt;p&gt;example/folder/example-page.md&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

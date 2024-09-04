@@ -1,0 +1,222 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artbox – Guides</title>
+    <link>http://localhost:1313/docs-copy/folder/</link>
+    <description>Recent content in Guides on Artbox</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    
+	  <atom:link href="http://localhost:1313/docs-copy/folder/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/docs-copy/folder/a-linux-system-overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs-copy/folder/a-linux-system-overview/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Linux is a powerful and versatile operating system with a vast community of developers. At its core, a Linux system consists of several key components that work together to provide a seamless user experience. This overview will outline the essential parts of a Linux system, including the kernel, distribution, package manager, display manager, desktop environment, and display server (X11 or Wayland).&lt;/p&gt;
+&lt;h2&gt;Examples of Linux Distribution Configurations&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;examples-of-linux-distribution-configurations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#examples-of-linux-distribution-configurations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Distribution&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Package Manager&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Display Manager&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Desktop Environment&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Display Server&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Debian&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;APT&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GDM&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GNOME&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;X11&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Debian&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;APT&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;LightDM&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cinnamon&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;X11&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Debian Testing&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;APT&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GDM&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GNOME&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wayland&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Fedora&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;DNF&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GDM&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GNOME&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wayland&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Arch Linux&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Pacman&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;SDDM&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;KDE Plasma&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;X11&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Explanation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;explanation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#explanation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Kernel&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kernel&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kernel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The core of the operating system that interfaces directly with the hardware, usually Linux.&lt;/p&gt;
+&lt;h3&gt;Distribution&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;distribution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#distribution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Linux distribution, which packages the kernel along with user space tools, libraries, and software. Examples include Debian, Arch Linux, and Fedora.&lt;/p&gt;
+&lt;h3&gt;Package Manager&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;package-manager&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#package-manager&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A tool used to install, update, and remove software applications from repositories. Examples include APT for Debian-based distributions, DNF for Fedora, and Pacman for Arch Linux.&lt;/p&gt;
+&lt;h3&gt;Display Manager&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-manager&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#display-manager&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Manages the graphical login screen and session initiation. Examples include GDM (GNOME Display Manager), LightDM, and SDDM (Simple Desktop Display Manager).&lt;/p&gt;
+&lt;h3&gt;Desktop Environment&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;desktop-environment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#desktop-environment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Provides the graphical user interface (GUI) and manages the overall appearance and user experience. Examples include GNOME, Cinnamon, and KDE Plasma.&lt;/p&gt;
+&lt;h3&gt;Display Server&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-server&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#display-server&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Manages the display output and input events. Examples include X11 (X Window System) and Wayland. X11 is a traditional display server, while Wayland is a newer, more secure alternative.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/docs-copy/folder/installing-debian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs-copy/folder/installing-debian/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This document outlines the steps I took to install &lt;a href=&#34;https://www.debian.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Debian&lt;/a&gt; Stable as the &lt;a href=&#34;https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/home&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Artbox&lt;/a&gt; OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.&lt;/p&gt;
+&lt;h2&gt;Backup Your Data&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;backup-your-data&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#backup-your-data&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost.&lt;/p&gt;
+&lt;h2&gt;Create a Partition&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-a-partition&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-a-partition&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Create a disk partition on your primary hard drive to install Debian onto. This process has many online guides and various tools, such as GParted. You may need to create a partition from Windows to create a dual-boot machine or reuse an existing partition for Linux. Understand the process specific to your system and needs before proceeding.&lt;/p&gt;
+&lt;h2&gt;Create a USB to Install Debian Stable&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-a-usb-to-install-debian-stable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-a-usb-to-install-debian-stable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Assuming you have created a partition on your primary hard drive for Debian and an appropriate-sized swap partition:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download the Debian ISO from the official &lt;a href=&#34;https://www.debian.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;website&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;On Windows, we can use &lt;a href=&#34;https://etcher.balena.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BalenaEtcher&lt;/a&gt; to put the ISO on a USB drive.&lt;/li&gt;
+&lt;li&gt;On Linux, we can use a command-line tool to create a bootable USB from the ISO.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Install&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;install&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#install&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Insert the USB drive into a main USB port.&lt;/li&gt;
+&lt;li&gt;Restart and press F2 on the initial screen to access the boot options.&lt;/li&gt;
+&lt;li&gt;Select the USB drive to boot from.&lt;/li&gt;
+&lt;li&gt;Choose a non-graphical install.&lt;/li&gt;
+&lt;li&gt;Skip the root password when asked, leaving it blank, and set a user password on the next section.&lt;/li&gt;
+&lt;li&gt;Partition manually:
+&lt;ul&gt;
+&lt;li&gt;Set your spare partition as ext4 journaling.&lt;/li&gt;
+&lt;li&gt;Set your swap partition.&lt;/li&gt;
+&lt;li&gt;Mount point: /&lt;/li&gt;
+&lt;li&gt;Label: linux&lt;/li&gt;
+&lt;li&gt;Hostname: name (appears to the right of your terminal prompt user@hostname)&lt;/li&gt;
+&lt;li&gt;User account: Your Full Name&lt;/li&gt;
+&lt;li&gt;User: name (appears to the left of your terminal prompt)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Add Cinnamon to the install section for a traditional desktop interface.&lt;/li&gt;
+&lt;li&gt;The installation will proceed, and you should have a new Debian Stable OS to set up.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Setup the System&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setup-the-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setup-the-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Display Scaling&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-scaling&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#display-scaling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You may have purchased a 4K monitor to use 4K worth of display, at the moment, Debian Stable does not do fractional scaling in a way that allows this.&lt;/p&gt;
+&lt;p&gt;An ideal approach to display scaling would be, where the display resolution is retained, and only the GUI elements are scaled up or down to match the desired size. This is often referred to as &amp;ldquo;resolution-independent&amp;rdquo; or &amp;ldquo;high-DPI&amp;rdquo; scaling.&lt;/p&gt;
+&lt;p&gt;In this approach, the display resolution remains the same (e.g., 4K), and the GUI elements, such as text, icons, and graphics, are scaled up or down to match the desired size. This way, the display resolution is not compromised, and the GUI elements are rendered at a size that&amp;rsquo;s comfortable for the user.&lt;/p&gt;
+&lt;p&gt;Unfortunately, Linux desktop environments have been slower to adopt this approach, and many still use the older method of scaling the display resolution itself, which can lead to the blurriness.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoid fractional display scaling, as Debian Stable does not support it well.&lt;/li&gt;
+&lt;li&gt;Instead, use the following workaround:
+&lt;ul&gt;
+&lt;li&gt;Menu -&amp;gt; Search -&amp;gt; Font Selection -&amp;gt; Font Settings -&amp;gt; Text Scaling Factor -&amp;gt; 2.5&lt;/li&gt;
+&lt;li&gt;Menu -&amp;gt; Search -&amp;gt; Font Selection -&amp;gt; Desktop Font 14: affects both monitors&lt;/li&gt;
+&lt;li&gt;Menu -&amp;gt; Search -&amp;gt; Panel -&amp;gt; Customize -&amp;gt; Panel Height 60&lt;/li&gt;
+&lt;li&gt;Menu -&amp;gt; Search -&amp;gt; Panel -&amp;gt; Panel appearance -&amp;gt; Right Zone: Symbolic Icon Size 48px&lt;/li&gt;
+&lt;li&gt;Menu -&amp;gt; Search -&amp;gt; Mouse and Touchpad -&amp;gt; Pointer Size and Speed: affects both monitors&lt;/li&gt;
+&lt;li&gt;Right-click the 4K monitor Desktop -&amp;gt; Customize: Icon Size Larger&lt;/li&gt;
+&lt;li&gt;Firefox: in the address bar -&amp;gt; about:config -&amp;gt; search: layout.css.devPixelsPerPx -&amp;gt; set the value to 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Terminal&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;terminal&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#terminal&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Configure your terminal to your liking:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Menu -&amp;gt; Search -&amp;gt; Terminal -&amp;gt; Edit -&amp;gt; Preferences&lt;/li&gt;
+&lt;li&gt;Text -&amp;gt; Initial Size 140: columns 40 rows&lt;/li&gt;
+&lt;li&gt;Text -&amp;gt; Custom font: 140: Monospace 10&lt;/li&gt;
+&lt;li&gt;Colours -&amp;gt; Built-in-schemes -&amp;gt; Solarized Dark&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Restore Data - User Specific&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;restore-data---user-specific&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#restore-data---user-specific&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Restore your backed-up data to the Home directory. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Backup/Home/Artwork -&amp;gt; Home/Artwork&lt;/li&gt;
+&lt;li&gt;Backup/Home/code -&amp;gt; Home/code&lt;/li&gt;
+&lt;li&gt;Backup/Home/Desktop -&amp;gt; Home/Desktop&lt;/li&gt;
+&lt;li&gt;Backup/Home/.ssh (GitLab keys) -&amp;gt; Home/.ssh (GitLab keys)&lt;/li&gt;
+&lt;li&gt;Backup/Home/.config/GIMP -&amp;gt; Home/.config/GIMP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Git&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Install Git using the terminal command: &lt;code&gt;sudo apt install git&lt;/code&gt;
+Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;GitLab Access&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;gitlab-access&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#gitlab-access&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Restore repository access to GitLab or GitHub:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Change the permissions on the SSH key file: &lt;code&gt;chmod 600 ~/.ssh/id_rsa&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add the user to the new Git install: &lt;code&gt;ssh-add ~/.ssh/id_rsa&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Test the connection: &lt;code&gt;ssh -T git@ssh.gitlab.gnome.org&lt;/code&gt; or &lt;code&gt;ssh -T git@github.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For each repository, fetch the origins and reset the local branch to match:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git reset --hard remote-name/branch-name
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clean -df&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;A &lt;code&gt;git status&lt;/code&gt; report on the updated repo should now look normal. This may also need to be done on any submodules.&lt;/p&gt;
+&lt;p&gt;We now have a new OS with any data and repositories restored. This process is fairly specific to my usage and knowledge of Linux, feel free to offer any suggestions for improving it as a guide.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Folder</title>
+      <link>http://localhost:1313/docs-copy/folder/leaf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/docs-copy/folder/leaf/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Pages can be organized into folders.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
