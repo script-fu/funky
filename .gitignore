@@ -1,0 +1,4 @@
+# Ignore Hugo build output
+/public
+
+# Other files or folders you want to ignore
