@@ -2,89 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/artbox/</loc>
     <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>http://localhost:1313/artbox/blog/</loc>
     <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/artbox/tags/</loc>
     <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/test/</loc>
+    <loc>http://localhost:1313/artbox/tags/test/</loc>
     <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/post-2024-09-04/</loc>
+    <loc>http://localhost:1313/artbox/blog/post-2024-09-04/</loc>
     <lastmod>2024-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/boxdocs/folder/data/</loc>
+    <loc>http://localhost:1313/artbox/boxdocs/folder/data/</loc>
   </url><url>
-    <loc>http://localhost:1313/boxdocs/folder/Installation/</loc>
+    <loc>http://localhost:1313/artbox/boxdocs/folder/Installation/</loc>
   </url><url>
-    <loc>http://localhost:1313/boxdocs/folder/technical-guide/</loc>
+    <loc>http://localhost:1313/artbox/boxdocs/folder/technical-guide/</loc>
   </url><url>
-    <loc>http://localhost:1313/boxdocs/folder/troubleshooting/</loc>
+    <loc>http://localhost:1313/artbox/boxdocs/folder/troubleshooting/</loc>
   </url><url>
-    <loc>http://localhost:1313/example/folder/example-page/</loc>
+    <loc>http://localhost:1313/artbox/feature-test/folder/filter-restores-last-tool/</loc>
   </url><url>
-    <loc>http://localhost:1313/guides/folder/a-linux-system-overview/</loc>
+    <loc>http://localhost:1313/artbox/feature-test/folder/paint-tool/</loc>
   </url><url>
-    <loc>http://localhost:1313/guides/folder/building-a-debug-version/</loc>
+    <loc>http://localhost:1313/artbox/feature-test/folder/paintbrush-high-quality-force/</loc>
   </url><url>
-    <loc>http://localhost:1313/guides/folder/installing-debian/</loc>
+    <loc>http://localhost:1313/artbox/feature-test/folder/paintbrush-options/</loc>
   </url><url>
-    <loc>http://localhost:1313/guides/folder/system-backup-clonezilla/</loc>
+    <loc>http://localhost:1313/artbox/feature-test/folder/presets-restore/</loc>
   </url><url>
-    <loc>http://localhost:1313/guides/folder/using-git-on-linux/</loc>
+    <loc>http://localhost:1313/artbox/feature-test/folder/resource-control/</loc>
   </url><url>
-    <loc>http://localhost:1313/test/folder/filter-restores-last-tool/</loc>
+    <loc>http://localhost:1313/artbox/feature-test/folder/script-fu/</loc>
   </url><url>
-    <loc>http://localhost:1313/test/folder/paint-tool/</loc>
+    <loc>http://localhost:1313/artbox/feature-test/folder/toolbox/</loc>
   </url><url>
-    <loc>http://localhost:1313/test/folder/paintbrush-high-quality-force/</loc>
+    <loc>http://localhost:1313/artbox/guides/folder/a-linux-system-overview/</loc>
   </url><url>
-    <loc>http://localhost:1313/test/folder/paintbrush-options/</loc>
+    <loc>http://localhost:1313/artbox/guides/folder/building-a-debug-version/</loc>
   </url><url>
-    <loc>http://localhost:1313/test/folder/presets-restore/</loc>
+    <loc>http://localhost:1313/artbox/guides/folder/installing-debian/</loc>
   </url><url>
-    <loc>http://localhost:1313/test/folder/resource-control/</loc>
+    <loc>http://localhost:1313/artbox/guides/folder/system-backup-clonezilla/</loc>
   </url><url>
-    <loc>http://localhost:1313/test/folder/script-fu/</loc>
+    <loc>http://localhost:1313/artbox/guides/folder/using-git-on-linux/</loc>
   </url><url>
-    <loc>http://localhost:1313/test/folder/toolbox/</loc>
+    <loc>http://localhost:1313/artbox/themes/folder/dark/</loc>
   </url><url>
-    <loc>http://localhost:1313/themes/folder/dark/</loc>
+    <loc>http://localhost:1313/artbox/themes/folder/default/</loc>
   </url><url>
-    <loc>http://localhost:1313/themes/folder/default/</loc>
+    <loc>http://localhost:1313/artbox/themes/folder/high-contrast/</loc>
   </url><url>
-    <loc>http://localhost:1313/themes/folder/high-contrast/</loc>
+    <loc>http://localhost:1313/artbox/themes/folder/system/</loc>
   </url><url>
-    <loc>http://localhost:1313/themes/folder/system/</loc>
+    <loc>http://localhost:1313/artbox/themes/folder/warm/</loc>
   </url><url>
-    <loc>http://localhost:1313/themes/folder/warm/</loc>
+    <loc>http://localhost:1313/artbox/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://localhost:1313/artbox/boxdocs/folder/</loc>
   </url><url>
-    <loc>http://localhost:1313/boxdocs/folder/</loc>
+    <loc>http://localhost:1313/artbox/boxdocs/</loc>
   </url><url>
-    <loc>http://localhost:1313/boxdocs/</loc>
+    <loc>http://localhost:1313/artbox/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/artbox/feature-test/folder/</loc>
   </url><url>
-    <loc>http://localhost:1313/example/folder/</loc>
+    <loc>http://localhost:1313/artbox/feature-test/</loc>
   </url><url>
-    <loc>http://localhost:1313/example/</loc>
+    <loc>http://localhost:1313/artbox/guides/</loc>
   </url><url>
-    <loc>http://localhost:1313/test/folder/</loc>
+    <loc>http://localhost:1313/artbox/guides/folder/</loc>
   </url><url>
-    <loc>http://localhost:1313/guides/</loc>
+    <loc>http://localhost:1313/artbox/themes/</loc>
   </url><url>
-    <loc>http://localhost:1313/guides/folder/</loc>
-  </url><url>
-    <loc>http://localhost:1313/test/</loc>
-  </url><url>
-    <loc>http://localhost:1313/themes/</loc>
-  </url><url>
-    <loc>http://localhost:1313/themes/folder/</loc>
+    <loc>http://localhost:1313/artbox/themes/folder/</loc>
   </url>
 </urlset>

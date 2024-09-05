@@ -7,7 +7,7 @@ type: docs
 
 Personalize your creative experience with a selection of custom themes for GIMP and Artbox! Whether you prefer a high-contrast interface for easy visibility, a warm and cozy palette, or a dark theme for a more focused environment, these themes offer a variety of options to suit your style. Easy to install and compatible with multiple platforms, these themes will help you tailor the look and feel of your Artbox interface to match your preferences. 
 
-1. [Download](/downloads/themes.zip)
+1. [Download](/artbox/downloads/themes.zip)
 2. Once the themes.zip has downloaded, extract the themes directory.
 3. Point Artbox at that folder by adding it here: **Edit->Preferences->Folders->Themes**
 4. Restart Artbox and find the new themes in **Edit->Preferences->Interface->Theme**

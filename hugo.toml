@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://script-fu.github.io/artbox/'
 languageCode = 'en-GB'
 title = 'Artbox'
 theme = 'hextra'
@@ -17,7 +17,7 @@ displayLogo = false
 [params.navbar.logo]
 path = "images/logo.svg"
 dark = "images/logo-dark.svg"
-link = "/"
+link = "/artbox/"
 width = 40
 height = 20
 
@@ -81,7 +81,7 @@ weight = 1
 
 [[menu.main]]
 name = "Features"
-pageRef = "/test/folder/"
+pageRef = "/feature-test/folder/"
 weight = 1
 
 [[menu.main]]
@@ -107,14 +107,6 @@ type = "flexsearch"
 
 [params.search.flexsearch]
 index = "content"  # index page by: content | summary | heading | title
-
-[[menu.main]]
-name = "GitLab"
-weight = 5
-url = "https://gitlab.gnome.org/pixelmixer/artbox"
-
-  [menu.main.params]
-  icon = "gitlab"
 
 [services.googleAnalytics]
 ID = "G-MEASUREMENT_ID"

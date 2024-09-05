@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Artbox – Guides</title>
-    <link>http://localhost:1313/guides/folder/</link>
+    <link>http://localhost:1313/artbox/guides/folder/</link>
     <description>Recent content in Guides on Artbox</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-GB</language>
     
-	  <atom:link href="http://localhost:1313/guides/folder/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/artbox/guides/folder/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/guides/folder/a-linux-system-overview/</link>
+      <link>http://localhost:1313/artbox/guides/folder/a-linux-system-overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/guides/folder/a-linux-system-overview/</guid>
+      <guid>http://localhost:1313/artbox/guides/folder/a-linux-system-overview/</guid>
       <description>
         
         
@@ -92,10 +92,10 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/guides/folder/building-a-debug-version/</link>
+      <link>http://localhost:1313/artbox/guides/folder/building-a-debug-version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/guides/folder/building-a-debug-version/</guid>
+      <guid>http://localhost:1313/artbox/guides/folder/building-a-debug-version/</guid>
       <description>
         
         
@@ -520,10 +520,10 @@ From                To                  Syms Read   Shared Object Library
     
     <item>
       <title></title>
-      <link>http://localhost:1313/guides/folder/installing-debian/</link>
+      <link>http://localhost:1313/artbox/guides/folder/installing-debian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/guides/folder/installing-debian/</guid>
+      <guid>http://localhost:1313/artbox/guides/folder/installing-debian/</guid>
       <description>
         
         
@@ -632,10 +632,10 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
     
     <item>
       <title></title>
-      <link>http://localhost:1313/guides/folder/system-backup-clonezilla/</link>
+      <link>http://localhost:1313/artbox/guides/folder/system-backup-clonezilla/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/guides/folder/system-backup-clonezilla/</guid>
+      <guid>http://localhost:1313/artbox/guides/folder/system-backup-clonezilla/</guid>
       <description>
         
         
@@ -716,10 +716,10 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
     
     <item>
       <title></title>
-      <link>http://localhost:1313/guides/folder/using-git-on-linux/</link>
+      <link>http://localhost:1313/artbox/guides/folder/using-git-on-linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/guides/folder/using-git-on-linux/</guid>
+      <guid>http://localhost:1313/artbox/guides/folder/using-git-on-linux/</guid>
       <description>
         
         

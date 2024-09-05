@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Artbox – Artbox Docs</title>
-    <link>http://localhost:1313/boxdocs/folder/</link>
+    <link>http://localhost:1313/artbox/boxdocs/folder/</link>
     <description>Recent content in Artbox Docs on Artbox</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-GB</language>
     
-	  <atom:link href="http://localhost:1313/boxdocs/folder/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/artbox/boxdocs/folder/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/boxdocs/folder/data/</link>
+      <link>http://localhost:1313/artbox/boxdocs/folder/data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/boxdocs/folder/data/</guid>
+      <guid>http://localhost:1313/artbox/boxdocs/folder/data/</guid>
       <description>
         
         
@@ -430,10 +430,10 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/boxdocs/folder/Installation/</link>
+      <link>http://localhost:1313/artbox/boxdocs/folder/Installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/boxdocs/folder/Installation/</guid>
+      <guid>http://localhost:1313/artbox/boxdocs/folder/Installation/</guid>
       <description>
         
         
@@ -845,10 +845,10 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/boxdocs/folder/technical-guide/</link>
+      <link>http://localhost:1313/artbox/boxdocs/folder/technical-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/boxdocs/folder/technical-guide/</guid>
+      <guid>http://localhost:1313/artbox/boxdocs/folder/technical-guide/</guid>
       <description>
         
         
@@ -1019,10 +1019,10 @@ commit &amp;lt;SHA&amp;gt;
     
     <item>
       <title></title>
-      <link>http://localhost:1313/boxdocs/folder/troubleshooting/</link>
+      <link>http://localhost:1313/artbox/boxdocs/folder/troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/boxdocs/folder/troubleshooting/</guid>
+      <guid>http://localhost:1313/artbox/boxdocs/folder/troubleshooting/</guid>
       <description>
         
         
