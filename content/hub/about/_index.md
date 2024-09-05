@@ -9,4 +9,4 @@ Artbox is a digital painting and illustration application for Linux, specificall
 
 Artbox is powered by the [GNU Image Manipulation Program](https://www.gimp.org/) open source project.
 
-![angry_boy](/images/gallery/my_ball_lined_final.webp)
+![artbox-logo](/images/artbox-logo.webp)

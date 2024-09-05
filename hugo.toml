@@ -85,11 +85,6 @@ pageRef = "hub/feature-test/folder/"
 weight = 1
 
 [[menu.main]]
-name = "Blog"
-pageRef = "hub/blog"
-weight = 2
-
-[[menu.main]]
 name = "Guides"
 pageRef = "hub/guides/folder/"
 weight = 3

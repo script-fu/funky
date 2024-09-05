@@ -5,10 +5,6 @@ type: docs
 
 ### Introduction
 
-Welcome to the Documentation Hub!
-
-These guides are designed to help you navigate the diverse landscape of Linux, with a special focus on using Artbox, a powerful image editing tool built as a fork of GIMP. Whether you're new to Linux or an experienced user, you'll find a range of resources to enhance your understanding and workflow.
-
-You'll find simple guides and more complex instructions. This is about quickly finding the information you need, while gaining a comprehensive view of how Artbox integrates with other Linux tools and workflows.
+Welcome to this series of guides designed for those who are new to Linux and want to explore its capabilities. Whether you're wondering what Linux is, how to navigate its different distributions, or looking to learn about essential tools like Git, Debian, and Clonezilla for backups, these guides will help you get started. Each guide provides a clear, step-by-step approach to understanding and using Linux, breaking down complex concepts into simple terms.
 
 ![seaside](/images/gallery/at_the_seaside_tlined_final.webp)
