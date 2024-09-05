@@ -1,0 +1,1007 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Artbox – Artbox</title><link>http://localhost:1313/artbox/hub/docs/folder/</link><description>Recent content on Artbox</description><generator>Hugo -- gohugo.io</generator><language>en-GB</language><atom:link href="http://localhost:1313/artbox/hub/docs/folder/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>http://localhost:1313/artbox/hub/docs/folder/data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/docs/folder/data/</guid><description>
+&lt;h1>Introduction&lt;/h1>&lt;p>This guide explains how to manage the &amp;lsquo;gimp-data&amp;rsquo; submodule within the Artbox project. A submodule is a repository embedded within another repository. It is &lt;em>not&lt;/em> a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Artbox Repository&lt;/strong>: The parent project, it references a commit in gimp-data.
+&lt;ul>
+&lt;li>&lt;strong>gimp-data&lt;/strong>: The submodule that points to a different repository.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2>Understanding the Submodule&lt;span class="hx-absolute -hx-mt-20" id="understanding-the-submodule">&lt;/span>
+&lt;a href="#understanding-the-submodule" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Artbox Build Repository&lt;/strong>: This is the &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox" target="_blank" rel="noopener">parent repository&lt;/a> that contains the &amp;lsquo;gimp-data&amp;rsquo; submodule.&lt;/li>
+&lt;li>&lt;strong>Artbox Data Submodule&lt;/strong>: The directory within the Artbox repository that links to the &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox-data" target="_blank" rel="noopener">Artbox data repository&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>Specific Commit in Artbox Data&lt;/strong>: The submodule is fixed to a specific commit in the Artbox data repository.&lt;/li>
+&lt;li>&lt;strong>.gitmodules File&lt;/strong>: This file in the parent repository specifies the submodule&amp;rsquo;s repository location.&lt;/li>
+&lt;/ul>
+&lt;pre class="mermaid hx-mt-6">graph LR;
+subgraph Parent Repo / Superproject
+A([Artbox Build Repository])
+D([.gitmodules File])
+end
+B([Artbox Data Submodule])
+C([Specific Commit in Artbox Data Repository])
+A --> B
+B --> C
+D -.-> B&lt;/pre>&lt;p>&lt;em>Diagram 1: This diagram illustrates the relationship between the Artbox build repository (superproject), the gimp-data submodule, and its specific commit. The .gitmodules file specifies the submodule details.&lt;/em>&lt;/p>
+&lt;h2>Customizing the Submodule&lt;span class="hx-absolute -hx-mt-20" id="customizing-the-submodule">&lt;/span>
+&lt;a href="#customizing-the-submodule" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>Configuration: You can configure the submodule to point to a different repository, such as a modified clone of gimp-data.&lt;/li>
+&lt;li>Updating the Superproject: After pushing changes to the new repository, update the parent repository to point to the new commit.&lt;/li>
+&lt;/ul>
+&lt;h2>Remotes&lt;span class="hx-absolute -hx-mt-20" id="remotes">&lt;/span>
+&lt;a href="#remotes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Ensure the submodule remotes are correctly set up. For example:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git remote -v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gimp-data-origin https://gitlab.gnome.org/GNOME/gimp-data.git &lt;span style="color:#f92672">(&lt;/span>fetch&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gimp-data-origin https://gitlab.gnome.org/GNOME/gimp-data.git &lt;span style="color:#f92672">(&lt;/span>push&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>origin git@ssh.gitlab.gnome.org:pixelmixer/artbox-data.git &lt;span style="color:#f92672">(&lt;/span>fetch&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>origin git@ssh.gitlab.gnome.org:pixelmixer/artbox-data.git &lt;span style="color:#f92672">(&lt;/span>push&lt;span style="color:#f92672">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>This set up has the GIMP gimp-data as an upstream remote called gimp-data-origin, this is used to fetch updates from GIMP.&lt;/p>
+&lt;p>The .gitmodules file in the parent repo should be adjusted to point at the Artbox gimp-data repo:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;pre>&lt;code>[submodule &amp;#34;gimp-data&amp;#34;]
+path = gimp-data
+url = https://gitlab.gnome.org/pixelmixer/artbox-data.git
+shallow = true&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>&lt;em>The contents of the .gitmodules file in the build/artbox folder.&lt;/em>&lt;/p>
+&lt;h2>Artbox Data&lt;span class="hx-absolute -hx-mt-20" id="artbox-data">&lt;/span>
+&lt;a href="#artbox-data" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The Artbox &amp;lsquo;gimp-data&amp;rsquo; repository is a clone of the original &amp;lsquo;gimp-data&amp;rsquo; repository, with merged changes specifically for Artbox. Regularly rebasing to the upstream &amp;lsquo;gimp-data&amp;rsquo; repository ensures that you incorporate the latest GIMP updates. Follow these steps to rebase:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Checkout the &amp;lsquo;convert-to-artbox&amp;rsquo; Branch&lt;/strong>: Switch to the branch that integrates the latest changes and serves as the base for your updates.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git checkout convert-to-artbox&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Update the Submodule&lt;/strong>: Make sure the submodule is synchronized with the latest commit in the &amp;lsquo;gimp-data&amp;rsquo; repository.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git submodule update&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Checkout the &amp;lsquo;main&amp;rsquo; Branch in the &amp;lsquo;gimp-data&amp;rsquo; Directory&lt;/strong>: Navigate to the &amp;lsquo;gimp-data&amp;rsquo; submodule and switch to its main branch.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cd gimp-data
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git checkout main&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Fetch the Latest Changes from the Original &amp;lsquo;gimp-data&amp;rsquo; Repository&lt;/strong>: Retrieve updates from the upstream repository to keep your local copy current.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git fetch gimp-data-origin&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Rebase the Artbox Data Repository onto the Original &amp;lsquo;gimp-data&amp;rsquo;&lt;/strong>: Apply the latest changes from the upstream repository onto your local branch.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git rebase gimp-data-origin/main&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Resolve Conflicts and Push Updates to the Artbox Data Repository&lt;/strong>: If there are conflicts, resolve them, and then push the rebased changes to the Artbox data repository.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git push -f&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;em>Explanation&lt;/em>: By rebasing the Artbox &amp;lsquo;gimp-data&amp;rsquo; repository onto the original &amp;lsquo;gimp-data&amp;rsquo;, you ensure that your project benefits from the latest updates and improvements. Regular rebasing helps avoid conflicts and keeps the repository in sync with upstream changes.&lt;/p>
+&lt;h2>Modifying or Adding New Resources&lt;span class="hx-absolute -hx-mt-20" id="modifying-or-adding-new-resources">&lt;/span>
+&lt;a href="#modifying-or-adding-new-resources" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To change or add new resources in the &amp;lsquo;gimp-data&amp;rsquo; submodule, follow these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Checkout the &amp;lsquo;convert-to-artbox&amp;rsquo; Branch&lt;/strong>: Ensure you are working on the correct branch that incorporates the latest changes.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git checkout convert-to-artbox&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Update the Submodule&lt;/strong>: Sync the submodule to ensure it is pointing to the latest commit in the &amp;lsquo;gimp-data&amp;rsquo; repository.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git submodule update&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Checkout the &amp;lsquo;main&amp;rsquo; Branch in the &amp;lsquo;gimp-data&amp;rsquo; Directory&lt;/strong>: Switch to the main branch of the submodule where you will make changes.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cd gimp-data
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git checkout main&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Make the Necessary Changes to the Data&lt;/strong>: Edit or add files as needed within the &amp;lsquo;gimp-data&amp;rsquo; submodule.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Stage the Modified Files&lt;/strong>: Add the changes to the staging area for the submodule.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git add .&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Commit the Changes&lt;/strong>: Commit the staged changes with a descriptive message.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git commit -m &lt;span style="color:#e6db74">&amp;#34;Describe your changes here&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Push the Changes to the Artbox Data Repository&lt;/strong>: Push the updates to the remote repository of the submodule.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git push&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Update the Parent Repository&lt;/strong>: Ensure the Artbox parent repository is updated to reflect the new commit in the &amp;lsquo;gimp-data&amp;rsquo; submodule.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cd ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git add gimp-data
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git commit -m &lt;span style="color:#e6db74">&amp;#34;Update submodule to latest commit&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git push&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;em>Explanation&lt;/em>: This sequence ensures that changes are correctly made and integrated into both the submodule and the parent repository. By committing and pushing changes in the submodule first, and then updating the parent repository, you maintain proper synchronization and history.&lt;/p>
+&lt;h2>Propagating Changed Data to Feature Branches&lt;span class="hx-absolute -hx-mt-20" id="propagating-changed-data-to-feature-branches">&lt;/span>
+&lt;a href="#propagating-changed-data-to-feature-branches" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To ensure that the changed data in the submodule is reflected in your feature branches, follow these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Checkout the Feature Branch&lt;/strong>: Switch to the branch where you want to propagate the changes.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git checkout feature-branch&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Rebase the Branch&lt;/strong>: Rebase the feature branch onto the common base layer to incorporate the latest commit from the &amp;lsquo;convert-to-artbox&amp;rsquo; branch. This step ensures that your feature branch is up-to-date with the latest changes.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git rebase convert-to-artbox&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Update the Submodule&lt;/strong>: After rebasing, update the submodule to ensure it points to the correct commit in the &amp;lsquo;gimp-data&amp;rsquo; repository. This step integrates any changes made to the submodule.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git submodule update --remote&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Push the Changes&lt;/strong>: Push the updated feature branch to the remote repository, reflecting the integrated changes.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git push&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol></description></item><item><title/><link>http://localhost:1313/artbox/boxdocs/folder/Installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/boxdocs/folder/Installation/</guid><description>
+&lt;h1>Introduction&lt;/h1>&lt;p>Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbox. Artbox does not exist as an individual application, it relies on many parts to function and many apps are used to construct it. You need to create a &lt;em>build environment&lt;/em> for it first, like an aquarium for a fish. The following is a guide, for a Debian system. It will be a unique process for your system, and may require further research. Good luck!&lt;/p>
+&lt;h2>Content&lt;span class="hx-absolute -hx-mt-20" id="content">&lt;/span>
+&lt;a href="#content" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;a href="#git" >Git&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#dependencies" >Dependencies&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#install-location" >Install Location&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#clone-the-source-code-repositories" >Clone the Source Code Repositories&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#environment-variables" >Environment Variables&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#a-build-script-for-artbox-babl-and-gegl" >A Build Script for Artbox, BABL and GEGL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#desktop-launcher-system-specific" >Desktop Launcher (System Specific)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#conclusion" >Conclusion&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2>Git&lt;span class="hx-absolute -hx-mt-20" id="git">&lt;/span>
+&lt;a href="#git" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Before we dive into building Artbox, you&amp;rsquo;ll need to install and learn the basics of Git, a version control system that helps you manage and share source code. Git is an essential tool for any developer, and understanding how to use it will make the rest of the build process much easier. If you&amp;rsquo;re new to Git, take a few minutes to read through &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/A-Beginner%27s-Guide-to-Using-Git-on-Linux" target="_blank" rel="noopener">A Beginner&amp;rsquo;s Guide to Using Git on Linux&lt;/a> to get up to speed.&lt;/p>
+&lt;h2>Dependencies&lt;span class="hx-absolute -hx-mt-20" id="dependencies">&lt;/span>
+&lt;a href="#dependencies" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Here is the &lt;a href="https://developer.gimp.org/core/setup/build/linux/" target="_blank" rel="noopener">official guide&lt;/a>. The suggestion to look at &lt;a href="https://gitlab.gnome.org/GNOME/gimp/-/blob/master/.gitlab-ci.yml" target="_blank" rel="noopener">this&lt;/a> file, that builds GIMP in the GitLab CI environment, is worth following. That file lists all the dependencies the GIMP Dev build process needs. By using that information we can make a bash script to install those packages on our system. Save the following code block to a file called &amp;ldquo;install-GIMP-dep.sh&amp;rdquo; and execute it by following the instructions below.&lt;/p>
+&lt;p>To execute the script:&lt;/p>
+&lt;ul>
+&lt;li>Open a terminal in the script folder.&lt;/li>
+&lt;li>Run the command &lt;code>bash install-GIMP-dep.sh&lt;/code> to execute the script.&lt;/li>
+&lt;/ul>
+&lt;h2>Important&lt;span class="hx-absolute -hx-mt-20" id="important">&lt;/span>
+&lt;a href="#important" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Be wary about executing shell scripts from the internet, have a look at the contents and try and understand roughly what it is doing. Alternatively copy it into an AI chatbot and ask &lt;em>that&lt;/em> what the script is doing.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Define the list of packages to install&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PACKAGES&lt;span style="color:#f92672">=(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ccache
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> clang
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cmake
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lld
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libomp-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> appstream
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> at-spi2-core
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> desktop-file-utils
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ffmpeg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> gettext
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ghostscript
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> gi-docgen
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> gjs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> glib-networking
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> gobject-introspection
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graphviz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graphviz-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hicolor-icon-theme
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> iso-codes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libaa1-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libappstream-glib-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libbz2-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libcfitsio-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libdbus-glib-1-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libexif-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libgexiv2-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libgirepository1.0-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libgs-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libgtk-3-bin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libgtk-3-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libgudev-1.0-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libheif-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libjson-glib-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libjxl-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> liblcms2-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> liblzma-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libmng-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libmypaint-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libopenexr-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libopenjp2-7-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libpoppler-glib-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libraw-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libraw20
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> librsvg2-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libspiro-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libsuitesparse-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libtiff-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libtiff5-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libtool
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libumfpack5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libunwind-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libwebp-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libwmf-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libxmu-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libxpm-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> luajit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> meson
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mypaint-brushes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> poppler-data
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> python3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> python3-gi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> valac
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xauth
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xsltproc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xvfb
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xz-utils
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> yelp-tools
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Define a function to install a package and report failure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>install_package&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> local package&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$1&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> sudo apt-get install -y &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$package&lt;span style="color:#e6db74">&amp;#34;&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;Installed &lt;/span>$package&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FAILED_PACKAGES&lt;span style="color:#f92672">+=(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$package&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Initialize the list of failed packages&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FAILED_PACKAGES&lt;span style="color:#f92672">=()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Loop through the packages and install them&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> package in &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>PACKAGES[@]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>; &lt;span style="color:#66d9ef">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> install_package &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$package&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Print a summary of the installation&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;Installation Summary:&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;---------------------&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;Installed packages: &lt;/span>&lt;span style="color:#e6db74">${#&lt;/span>PACKAGES[@]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;Failed packages: &lt;/span>&lt;span style="color:#e6db74">${#&lt;/span>FAILED_PACKAGES[@]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> &lt;span style="color:#e6db74">${#&lt;/span>FAILED_PACKAGES[@]&lt;span style="color:#e6db74">}&lt;/span> -gt &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;Failed packages:&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> package in &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>FAILED_PACKAGES[@]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>; &lt;span style="color:#66d9ef">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34; &lt;/span>$package&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>read -n &lt;span style="color:#ae81ff">1&lt;/span> -r -s -p &lt;span style="color:#e6db74">&amp;#34;Press any key to exit&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h2>Install Location&lt;span class="hx-absolute -hx-mt-20" id="install-location">&lt;/span>
+&lt;a href="#install-location" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>After the Git challenge and package installation, we can proceed with the task. We&amp;rsquo;ll keep the files we need in repository folders on the hard-drive, it&amp;rsquo;s good to call the root folder &amp;ldquo;code&amp;rdquo;, then put in a sub-folder, like &amp;ldquo;gnome&amp;rdquo;, then another sub-folder &amp;ldquo;build&amp;rdquo; and one called &amp;ldquo;bash&amp;rdquo;&lt;/p>
+&lt;ul>
+&lt;li>Home
+&lt;ul>
+&lt;li>code
+&lt;ul>
+&lt;li>bash&lt;/li>
+&lt;li>gnome
+&lt;ul>
+&lt;li>build&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>These shell commands will create that little structure when run in a terminal, or you can do it using the File Manager.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir $HOME/code
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir $HOME/code/bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir $HOME/code/gnome
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir $HOME/code/gnome/build&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>We are now ready to download from the internet, the source code files we need for our build environment. These files will be &lt;em>cloned&lt;/em> from existing repositories using Git and GitLab addresses.&lt;/p>
+&lt;h2>Clone the Source Code Repositories&lt;span class="hx-absolute -hx-mt-20" id="clone-the-source-code-repositories">&lt;/span>
+&lt;a href="#clone-the-source-code-repositories" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>In a terminal we can download the sources to our build directory:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>cd $HOME/code/gnome/build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://gitlab.gnome.org/GNOME/babl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://gitlab.gnome.org/GNOME/gegl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://gitlab.gnome.org/GNOME/gimp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://gitlab.gnome.org/pixelmixer/artbox.git&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>The simple folder structure is now populated with thousands of files, and there&amp;rsquo;s more to be made automatically by the build process.&lt;/p>
+&lt;ul>
+&lt;li>Home
+&lt;ul>
+&lt;li>code
+&lt;ul>
+&lt;li>bash&lt;/li>
+&lt;li>gnome
+&lt;ul>
+&lt;li>build
+&lt;ul>
+&lt;li>babl&lt;/li>
+&lt;li>gegl&lt;/li>
+&lt;li>gimp&lt;/li>
+&lt;li>artbox&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2>Environment Variables&lt;span class="hx-absolute -hx-mt-20" id="environment-variables">&lt;/span>
+&lt;a href="#environment-variables" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>The software that is about to be built, needs to know a few things about its environment. We do this by exporting some environmental variables. Copy the following into a file, call it &lt;strong>build_env.sh&lt;/strong> and save it in the &amp;ldquo;bash&amp;rdquo; folder.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>export GIMP_PREFIX&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>HOME&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/code/gnome&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$GIMP_PREFIX&lt;span style="color:#e6db74">/bin:&lt;/span>$PATH&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Capture the multi-os-directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>multi_os_directory&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>gcc -print-multi-os-directory 2&amp;gt;/dev/null&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$multi_os_directory&lt;span style="color:#e6db74">&amp;#34;&lt;/span> | grep ./ &amp;gt; /dev/null; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LIB_DIR&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>echo &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$multi_os_directory&lt;span style="color:#e6db74">&amp;#34;&lt;/span> | sed &lt;span style="color:#e6db74">&amp;#39;s/\.\.\///g&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LIB_DIR&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;lib&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Capture the multiarch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>multiarch&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>gcc -print-multiarch 2&amp;gt;/dev/null&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$multiarch&lt;span style="color:#e6db74">&amp;#34;&lt;/span> | grep . &amp;gt; /dev/null; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LIB_SUBDIR&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>multiarch&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LIB_SUBDIR&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Export environment variables&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PKG_CONFIG_PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>LIB_DIR&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>LIB_SUBDIR&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">pkgconfig&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export LD_LIBRARY_PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>LIB_DIR&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>LIB_SUBDIR&lt;span style="color:#e6db74">}${&lt;/span>LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export XDG_DATA_DIRS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/share:/usr/share&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>XDG_DATA_DIRS:+:$XDG_DATA_DIRS&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export GI_TYPELIB_PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>LIB_DIR&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>LIB_SUBDIR&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">girepository-1.0&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h2>Build Artbox, BABL and GEGL&lt;span class="hx-absolute -hx-mt-20" id="build-artbox-babl-and-gegl">&lt;/span>
+&lt;a href="#build-artbox-babl-and-gegl" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>To build or run the software, we can use another shell script, that uses this file to build, compile or run the software. Copy the following and save it as artbox.sh in the bash folder. Then in your File Manager, right click the artbox.sh file, properties, permissions, &amp;ldquo;Allow executing file as program&amp;rdquo;.&lt;/p>
+&lt;p>Notice that BABL and GEGL are also being built, these two additional packages don&amp;rsquo;t have to be built everytime.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># sets the type of build &amp;#34;release&amp;#34; or &amp;#34;debug&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>build_type&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;release&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># set to &amp;#34;false&amp;#34; to skip the build&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>build_babl&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>build_gegl&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>build_artbox&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># code changes can be compiled and tested, rather than building everything&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>compile_artbox&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;false&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># find the directory this script was run in&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>script_dir&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>dirname &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>realpath &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$0&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># load the environment variables&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$script_dir&lt;span style="color:#e6db74">/build_env.sh&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># start in the build directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd &lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>/build/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Build and install BABL&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> $build_babl &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mkdir -p babl/_build &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> cd babl/_build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> meson setup .. -Dprefix&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ninja
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ninja install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;\n*** Built BABL ***\n&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># start in the build directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd &lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>/build/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Build and install GEGL&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> $build_gegl &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mkdir -p gegl/_build &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> cd gegl/_build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> meson setup .. -Dprefix&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ninja
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ninja install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;\n*** Built GEGL ***\n&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># start in the build directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd &lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>/build/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Build and install Artbox&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> $build_artbox &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mkdir -p artbox/_build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cd artbox/_build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># Construct a build command&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MESON_SETUP&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;meson setup .. -Dprefix=&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> --buildtype=&lt;/span>$build_type&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># if the build directory has configuration files, then wipe for a clean build&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -e meson-logs &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MESON_SETUP&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#e6db74">&amp;#34; --wipe&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $MESON_SETUP
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ninja
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ninja install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;\n*** Built Artbox ***\n&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># compile&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> $compile_artbox &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cd &lt;span style="color:#e6db74">${&lt;/span>GIMP_PREFIX&lt;span style="color:#e6db74">}&lt;/span>/build/artbox/_build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ninja
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ninja install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;\n*** Compiled Artbox ***\n&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>read -n &lt;span style="color:#ae81ff">1&lt;/span> -r -s -p &lt;span style="color:#e6db74">&amp;#34;Press any key to exit...&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>To run the build script you can open a terminal in the bash folder and enter: &lt;code>bash artbox.sh&lt;/code>&lt;/p>
+&lt;h2>Desktop Launcher (System Specific)&lt;span class="hx-absolute -hx-mt-20" id="desktop-launcher-system-specific">&lt;/span>
+&lt;a href="#desktop-launcher-system-specific" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Alternatively you can launch Artbox using a desktop launcher, save the following as a file to your desktop, and then right click it, properties, permissions, &amp;ldquo;Allow executing file as program&amp;rdquo;.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Desktop Entry&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Exec&lt;span style="color:#f92672">=&lt;/span>gnome-terminal -- /home/your-home/code/bash/artbox.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Terminal&lt;span style="color:#f92672">=&lt;/span>True
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Icon&lt;span style="color:#f92672">=&lt;/span>cinnamon-panel-launcher
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Type&lt;span style="color:#f92672">=&lt;/span>Application
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Name&lt;span style="color:#f92672">[&lt;/span>en_GB&lt;span style="color:#f92672">]=&lt;/span>Artbox&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>You&amp;rsquo;ll have to change &amp;ldquo;your-home&amp;rdquo; to get it to work, this is a Linux thing, on my system the line would be:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>gnome-terminal -- /home/mark/code/bash/artbox.sh&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>It also assumes you are using a specific desktop environment (Cinnamon). My tip would be to look at how to create a desktop launcher for your particular system, or copy and edit an existing one you may have.&lt;/p>
+&lt;h2>Conclusion&lt;span class="hx-absolute -hx-mt-20" id="conclusion">&lt;/span>
+&lt;a href="#conclusion" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>At this point you will have the source code for Artbox, a build script and a desktop launcher. Double clicking the launcher should see a terminal and Artbox will open. There are many ways to make a build script, this is a starting point. If you got to this point, congratulations!&lt;/p>
+&lt;p>You can also build GIMP in the same manner, replace occurrences of &amp;ldquo;artbox&amp;rdquo; in the build script to &amp;ldquo;gimp&amp;rdquo;.&lt;/p></description></item><item><title/><link>http://localhost:1313/artbox/hub/docs/folder/technical-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/docs/folder/technical-guide/</guid><description>
+&lt;h1>Introduction&lt;/h1>&lt;p>The diagram illustrates the flow of the development process. The GIMP development branch is the foundation, and the &amp;lsquo;convert-to-artbox&amp;rsquo; branch serves as the common base for all feature branches. These feature branches contribute to the final &amp;lsquo;Artbox&amp;rsquo; branch, which represents the integrated work from all features.&lt;/p>
+&lt;h2>Contents&lt;span class="hx-absolute -hx-mt-20" id="contents">&lt;/span>
+&lt;a href="#contents" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;a href="#updating-artbox-to-gimp-dev" >Updating Artbox to GIMP Dev&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#step-1-construct-the-common-base" >Step 1: Construct the Common Base&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#step-2-construct-feature-branches-from-the-common-base" >Step 2: Construct Feature Branches from the Common Base&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#step-3-construct-artbox-from-the-common-base-and-feature-branches" >Step 3: Construct Artbox from the Common Base and Feature Branches&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#convert-branches" >Convert Branches&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#example-of-a-compound-convert-branch-convert-paintbrush-all-merged" >Example of a Compound Convert Branch: convert-paintbrush-all-merged&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#feature-branches" >Feature Branches&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#example-of-a-compound-feature-branch-feature-paintbrush-options" >Example of a Compound Feature Branch: feature-paintbrush-options&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#notes" >Notes&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Branch Development Flow for GIMP to Artbox&lt;/p>
+&lt;hr>
+&lt;pre class="mermaid hx-mt-6">graph LR;
+A([GIMP Dev])
+B([Convert to Artbox])
+C([Feature A])
+D([Feature B])
+E([Feature C])
+F([Artbox])
+A --> B
+B --> C
+B --> D
+B --> E
+C --> F
+D --> F&lt;/pre>&lt;hr>
+&lt;p>&lt;em>Diagram 4: This diagram illustrates the flow from the GIMP Dev branch to the final Artbox branch. The &amp;lsquo;convert-to-artbox&amp;rsquo; branch is created from GIMP Dev, and it supports the development of multiple feature branches. Each feature branch, originates from the common &amp;lsquo;convert-to-artbox&amp;rsquo; base branch. Finally, the individual feature branches merge into the &amp;lsquo;artbox&amp;rsquo; branch&lt;/em>&lt;/p>
+&lt;h3>Updating Artbox to GIMP Dev&lt;span class="hx-absolute -hx-mt-20" id="updating-artbox-to-gimp-dev">&lt;/span>
+&lt;a href="#updating-artbox-to-gimp-dev" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>To keep Artbox up-to-date with the GIMP development branch, we follow a structured process divided into three main steps&lt;/p>
+&lt;h4>Step 1: Construct the Common Base&lt;span class="hx-absolute -hx-mt-20" id="step-1-construct-the-common-base">&lt;/span>
+&lt;a href="#step-1-construct-the-common-base" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>&lt;strong>Reset the Common Base:&lt;/strong> Reset the &amp;lsquo;convert-to-artbox&amp;rsquo; branch to the latest commit from the GIMP master branch.&lt;/li>
+&lt;li>&lt;strong>Merge Convert Branches:&lt;/strong> Merge all relevant convert branches into the &amp;lsquo;convert-to-artbox&amp;rsquo; branch.&lt;/li>
+&lt;li>&lt;strong>Squash Commit History:&lt;/strong> Squash the commit history of these merges into a single commit to simplify history.&lt;/li>
+&lt;/ul>
+&lt;h4>Step 2: Construct Feature Branches from the Common Base&lt;span class="hx-absolute -hx-mt-20" id="step-2-construct-feature-branches-from-the-common-base">&lt;/span>
+&lt;a href="#step-2-construct-feature-branches-from-the-common-base" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>&lt;strong>Update the Common Base:&lt;/strong> Ensure that the &amp;lsquo;convert-to-artbox&amp;rsquo; branch is up to date with the latest changes.&lt;/li>
+&lt;li>&lt;strong>Clone and Layer Commits:&lt;/strong>
+&lt;ul>
+&lt;li>Clone the &amp;lsquo;convert-to-artbox&amp;rsquo; branch.&lt;/li>
+&lt;li>Pick and apply commits from each existing feature branch onto this clone.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Replace Old Feature Branches:&lt;/strong>
+&lt;ul>
+&lt;li>Delete the old feature branches.&lt;/li>
+&lt;li>Rename the cloned branches to replace the old feature branches.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Repeat for All Feature Branches:&lt;/strong> Perform the above steps for each feature branch that needs updating.&lt;/li>
+&lt;/ul>
+&lt;h4>Step 3: Construct Artbox from the Common Base and Feature Branches&lt;span class="hx-absolute -hx-mt-20" id="step-3-construct-artbox-from-the-common-base-and-feature-branches">&lt;/span>
+&lt;a href="#step-3-construct-artbox-from-the-common-base-and-feature-branches" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>&lt;strong>Reset Artbox Branch:&lt;/strong> Reset the &amp;lsquo;artbox&amp;rsquo; branch to the &amp;lsquo;convert-to-artbox&amp;rsquo; branch to incorporate the latest changes.&lt;/li>
+&lt;li>&lt;strong>Merge Updated Feature Branches:&lt;/strong> Merge all updated feature branches into the &amp;lsquo;artbox&amp;rsquo; branch to consolidate the changes.&lt;/li>
+&lt;/ul>
+&lt;h3>Convert Branches&lt;span class="hx-absolute -hx-mt-20" id="convert-branches">&lt;/span>
+&lt;a href="#convert-branches" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A convert branch is used to adjust the latest GIMP master branch to support the Artbox feature branches or to make specific changes to the default GIMP application. These branches are merged into a single &amp;lsquo;convert-to-artbox&amp;rsquo; branch, which serves as the common base layer.&lt;/p>
+&lt;p>The current strategy is to place any heavily modified file that supports multiple feature branches—through the addition of new data structures—into a convert branch. This approach helps consolidate overlapping changes in one place, while maintaining the core code that performs the main functions in separate feature branches.&lt;/p>
+&lt;p>The convert branches are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>convert-to-artbox:&lt;/strong> The main branch that combines all other convert branches.
+&lt;ul>
+&lt;li>&lt;strong>convert-data-remote:&lt;/strong> Handles the gimp-data remote url.&lt;/li>
+&lt;li>&lt;strong>convert-context-all-merged:&lt;/strong> Consolidates context-related changes.&lt;/li>
+&lt;li>&lt;strong>convert-paintbrush-all-merged:&lt;/strong> Integrates modifications to the paintbrush tool.&lt;/li>
+&lt;li>&lt;strong>convert-pref-all-merged:&lt;/strong> Merges changes to preferences.&lt;/li>
+&lt;li>&lt;strong>convert-force-artbox-config:&lt;/strong> Forces specific configuration settings for Artbox.&lt;/li>
+&lt;li>&lt;strong>convert-name:&lt;/strong> Manages naming of Artbox.&lt;/li>
+&lt;li>&lt;strong>convert-readme:&lt;/strong> Updates the README.md&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4>Identifying Conflicts&lt;span class="hx-absolute -hx-mt-20" id="identifying-conflicts">&lt;/span>
+&lt;a href="#identifying-conflicts" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>The first stage of updating Artbox to the GIMP development branch involves identifying any conflicts or changes introduced by GIMP that overlap with Artbox changes. These conflicts can then be resolved at this early stage.&lt;/p>
+&lt;h4>Example of a Convert Branch&lt;span class="hx-absolute -hx-mt-20" id="example-of-a-convert-branch">&lt;/span>
+&lt;a href="#example-of-a-convert-branch" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>A convert branch like &amp;lsquo;convert-paintbrush-all-merged&amp;rsquo; is itself a combined branch that integrates multiple smaller changes.&lt;/p>
+&lt;ul>
+&lt;li>convert-paintbrush-all-merged: Integrates modifications to the paintbrush tool.
+&lt;ul>
+&lt;li>convert-paintbrush-simple-boundary&lt;/li>
+&lt;li>convert-paintbrush-simple-boundary&lt;/li>
+&lt;li>convert-paintbrush-status-alt&lt;/li>
+&lt;li>convert-paintbrush-erase&lt;/li>
+&lt;li>convert-paintbrush-has-alpha&lt;/li>
+&lt;li>convert-paintbrush-has-alpha&lt;/li>
+&lt;li>convert-paintbrush-erasing-paint&lt;/li>
+&lt;li>convert-paintbrush-erasing-paint&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>These sub-branches implement smaller, specific changes. If a conflict arises between convert-paintbrush-all-merged and the GIMP development branch, the sub-branch can be reset to align with the latest GIMP development version, and the minor adjustment can be reapplied as needed.&lt;/p>
+&lt;h3>Feature Branches&lt;span class="hx-absolute -hx-mt-20" id="feature-branches">&lt;/span>
+&lt;a href="#feature-branches" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>A feature branch may also serve as an integration branch to consolidate multiple related changes. For example, the branch feature-paintbrush-options is composed of several smaller branches that have been merged together. This approach allows conflicts to be resolved incrementally, reducing complexity during the final merge into the main branch.&lt;/p>
+&lt;h4>Example of a Feature Branch&lt;span class="hx-absolute -hx-mt-20" id="example-of-a-feature-branch">&lt;/span>
+&lt;a href="#example-of-a-feature-branch" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;ul>
+&lt;li>feature-paintbrush-options
+&lt;ul>
+&lt;li>options-paintbrush-order&lt;/li>
+&lt;li>options-paintbrush-separate-dynamics&lt;/li>
+&lt;li>options-paintbrush-compact-resource-view&lt;/li>
+&lt;li>options-paintbrush-remove-link-brush&lt;/li>
+&lt;li>options-paintbrush-remove-reset-brush&lt;/li>
+&lt;li>options-paintbrush-additional-expander&lt;/li>
+&lt;li>convert-to-artbox&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>These merged sub-branches appear as individual commits in the feature-paintbrush-options branch commit history, after the commit labeled &amp;ldquo;convert to artbox.&amp;rdquo;&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;pre>&lt;code>git checkout feature-paintbrush-options
+git log
+commit &amp;lt;SHA&amp;gt; (HEAD -&amp;gt; feature-paintbrush-options)
+Merge branch &amp;#39;options-paintbrush-order&amp;#39;
+commit &amp;lt;SHA&amp;gt;
+Merge branch &amp;#39;options-paintbrush-separate-dynamics&amp;#39;
+commit &amp;lt;SHA&amp;gt;
+Merge branch &amp;#39;options-paintbrush-compact-resource-view&amp;#39;
+commit &amp;lt;SHA&amp;gt;
+Merge branch &amp;#39;options-paintbrush-remove-link-brush&amp;#39;
+commit &amp;lt;SHA&amp;gt;
+Merge branch &amp;#39;options-paintbrush-remove-reset-brush&amp;#39;
+commit &amp;lt;SHA&amp;gt;
+Merge branch &amp;#39;options-paintbrush-additional-expander&amp;#39;
+commit &amp;lt;SHA&amp;gt;
+convert to artbox&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h3>Notes&lt;span class="hx-absolute -hx-mt-20" id="notes">&lt;/span>
+&lt;a href="#notes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The key difference between a feature branch and a convert branch is that feature branches, and their sub-branches, build on top of the convert-to-artbox branch. In contrast, a convert branch is an adjustment made directly to the GIMP development master branch.&lt;/p></description></item><item><title/><link>http://localhost:1313/artbox/hub/docs/folder/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/docs/folder/troubleshooting/</guid><description>
+&lt;h2>Install and Build&lt;span class="hx-absolute -hx-mt-20" id="install-and-build">&lt;/span>
+&lt;a href="#install-and-build" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;h3>Deleting the _build directory Causes a Meson Fail&lt;span class="hx-absolute -hx-mt-20" id="deleting-the-_build-directory-causes-a-meson-fail">&lt;/span>
+&lt;a href="#deleting-the-_build-directory-causes-a-meson-fail" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Occasionally, to get GIMP building correctly, you may need to delete the &lt;strong>_build&lt;/strong> directory Meson creates, note the &amp;lsquo;_&amp;rsquo;. Do not delete the &amp;lsquo;build&amp;rsquo; directory! This clears all the old build data and allows a fresh try. However, if you use &lt;code>--wipe&lt;/code> or &lt;code>--reconfigure&lt;/code> in your build process, and the _build directory is not present or empty, Meson may fail. This could be because Meson requires the _build directory to be present and contain a valid build configuration in order to reconfigure or wipe the build.&lt;/p>
+&lt;h4>Avoiding the Issue&lt;span class="hx-absolute -hx-mt-20" id="avoiding-the-issue">&lt;/span>
+&lt;a href="#avoiding-the-issue" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>To avoid this issue, make sure to create the _build directory and run Meson at least once without &amp;ndash;wipe or &amp;ndash;reconfigure before attempting to change the compiler. This will ensure that the _build directory contains a valid build configuration, and Meson will be able to reconfigure or wipe the build successfully. Alternatively, we can do a check in the build script for this event.&lt;/p>
+&lt;h4>load error: libavcodec.so.61:&lt;span class="hx-absolute -hx-mt-20" id="load-error-libavcodecso61">&lt;/span>
+&lt;a href="#load-error-libavcodecso61" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h4>&lt;p>If you see error messages like this during start up, it&amp;rsquo;s because we need a newer version of a particular
+library than the one packaged with the Linux distribution we are using.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>GEGL-Message: 20:50:10.029: Module &lt;span style="color:#e6db74">&amp;#39;/home/mark/code/gnome/lib/x86_64-linux-gnu/gegl-0.4/ff-save.so&amp;#39;&lt;/span> load error: libavcodec.so.61: cannot open shared object file: No such file or directory&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>For me, this issue was solved by building the latest version of FFmepg, which includes the needed library, libavcodec.so.61.&lt;/p>
+&lt;p>Install a needed library prior to the build process:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt-get install libx264-dev&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>Create a local folder for FFMpeg, open a terminal in that folder, then:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://git.ffmpeg.org/ffmpeg.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd ffmpeg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./configure --enable-shared --enable-gpl --enable-libx264 --enable-libx265 --disable-x86asm --disable-libopus&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>Now we make and install:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;pre>&lt;code>sudo make install&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>Verify you have the latest version:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;pre>&lt;code>ls /usr/local/lib | grep libavcodec
+libavcodec.a
+libavcodec.so
+libavcodec.so.61
+libavcodec.so.61.11.100&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>When building and launching Artbox, those GEGL error messages should be gone.&lt;/p>
+&lt;p>EDIT: discovered that this could have been caused by a rougue use of &lt;code>submodule update&lt;/code> in
+the gegl folder.&lt;/p>
+&lt;h2>GEGL or BABL issues&lt;span class="hx-absolute -hx-mt-20" id="gegl-or-babl-issues">&lt;/span>
+&lt;a href="#gegl-or-babl-issues" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>A build error may occur if we haven&amp;rsquo;t built BABL or GEGL for a while and there is a new feature used by GIMP, and therefore Artbox, that is not available locally. We need to get the latest version of BABL and GEGL then rebuild those libraries.&lt;/p>
+&lt;p>This sequence of git instructions will reset your local babl and gegl folders to be a clone of the remote folders. WARNING: Any changes you made locally in the master folder, will be lost.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Bash" data-lang="Bash">&lt;span style="display:flex;">&lt;span>cd $GIMP_PREFIX/build/gegl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git checkout master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git fetch origin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git reset --hard origin/master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clean -df
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd $GIMP_PREFIX/build/babl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git checkout master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git fetch origin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git reset --hard origin/master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clean -df&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>Remember to be careful when resetting your local repositories, as any local changes you may have made will be lost.&lt;/p>
+&lt;p>Rebuild BABL and GEGL using the previously described build script:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>build_babl&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>build_gegl&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h2>gimp-data&lt;span class="hx-absolute -hx-mt-20" id="gimp-data">&lt;/span>
+&lt;a href="#gimp-data" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When performing a rebase on a branch that includes submodules, Git may fail with a conflict related to submodule merging. The error may look like this:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>Failed to merge submodule gimp-data
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CONFLICT &lt;span style="color:#f92672">(&lt;/span>submodule&lt;span style="color:#f92672">)&lt;/span>: Merge conflict in gimp-data
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Recursive merging with submodules currently only supports trivial cases.&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>This issue occurs because Git does not handle complex submodule merging automatically during a rebase, especially when the submodule contains conflicting changes. If you encounter this error during a rebase, you can bypass the submodule conflict by restoring the submodule&amp;rsquo;s staged state and continuing with the rebase:&lt;/p>
+&lt;h3>Workaround&lt;span class="hx-absolute -hx-mt-20" id="workaround">&lt;/span>
+&lt;a href="#workaround" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>This will remove the submodule (e.g., gimp-data) from the rebase process, allowing you to continue:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git restore ---staged gimp-data&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>Once you&amp;rsquo;ve restored the submodule&amp;rsquo;s staged state, continue with the rebase process:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git --continue&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h3>Explanation&lt;span class="hx-absolute -hx-mt-20" id="explanation">&lt;/span>
+&lt;a href="#explanation" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The git restore &amp;ndash;staged gimp-data command effectively resets the submodule to its previous state, removing it from the list of files that are considered to have conflicts. This allows Git to move forward with the rebase without attempting to handle the submodule as part of the conflict resolution process.&lt;/p>
+&lt;p>Please let me know any issues and solutions you discover, thanks.&lt;/p></description></item></channel></rss>

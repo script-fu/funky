@@ -1,0 +1,378 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Artbox – Feature Testing</title><link>http://localhost:1313/artbox/hub/feature-test/folder/</link><description>Recent content in Feature Testing on Artbox</description><generator>Hugo -- gohugo.io</generator><language>en-GB</language><atom:link href="http://localhost:1313/artbox/hub/feature-test/folder/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>http://localhost:1313/artbox/hub/feature-test/folder/filter-restores-last-tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/feature-test/folder/filter-restores-last-tool/</guid><description>
+&lt;h3>Objective&lt;span class="hx-absolute -hx-mt-20" id="objective">&lt;/span>
+&lt;a href="#objective" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Removes a longstanding GUI issue.&lt;/p>
+&lt;h3>Key Concepts and Definitions&lt;span class="hx-absolute -hx-mt-20" id="key-concepts-and-definitions">&lt;/span>
+&lt;a href="#key-concepts-and-definitions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Filter&lt;/strong>: A plug-in that processes pixels in a drawable, Hue, Blur etc.&lt;/li>
+&lt;li>&lt;strong>Tool Palette&lt;/strong>: The grid of tool buttons, Move Tool, Paintbrush Tool ect.&lt;/li>
+&lt;/ul>
+&lt;h3>Related Links&lt;span class="hx-absolute -hx-mt-20" id="related-links">&lt;/span>
+&lt;a href="#related-links" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>Branches: Artbox and &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-filter-restores-last-tool?ref_type=heads" target="_blank" rel="noopener">feature-filter-restores-last-tool&lt;/a>&lt;/li>
+&lt;li>old &lt;a href="https://gitlab.gnome.org/GNOME/gimp/-/merge_requests/1572" target="_blank" rel="noopener">Merge Request&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Design Revisions&lt;span class="hx-absolute -hx-mt-20" id="design-revisions">&lt;/span>
+&lt;a href="#design-revisions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">&lt;strong>Revision&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Current Design&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Issues&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Changes&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>1. Restore the previous tool after using a filter&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">The filter is the active tool&lt;/td>
+&lt;td style="text-align: left">Confusing to the user to deselect the active tool when a filter is used, and to keep the filter as the active tool&lt;/td>
+&lt;td style="text-align: left">Restore the previous tool when a filter dialog is closed&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title/><link>http://localhost:1313/artbox/hub/feature-test/folder/paint-tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/feature-test/folder/paint-tool/</guid><description>
+&lt;h3>Objective&lt;span class="hx-absolute -hx-mt-20" id="objective">&lt;/span>
+&lt;a href="#objective" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Improve the quality of the painting experience in Artbox&lt;/p>
+&lt;h3>Related Links&lt;span class="hx-absolute -hx-mt-20" id="related-links">&lt;/span>
+&lt;a href="#related-links" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>Branches: Artbox and &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-painttool?ref_type=heads" target="_blank" rel="noopener">feature-painttool&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Design Revisions&lt;span class="hx-absolute -hx-mt-20" id="design-revisions">&lt;/span>
+&lt;a href="#design-revisions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">&lt;strong>Revision&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Current Design&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Issues&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Changes&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>1. Easy Cursor Location&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">The Tool Cursor can be turned off in Preferences, and the pointer, leaving the only the brush outline. This is good, but causes issues.&lt;/td>
+&lt;td style="text-align: left">A small and minimal cursor can be hard to locate&lt;/td>
+&lt;td style="text-align: left">There is a minimum screen size for the cursor, and a small &amp;lsquo;filled&amp;rsquo; &amp;lsquo;contact&amp;rsquo; circle is always drawn&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>2. Indicate Erase Mode&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">New Feature&lt;/td>
+&lt;td style="text-align: left">It&amp;rsquo;s not possible to tell if the paintbrush is about to erase whilst looking at the cursor&lt;/td>
+&lt;td style="text-align: left">Detect the &amp;lsquo;Eraser Tool&amp;rsquo; and &amp;lsquo;Erase Paint&amp;rsquo; mode, change the cursor to a dashed circle&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>3. Simple Brush Boundary&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Image brushes are drawn as complex outlines based on the image&lt;/td>
+&lt;td style="text-align: left">They can make a distracting paintbrush when the image is large and noisy&lt;/td>
+&lt;td style="text-align: left">Draw a simple circular boundary if the &amp;lsquo;Simple Brush Boundary&amp;rsquo; option is checked in the Paintbrush Options&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Notes&lt;span class="hx-absolute -hx-mt-20" id="notes">&lt;/span>
+&lt;a href="#notes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>This feature branch only works when merged with the &amp;lsquo;artbox&amp;rsquo; branch or rebased onto the &amp;lsquo;options-paintbrush-simple-boundary&amp;rsquo; branch&lt;/p></description></item><item><title/><link>http://localhost:1313/artbox/hub/feature-test/folder/paintbrush-high-quality-force/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/feature-test/folder/paintbrush-high-quality-force/</guid><description>
+&lt;h3>Objective&lt;span class="hx-absolute -hx-mt-20" id="objective">&lt;/span>
+&lt;a href="#objective" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Improve the quality of the painting.&lt;/p>
+&lt;h3>Key Concepts and Definitions&lt;span class="hx-absolute -hx-mt-20" id="key-concepts-and-definitions">&lt;/span>
+&lt;a href="#key-concepts-and-definitions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Brush Stamp&lt;/strong>: The mask that is used as a brush &amp;lsquo;stamp&amp;rsquo;.&lt;/li>
+&lt;li>&lt;strong>Force&lt;/strong>: A paintbrush option that affects the pre-processing of the brush stamp.&lt;/li>
+&lt;/ul>
+&lt;h3>Related Links&lt;span class="hx-absolute -hx-mt-20" id="related-links">&lt;/span>
+&lt;a href="#related-links" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>Branches: Artbox and &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-paintbrush-high-quality-force?ref_type=heads" target="_blank" rel="noopener">feature-paintbrush-high-quality-force&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Design Revisions&lt;span class="hx-absolute -hx-mt-20" id="design-revisions">&lt;/span>
+&lt;a href="#design-revisions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">&lt;strong>Revision&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Current Design&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Issues&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Changes&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>1. Enable High Quality Force&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">It is not active&lt;/td>
+&lt;td style="text-align: left">The Force parameter is not working as well as it could&lt;/td>
+&lt;td style="text-align: left">Enable&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3>Notes&lt;span class="hx-absolute -hx-mt-20" id="notes">&lt;/span>
+&lt;a href="#notes" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>This feature is the wonderful work of &lt;a href="https://gitlab.gnome.org/ellestone" target="_blank" rel="noopener">Elle Stone&lt;/a>. Artbox simply enables the option by default. Performance was an issue several years ago, which led to it being deactivated.&lt;/p></description></item><item><title/><link>http://localhost:1313/artbox/hub/feature-test/folder/paintbrush-options/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/feature-test/folder/paintbrush-options/</guid><description>
+&lt;h3>Objective&lt;span class="hx-absolute -hx-mt-20" id="objective">&lt;/span>
+&lt;a href="#objective" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Improve the usability of the Paintbrush GUI.&lt;/p>
+&lt;h3>Key Concepts and Definitions&lt;span class="hx-absolute -hx-mt-20" id="key-concepts-and-definitions">&lt;/span>
+&lt;a href="#key-concepts-and-definitions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Reset Brush Option&lt;/strong>: Resets the slider to a default value.&lt;/li>
+&lt;li>&lt;strong>Brush Link Button&lt;/strong>: Links the paintbrush options to the brush editor options.&lt;/li>
+&lt;li>&lt;strong>Expander&lt;/strong>: A collapsible GUI section for organizing lesser-used options.&lt;/li>
+&lt;/ul>
+&lt;h3>Related Links&lt;span class="hx-absolute -hx-mt-20" id="related-links">&lt;/span>
+&lt;a href="#related-links" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>Branches: Artbox and &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-paintbrush-options?ref_type=heads" target="_blank" rel="noopener">feature-paintbrush-options&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Design Revisions&lt;span class="hx-absolute -hx-mt-20" id="design-revisions">&lt;/span>
+&lt;a href="#design-revisions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">&lt;strong>Revision&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Current Design&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Issues&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Changes&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>1. Remove Reset Brush Button&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Option sliders have a reset button to default values.&lt;/td>
+&lt;td style="text-align: left">Rarely used; adds complexity to the GUI.&lt;/td>
+&lt;td style="text-align: left">Remove the reset to default button.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>2. Remove Brush Link Button&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Brush link button allows linking to brush editor options.&lt;/td>
+&lt;td style="text-align: left">Difficult to explain and justify; causes confusion&lt;/td>
+&lt;td style="text-align: left">Remove the link button.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>3. Add Expander for Additional Options&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Options added to the end of paintbrush settings; more options will be added in the future&lt;/td>
+&lt;td style="text-align: left">Lesser-used options clutter the interface and reduce dock space efficiency&lt;/td>
+&lt;td style="text-align: left">Add an &amp;ldquo;Additional Options&amp;rdquo; expander for lesser-used items&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>4. Separate Dynamics&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">&amp;lsquo;Enable Dynamics&amp;rsquo; contains the &amp;lsquo;Fade and Colour&amp;rsquo; options&lt;/td>
+&lt;td style="text-align: left">The &amp;lsquo;Fade and Colour&amp;rsquo; options take up a lot of space, and do not need to be visible all the time.&lt;/td>
+&lt;td style="text-align: left">Add a &amp;ldquo;Dynamic Fade and Colour&amp;rdquo; expander, visible when Enable Dynamics is checked&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>5. Compact Resource Chooser&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Picking a resource such as a brush or a dynamic is done via a chooser, see the Paintbrush GUI&lt;/td>
+&lt;td style="text-align: left">The chooser is takes up two rows of the dockable due to a label above the combo box. The icons on either side are distorted to fill the gap, which looks bad. GUI space is wasted&lt;/td>
+&lt;td style="text-align: left">Remove the label and the chooser becomes compact. The purpose of the chooser is self evident and does not need a label&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>6.Smooth Stroke Position&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">&amp;lsquo;Smooth Stroke&amp;rsquo; is in low down in the dock&lt;/td>
+&lt;td style="text-align: left">It&amp;rsquo;s a frequently used option for painting&lt;/td>
+&lt;td style="text-align: left">Move higher up the dock&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title/><link>http://localhost:1313/artbox/hub/feature-test/folder/presets-restore/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/feature-test/folder/presets-restore/</guid><description>
+&lt;h3>Objective&lt;span class="hx-absolute -hx-mt-20" id="objective">&lt;/span>
+&lt;a href="#objective" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Improve the usability of Tool Presets in Artbox.&lt;/p>
+&lt;h3>Key Concepts and Definitions&lt;span class="hx-absolute -hx-mt-20" id="key-concepts-and-definitions">&lt;/span>
+&lt;a href="#key-concepts-and-definitions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Tool Presets&lt;/strong>: A saved set of Tool Options, with an embedded filter that can be configured in the Tool Preset Editor.&lt;/li>
+&lt;/ul>
+&lt;h3>Related Links&lt;span class="hx-absolute -hx-mt-20" id="related-links">&lt;/span>
+&lt;a href="#related-links" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>Branches: Artbox and &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-presets-restore?ref_type=heads" target="_blank" rel="noopener">feature-presets-restore&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Design Revisions&lt;span class="hx-absolute -hx-mt-20" id="design-revisions">&lt;/span>
+&lt;a href="#design-revisions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">&lt;strong>Revision&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Current Design&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Issues&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Changes&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>1. Double click active preset to restore&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Clicking an active preset has no affect&lt;/td>
+&lt;td style="text-align: left">User has to select another preset then reselect to restore options to the save preset&lt;/td>
+&lt;td style="text-align: left">Double clicking restores the preset&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title/><link>http://localhost:1313/artbox/hub/feature-test/folder/resource-control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/feature-test/folder/resource-control/</guid><description>
+&lt;h3>Objective&lt;span class="hx-absolute -hx-mt-20" id="objective">&lt;/span>
+&lt;a href="#objective" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Improve the usability and data saving of resources and Tool Presets in Artbox.&lt;/p>
+&lt;h3>Key Concepts and Definitions&lt;span class="hx-absolute -hx-mt-20" id="key-concepts-and-definitions">&lt;/span>
+&lt;a href="#key-concepts-and-definitions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Resources&lt;/strong>: Tool Presets, Patterns, Gradients, Brushes, Palettes, and Dynamics.&lt;/li>
+&lt;li>&lt;strong>Tool Options&lt;/strong>: The set of adjustable parameters presented to the user for each Tool in Artbox.&lt;/li>
+&lt;li>&lt;strong>Tool Presets&lt;/strong>: A saved set of Tool Options, with an embedded filter that can be configured in the Tool Preset Editor.&lt;/li>
+&lt;/ul>
+&lt;h3>Related Links&lt;span class="hx-absolute -hx-mt-20" id="related-links">&lt;/span>
+&lt;a href="#related-links" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://gitlab.gnome.org/americo_gobbo/GIMPBrushwork/-/wikis/Tool-Presets-Revision-Presentation" target="_blank" rel="noopener">Tool-Presets-Revision&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gitlab.gnome.org/americo_gobbo/GIMPBrushwork/-/wikis/Design-Revision:-Brushes-Dialog-and-Brush-Editor" target="_blank" rel="noopener">Design Revision: Brushes Dialog and Brush Editor&lt;/a>&lt;/li>
+&lt;li>Branches: Artbox and &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-resource-control?ref_type=heads" target="_blank" rel="noopener">feature-resource-control&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Revised Preferences&lt;span class="hx-absolute -hx-mt-20" id="revised-preferences">&lt;/span>
+&lt;a href="#revised-preferences" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>Preferences -&amp;gt; Folders
+&lt;ul>
+&lt;li>Show the Copy Resource Location menu item&lt;/li>
+&lt;li>Save resource changes on exit&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2>Design Revisions&lt;span class="hx-absolute -hx-mt-20" id="design-revisions">&lt;/span>
+&lt;a href="#design-revisions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">&lt;strong>Revision&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Current Design&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Issues&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Changes&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>1. Deactivate automatic resource saving&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Saves are done when GIMP exits&lt;/td>
+&lt;td style="text-align: left">Tweaks to resources in session can corrupt carefully set up tools with unwanted changes.&lt;/td>
+&lt;td style="text-align: left">A Preference to &amp;lsquo;Save resource changes on exit&amp;rsquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>2. Save specific resource changes immediately&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Saves are done when GIMP exits&lt;/td>
+&lt;td style="text-align: left">Changes to resources are lost if GIMP crashes or exits with a crash.&lt;/td>
+&lt;td style="text-align: left">Save immediately when clicked&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>3. Save As&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Saves are done with default naming&lt;/td>
+&lt;td style="text-align: left">The name of the saved resource is not the same as the filename, this is confusing.&lt;/td>
+&lt;td style="text-align: left">Save immediately with a naming option, Save As&amp;hellip;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>4. Save All&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">If saves are done by the user on demand, as described in (2) or (3), a new issue arises&lt;/td>
+&lt;td style="text-align: left">Changes to resources may be forgotten during the session. Saving one by one is error prone and time consuming&lt;/td>
+&lt;td style="text-align: left">Add &amp;lsquo;Save all the active tool assets&amp;rsquo; button and a &amp;lsquo;Save all changes&amp;rsquo; button on the Preset Editor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>5. Simpler Menu&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Menu item &amp;lsquo;Copy Resource Location&amp;rsquo; exists in several menus&lt;/td>
+&lt;td style="text-align: left">Not used by most users, creates menu clutter&lt;/td>
+&lt;td style="text-align: left">A Preference to &amp;lsquo;Show Copy Resource Location menu item&amp;rsquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>6. Button Bar and Menu Revised&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">See menu items and Button Bar GUI in GIMP&lt;/td>
+&lt;td style="text-align: left">Confusing item placement, Button Bar GUI out of step with updates from (1-5)&lt;/td>
+&lt;td style="text-align: left">Apply a consistent menu item position, and arrange Button Bars to support the changes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>7. Edit Brush deals with Parametric and Image types&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">See Brushes Menu items&lt;/td>
+&lt;td style="text-align: left">Confusion over brush types&lt;/td>
+&lt;td style="text-align: left">Double clicking an image type opens the image for editing, Double clicking a parametric type opens the Brush Editor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>8. Inform the user about locked resources&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">Folder locked resources can not be edited&lt;/td>
+&lt;td style="text-align: left">User confusion&lt;/td>
+&lt;td style="text-align: left">An informative message is displayed in the Brush Editor if the resource is locked&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>9. Copy and Paste as New Brush&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">New Feature&lt;/td>
+&lt;td style="text-align: left">Create a brush from the active drawable&lt;/td>
+&lt;td style="text-align: left">Added to the Brushes Menu via a Script-Fu plug-in&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title/><link>http://localhost:1313/artbox/hub/feature-test/folder/script-fu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/feature-test/folder/script-fu/</guid><description>
+&lt;h3>Objective&lt;span class="hx-absolute -hx-mt-20" id="objective">&lt;/span>
+&lt;a href="#objective" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Extend Script-Fu to include additional functions that help the user.&lt;/p>
+&lt;h3>Key Concepts and Definitions&lt;span class="hx-absolute -hx-mt-20" id="key-concepts-and-definitions">&lt;/span>
+&lt;a href="#key-concepts-and-definitions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Script-Fu&lt;/strong>: A scripting language based on Scheme&lt;/li>
+&lt;/ul>
+&lt;h3>Related Links&lt;span class="hx-absolute -hx-mt-20" id="related-links">&lt;/span>
+&lt;a href="#related-links" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>Branches: Artbox and &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-additional-script-fu?ref_type=heads" target="_blank" rel="noopener">feature-additional-script-fu&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Additional Procedures&lt;span class="hx-absolute -hx-mt-20" id="additional-procedures">&lt;/span>
+&lt;a href="#additional-procedures" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">&lt;strong>Command&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Purpose&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">(gimp-context-get-display)&lt;/td>
+&lt;td style="text-align: left">Get the active display ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">(gimp-context-erase-paint-mode-toggle)&lt;/td>
+&lt;td style="text-align: left">Toggle the paint mode to erase&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">(gimp-context-eraser-toggle)&lt;/td>
+&lt;td style="text-align: left">Toggle the tool to the eraser.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">(gimp-items-set-visible)&lt;/td>
+&lt;td style="text-align: left">Set the visibility of a vector list of items&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title/><link>http://localhost:1313/artbox/hub/feature-test/folder/toolbox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/artbox/hub/feature-test/folder/toolbox/</guid><description>
+&lt;h3>Objective&lt;span class="hx-absolute -hx-mt-20" id="objective">&lt;/span>
+&lt;a href="#objective" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Improve the usability of the Toolbox.&lt;/p>
+&lt;h3>Key Concepts and Definitions&lt;span class="hx-absolute -hx-mt-20" id="key-concepts-and-definitions">&lt;/span>
+&lt;a href="#key-concepts-and-definitions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Flowbox&lt;/strong>: A flexible container that one to three widgets are arranged in. The FG/BG colour area, the active resources and active image.&lt;/li>
+&lt;li>&lt;strong>Tool Palette&lt;/strong>: The grid of tool buttons, Move Tool, Paintbrush Tool ect.&lt;/li>
+&lt;li>&lt;strong>FG/BG&lt;/strong>: The active foreground &amp;amp; background colour widget.&lt;/li>
+&lt;/ul>
+&lt;h3>Related Links&lt;span class="hx-absolute -hx-mt-20" id="related-links">&lt;/span>
+&lt;a href="#related-links" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>Branches: Artbox and &lt;a href="https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-toolbox?ref_type=heads" target="_blank" rel="noopener">feature-toolbox&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3>Revised Preferences&lt;span class="hx-absolute -hx-mt-20" id="revised-preferences">&lt;/span>
+&lt;a href="#revised-preferences" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;ul>
+&lt;li>Preferences -&amp;gt; Toolbox -&amp;gt; Appearance
+&lt;ul>
+&lt;li>Show colour, active resources and active image&lt;/li>
+&lt;li>Show only colour, set preferred position and scale.
+&lt;ul>
+&lt;li>Toolbox placement relative to the tool buttons
+&lt;ul>
+&lt;li>Top&lt;/li>
+&lt;li>Bottom&lt;/li>
+&lt;li>Left&lt;/li>
+&lt;li>Right&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Scale the colour widget&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3>Design Revisions&lt;span class="hx-absolute -hx-mt-20" id="design-revisions">&lt;/span>
+&lt;a href="#design-revisions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">&lt;strong>Revision&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Current Design&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Issues&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Changes&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>1. Remove Flowbox&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">The Flowbox is positioned beneath the Tool Palette&lt;/td>
+&lt;td style="text-align: left">The Flowbox takes up a large amount of GUI space. If only one or two elements are preferred, the GUI space is empty. The size of the FG/BG is restricted by the arrangement.&lt;/td>
+&lt;td style="text-align: left">Allow the user to create a simpler toolbox with no wasted space by removing the Flowbox and keeping the FG/BG widget&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>2. Position and scale the FG/BG widget.&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">New Feature&lt;/td>
+&lt;td style="text-align: left">The FG/BG widget may be poorly positioned taking up GUI space. It may be too small on HDPI displays&lt;/td>
+&lt;td style="text-align: left">Allow the user to position and scale the FG/BG widget relative to the Tool Palette&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item></channel></rss>

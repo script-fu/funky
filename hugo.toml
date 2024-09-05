@@ -66,32 +66,32 @@ categoryId = "<category ID>"
 
 [[menu.main]]
 name = "About"
-pageRef = "/about/"
+pageRef = "hub/about/"
 weight = 1
 
 [[menu.main]]
 name = "Installation"
-pageRef = "/boxdocs/folder/Installation"
+pageRef = "hub/docs/folder/Installation"
 weight = 1
 [[menu.main]]
 
 name = "Documentation"
-pageRef = "/boxdocs/folder/"
+pageRef = "hub/docs/folder/"
 weight = 1
 
 [[menu.main]]
 name = "Features"
-pageRef = "/feature-test/folder/"
+pageRef = "hub/feature-test/folder/"
 weight = 1
 
 [[menu.main]]
 name = "Blog"
-pageRef = "/blog"
+pageRef = "hub/blog"
 weight = 2
 
 [[menu.main]]
 name = "Guides"
-pageRef = "/guides/folder/"
+pageRef = "hub/guides/folder/"
 weight = 3
 
 [[menu.main]]
