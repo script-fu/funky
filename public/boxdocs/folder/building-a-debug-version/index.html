@@ -12,30 +12,32 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 
   <title>Artbox</title>
-  <meta name="description" content="Install and Build Deleting the _build directory Causes a Meson Fail Occasionally, to get GIMP building correctly, you may need to delete the _build directory Meson creates, note the ‘_’. Do not delete the ‘build’ directory! This clears all the old build data and allows a fresh try. However, if you use --wipe or --reconfigure in your build process, and the _build directory is not present or empty, Meson may fail. This could be because Meson requires the _build directory to be present and contain a valid build configuration in order to reconfigure or wipe the build." />
+  <meta name="description" content="IntroductionThis guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you’re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.
+A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program’s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable." />
 
   
-    <link rel="canonical" href="http://localhost:1313/boxdocs/folder/troubleshooting/" itemprop="url" />
+    <link rel="canonical" href="http://localhost:1313/boxdocs/folder/building-a-debug-version/" itemprop="url" />
   
 
   
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="Install and Build
-    Deleting the _build directory Causes a Meson Fail
-    Occasionally, to get GIMP building correctly, you may need to delete the _build directory Meson creates, note the &lsquo;_&rsquo;. Do not delete the &lsquo;build&rsquo; directory! This clears all the old build data and allows a fresh try. However, if you use --wipe or --reconfigure in your build process, and the _build directory is not present or empty, Meson may fail. This could be because Meson requires the _build directory to be present and contain a valid build configuration in order to reconfigure or wipe the build." />
+<meta property="og:description" content="IntroductionThis guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you&rsquo;re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.
+A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program&rsquo;s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/boxdocs/folder/troubleshooting/" /><meta property="article:section" content="boxdocs" />
+<meta property="og:url" content="http://localhost:1313/boxdocs/folder/building-a-debug-version/" /><meta property="article:section" content="boxdocs" />
 
 
 
   
   <meta itemprop="name" content="Artbox">
-  <meta itemprop="description" content="Install and Build Deleting the _build directory Causes a Meson Fail Occasionally, to get GIMP building correctly, you may need to delete the _build directory Meson creates, note the ‘_’. Do not delete the ‘build’ directory! This clears all the old build data and allows a fresh try. However, if you use --wipe or --reconfigure in your build process, and the _build directory is not present or empty, Meson may fail. This could be because Meson requires the _build directory to be present and contain a valid build configuration in order to reconfigure or wipe the build.">
-  <meta itemprop="wordCount" content="663">
+  <meta itemprop="description" content="IntroductionThis guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you’re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.
+A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program’s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable.">
+  <meta itemprop="wordCount" content="1628">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Artbox">
-  <meta name="twitter:description" content="Install and Build Deleting the _build directory Causes a Meson Fail Occasionally, to get GIMP building correctly, you may need to delete the _build directory Meson creates, note the ‘_’. Do not delete the ‘build’ directory! This clears all the old build data and allows a fresh try. However, if you use --wipe or --reconfigure in your build process, and the _build directory is not present or empty, Meson may fail. This could be because Meson requires the _build directory to be present and contain a valid build configuration in order to reconfigure or wipe the build.">
+  <meta name="twitter:description" content="IntroductionThis guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you’re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.
+A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program’s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable.">
 
     <link href="/css/compiled/main.css" rel="stylesheet" />
 
@@ -228,7 +230,48 @@
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
     </a>
               <div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+    href="/boxdocs/folder/building-a-debug-version/"
+    
+  >Building a Debug Version
+    </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#table-of-contents"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Table of Contents</a>
+            </li>
+          <li>
+              <a
+                href="#setting-up-debug-symbols"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Setting Up Debug Symbols</a>
+            </li>
+          <li>
+              <a
+                href="#build-babl-gegl-and-gimp-debug-versions"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Build BABL, GEGL and GIMP Debug Versions</a>
+            </li>
+          <li>
+              <a
+                href="#launch-an-app-under-gdb"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Launch an App under GDB</a>
+            </li>
+          <li>
+              <a
+                href="#gdb-server"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >GDB Server</a>
+            </li>
+          </ul>
+  
+              
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/boxdocs/folder/data/"
@@ -252,34 +295,13 @@
   >Technical Guide
     </a>
               
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/boxdocs/folder/troubleshooting/"
     
   >Troubleshooting
     </a>
-  
-    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
-              <a
-                href="#install-and-build"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >Install and Build</a>
-            </li>
-          <li>
-              <a
-                href="#gegl-or-babl-issues"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >GEGL or BABL issues</a>
-            </li>
-          <li>
-              <a
-                href="#gimp-data"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >gimp-data</a>
-            </li>
-          </ul>
-  
               
             </li></ul>
       </div>
@@ -337,14 +359,6 @@
     href="/guides/folder/a-linux-system-overview/"
     
   >A Linux System Overview
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/guides/folder/building-a-debug-version/"
-    
-  >Building a Debug Version
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -533,7 +547,15 @@
   >Artbox Docs
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
     </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+    href="/boxdocs/folder/building-a-debug-version/"
+    
+  >Building a Debug Version
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/boxdocs/folder/data/"
@@ -557,9 +579,9 @@
   >Technical Guide
     </a>
               
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/boxdocs/folder/troubleshooting/"
     
   >Troubleshooting
@@ -576,35 +598,47 @@
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">On this page</p><ul>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#install-and-build">Install and Build
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#table-of-contents">Table of Contents
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#deleting-the-_build-directory-causes-a-meson-fail">Deleting the _build directory Causes a Meson Fail
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#important">Important:
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-8 rtl:hx-pr-8 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#avoiding-the-issue">Avoiding the Issue
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#setting-up-debug-symbols">Setting Up Debug Symbols
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-8 rtl:hx-pr-8 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#load-error-libavcodecso61">load error: libavcodec.so.61:
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#installing-debuginfod">Installing debuginfod
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#gegl-or-babl-issues">GEGL or BABL issues
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#adding-extra-symbols">Adding Extra Symbols
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#gimp-data">gimp-data
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#installing-gdb">Installing GDB
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#workaround">Workaround
+        <a class="ltr:hx-pl-8 rtl:hx-pr-8 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#configure-gdb">Configure GDB
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#explanation">Explanation
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#build-babl-gegl-and-gimp-debug-versions">Build BABL, GEGL and GIMP Debug Versions
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#launch-an-app-under-gdb">Launch an App under GDB
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#gdb-server">GDB Server
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#using-ttys-in-linux">Using TTYs in Linux
         </a>
       </li></ul>
       <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400">
@@ -633,23 +667,33 @@
             <a href="/boxdocs/folder/">Artbox Docs</a>
           </div>
           <svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-    <div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Troubleshooting</div>
+    <div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Building a Debug Version</div>
   </div>
 
         <div class="content">
           <h1></h1>
-          <h2>Install and Build<span class="hx-absolute -hx-mt-20" id="install-and-build"></span>
-    <a href="#install-and-build" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Deleting the _build directory Causes a Meson Fail<span class="hx-absolute -hx-mt-20" id="deleting-the-_build-directory-causes-a-meson-fail"></span>
-    <a href="#deleting-the-_build-directory-causes-a-meson-fail" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Occasionally, to get GIMP building correctly, you may need to delete the <strong>_build</strong> directory Meson creates, note the &lsquo;_&rsquo;. Do not delete the &lsquo;build&rsquo; directory! This clears all the old build data and allows a fresh try. However, if you use <code>--wipe</code> or <code>--reconfigure</code> in your build process, and the _build directory is not present or empty, Meson may fail. This could be because Meson requires the _build directory to be present and contain a valid build configuration in order to reconfigure or wipe the build.</p>
-<h4>Avoiding the Issue<span class="hx-absolute -hx-mt-20" id="avoiding-the-issue"></span>
-    <a href="#avoiding-the-issue" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>To avoid this issue, make sure to create the _build directory and run Meson at least once without &ndash;wipe or &ndash;reconfigure before attempting to change the compiler. This will ensure that the _build directory contains a valid build configuration, and Meson will be able to reconfigure or wipe the build successfully. Alternatively, we can do a check in the build script for this event.</p>
-<h4>load error: libavcodec.so.61:<span class="hx-absolute -hx-mt-20" id="load-error-libavcodecso61"></span>
-    <a href="#load-error-libavcodecso61" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>If you see error messages like this during start up, it&rsquo;s because we need a newer version of a particular
-library than the one packaged with the Linux distribution we are using.</p>
+          <h1>Introduction</h1><p>This guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you&rsquo;re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.</p>
+<p>A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program&rsquo;s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable.</p>
+<h2>Table of Contents<span class="hx-absolute -hx-mt-20" id="table-of-contents"></span>
+    <a href="#table-of-contents" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li><a href="#setting-up-debug-symbols" >Setting Up Debug Symbols</a></li>
+<li><a href="#creating-a-gdbinit-file" >Configure GDB</a></li>
+<li><a href="#build-babl-gegl-and-gimp-debug-versions" >Build BABL, GEGL, and GIMP Debug Versions</a></li>
+<li><a href="#launch-an-app-under-gdb" >Launch an App under GDB</a></li>
+<li><a href="#gdb-server" >GDB Server</a></li>
+<li><a href="#using-ttys-in-linux" >Using TTYs in Linux</a></li>
+</ul>
+<h3>Important:<span class="hx-absolute -hx-mt-20" id="important"></span>
+    <a href="#important" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Be cautious with shell scripts from the internet. Review the script contents thoroughly or use an AI tool to understand its actions.</p>
+<h2>Setting Up Debug Symbols<span class="hx-absolute -hx-mt-20" id="setting-up-debug-symbols"></span>
+    <a href="#setting-up-debug-symbols" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>To manage and use debug symbols on Debian Stable, Debian offers the &lsquo;debuginfod&rsquo; service, which allows you to download debug symbols on demand.</p>
+<h3>Installing debuginfod<span class="hx-absolute -hx-mt-20" id="installing-debuginfod"></span>
+    <a href="#installing-debuginfod" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>First, you need to install the debuginfod package, which provides access to debugging information.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GEGL-Message: 20:50:10.029: Module <span style="color:#e6db74">&#39;/home/mark/code/gnome/lib/x86_64-linux-gnu/gegl-0.4/ff-save.so&#39;</span> load error: libavcodec.so.61: cannot open shared object file: No such file or directory</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install debuginfod</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -661,12 +705,12 @@ library than the one packaged with the Linux distribution we are using.</p>
 
   
 </div>
-<p>For me, this issue was solved by building the latest version of FFmepg, which includes the needed library, libavcodec.so.61.</p>
-<p>Install a needed library prior to the build process:</p>
+<h3>Adding Extra Symbols<span class="hx-absolute -hx-mt-20" id="adding-extra-symbols"></span>
+    <a href="#adding-extra-symbols" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>In addition to using debuginfod, you’ll need to add the Debian debug repository to your sources list. This repository contains debug symbols for various Debian packages.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install libx264-dev</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb http://deb.debian.org/debian-debug/ bookworm-debug main&#34;</span> | sudo tee -a /etc/apt/sources.list.d/debug.list</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -678,13 +722,11 @@ library than the one packaged with the Linux distribution we are using.</p>
 
   
 </div>
-<p>Create a local folder for FFMpeg, open a terminal in that folder, then:</p>
+<p>Update your package lists:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://git.ffmpeg.org/ffmpeg.git
-</span></span><span style="display:flex;"><span>cd ffmpeg
-</span></span><span style="display:flex;"><span>./configure --enable-shared --enable-gpl --enable-libx264 --enable-libx265  --disable-x86asm --disable-libopus</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -696,11 +738,13 @@ library than the one packaged with the Linux distribution we are using.</p>
 
   
 </div>
-<p>Now we make and install:</p>
+<p>Then, install the debug symbols for GIMP, GLib, GTK, and other dependencies:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<pre><code>sudo make install</code></pre><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install gimp-dbgsym
+</span></span><span style="display:flex;"><span>sudo apt install libglib2.0-0-dbgsym
+</span></span><span style="display:flex;"><span>sudo apt install libgtk-3-0-dbgsym libc6-dbg</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -712,15 +756,14 @@ library than the one packaged with the Linux distribution we are using.</p>
 
   
 </div>
-<p>Verify you have the latest version:</p>
+<h3>Installing GDB<span class="hx-absolute -hx-mt-20" id="installing-gdb"></span>
+    <a href="#installing-gdb" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>GDB (GNU Debugger) is a powerful tool that allows you to debug and troubleshoot applications. It provides a wide range of features, including the ability to run an application in debug mode, set breakpoints, and inspect variables.</p>
+<p>Install GDB with:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<pre><code>ls /usr/local/lib | grep libavcodec
-libavcodec.a
-libavcodec.so
-libavcodec.so.61
-libavcodec.so.61.11.100</code></pre><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install gdb</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -732,26 +775,46 @@ libavcodec.so.61.11.100</code></pre><div class="hextra-code-copy-btn-container h
 
   
 </div>
-<p>When building and launching Artbox, those GEGL error messages should be gone.</p>
-<p>EDIT: discovered that this could have been caused by a rougue use of <code>submodule update</code> in
-the gegl folder.</p>
-<h2>GEGL or BABL issues<span class="hx-absolute -hx-mt-20" id="gegl-or-babl-issues"></span>
-    <a href="#gegl-or-babl-issues" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>A build error may occur if we haven&rsquo;t built BABL or GEGL for a while and there is a new feature used by GIMP, and therefore Artbox, that is not available locally.  We need to get the latest version of BABL and GEGL then rebuild those libraries.</p>
-<p>This sequence of git instructions will reset your local babl and gegl folders to be a clone of the remote folders. WARNING: Any changes you made locally in the master folder, will be lost.</p>
+<p>Note that GDB is a separate tool from debuginfod, which provides access to debugging information. GDB uses this information to provide a more detailed view of the application&rsquo;s execution flow.</p>
+<h4>Configure GDB<span class="hx-absolute -hx-mt-20" id="configure-gdb"></span>
+    <a href="#configure-gdb" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>The .gdbinit file allows you to configure GDB with default options and commands, streamlining the debugging process.</p>
+<p>Here’s a simple script that creates a .gdbinit file with basic logging settings:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>cd $GIMP_PREFIX/build/gegl
-</span></span><span style="display:flex;"><span>git checkout master
-</span></span><span style="display:flex;"><span>git fetch origin
-</span></span><span style="display:flex;"><span>git reset --hard origin/master
-</span></span><span style="display:flex;"><span>git clean -df
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define the path to the .gdbinit file and log folder/file</span>
+</span></span><span style="display:flex;"><span>GDBINIT_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.gdbinit&#34;</span>
+</span></span><span style="display:flex;"><span>LOG_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/gdb_logs&#34;</span>
+</span></span><span style="display:flex;"><span>LOG_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$LOG_DIR<span style="color:#e6db74">/gdb_log.txt&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>cd $GIMP_PREFIX/build/babl
-</span></span><span style="display:flex;"><span>git checkout master
-</span></span><span style="display:flex;"><span>git fetch origin
-</span></span><span style="display:flex;"><span>git reset --hard origin/master
-</span></span><span style="display:flex;"><span>git clean -df</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create the logging directory if it doesn&#39;t exist</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d <span style="color:#e6db74">&#34;</span>$LOG_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Creating logging directory at </span>$LOG_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    mkdir -p <span style="color:#e6db74">&#34;</span>$LOG_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create the log file if it doesn&#39;t exist</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Creating log file at </span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    touch <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create or overwrite the .gdbinit file with the necessary GDB settings</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Creating or updating .gdbinit in </span>$HOME<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat &gt; <span style="color:#e6db74">&#34;</span>$GDBINIT_PATH<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&lt;&lt; EOL
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set debuginfod enabled on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set logging file $LOG_FILE
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set logging enabled on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set logging overwrite on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOL</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;.gdbinit file has been created with the following content:&#34;</span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&#34;</span>$GDBINIT_PATH<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Default GDB settings have been applied. Logs will be saved to </span>$LOG_FILE<span style="color:#e6db74">.&#34;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -763,13 +826,71 @@ the gegl folder.</p>
 
   
 </div>
-<p>Remember to be careful when resetting your local repositories, as any local changes you may have made will be lost.</p>
-<p>Rebuild BABL and GEGL using the previously described build script:</p>
+<p>This script sets GDB to automatically log output and enables debuginfod.</p>
+<h2>Build BABL, GEGL and GIMP Debug Versions<span class="hx-absolute -hx-mt-20" id="build-babl-gegl-and-gimp-debug-versions"></span>
+    <a href="#build-babl-gegl-and-gimp-debug-versions" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>To debug issues with GIMP, it&rsquo;s often necessary to build debug versions of the underlying libraries, including BABL, GEGL, and GIMP itself. This allows you to get more detailed information about the execution flow of the program and identify the source of errors.</p>
+<p>There is a switch to set when we build these libraries and GIMP that allow the
+debugging to take place. We build debug versions, using the same method as described
+<a href="https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/Building-Artbox#a-build-script-for-artbox-babl-and-gegl" target="_blank" rel="noopener">here</a>, except that <code>build_type=&quot;release&quot;</code> is set to <code>build_type=&quot;debug&quot;</code>. Build all
+three with the debug option set before continuing.</p>
+<p>Also, keep in mind that you&rsquo;ll need to rebuild the libraries with the build_type set to &ldquo;release&rdquo; when you&rsquo;re finished debugging, in order to get the best performance out of GIMP.</p>
+<h2>Launch an App under GDB<span class="hx-absolute -hx-mt-20" id="launch-an-app-under-gdb"></span>
+    <a href="#launch-an-app-under-gdb" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The following bash script helps automate the process of launching GIMP in debug mode using GDB. It checks for necessary files and environment variables before running the debugger. When prompted, if you choose &lsquo;y&rsquo;, the script will break at the main function to check if debug symbols are available. At the GDB prompt, use &lsquo;info sharedlibrary&rsquo; to view the availability of symbols. Missing symbols will be indicated with an asterisk (*).</p>
+<p>Ensure you have a &lsquo;build_env.sh&rsquo; <a href="https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/Building-Artbox#environment-variables" target="_blank" rel="noopener">file</a> in the same directory. This file should define environment variables, such as GIMP_PREFIX, required for the GIMP build.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>build_babl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>
-</span></span><span style="display:flex;"><span>build_gegl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># store the folder path for this script</span>
+</span></span><span style="display:flex;"><span>script_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>dirname <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>realpath <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export DEBUGINFOD_URLS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://debuginfod.debian.net/&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if &#34;build_env.sh&#34; exists in the same directory as this script, source it</span>
+</span></span><span style="display:flex;"><span>definitions_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$script_dir<span style="color:#e6db74">/build_env.sh&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -f <span style="color:#e6db74">&#34;</span>$definitions_file<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Error: file &#39;build_env.sh&#39; not found in </span>$script_dir<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  read -n <span style="color:#ae81ff">1</span> -r -s -p <span style="color:#e6db74">&#34;Press any key to exit...&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>source <span style="color:#e6db74">&#34;</span>$definitions_file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if GIMP_PREFIX is set and valid</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span>$GIMP_PREFIX<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Error: GIMP_PREFIX is not set.&#34;</span>
+</span></span><span style="display:flex;"><span>  read -n <span style="color:#ae81ff">1</span> -r -s -p <span style="color:#e6db74">&#34;Press any key to exit...&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify GIMP binary path</span>
+</span></span><span style="display:flex;"><span>gimp_binary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>GIMP_PREFIX<span style="color:#e6db74">}</span><span style="color:#e6db74">/bin/gimp-2.99&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -x <span style="color:#e6db74">&#34;</span>$gimp_binary<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Error: GIMP not found or not executable at </span>$gimp_binary<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  read -n <span style="color:#ae81ff">1</span> -r -s -p <span style="color:#e6db74">&#34;Press any key to exit...&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ask user if they want to test debug symbol availability</span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;Launching GIMP in debug mode.&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Check debug symbols with a breakpoint?&#34;</span>
+</span></span><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Type &#39;y&#39; to test or &#39;n&#39; to skip [default: n]: &#34;</span> user_choice
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Default to skipping debug symbol testing if user input is empty</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span>$user_choice<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  user_choice<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;n&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Perform action based on user input</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$user_choice<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo -e <span style="color:#e6db74">&#34;\nTesting debug symbols with a breakpoint at &#39;main&#39;.&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Enter &#39;info sharedlibrary&#39; at the (gdb) prompt to view availablity.&#34;</span>
+</span></span><span style="display:flex;"><span>  echo -e <span style="color:#e6db74">&#34;Enter &#39;continue&#39; at the (gdb) prompt to launch GIMP in debug mode.\n&#34;</span>
+</span></span><span style="display:flex;"><span>  gdb -q -ex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;break main&#34;</span> -ex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run&#34;</span> --args <span style="color:#e6db74">&#34;</span>$gimp_binary<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Launching GIMP directly in debug mode.&#34;</span>
+</span></span><span style="display:flex;"><span>  gdb -q -ex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run&#34;</span> --args <span style="color:#e6db74">&#34;</span>$gimp_binary<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -781,14 +902,49 @@ the gegl folder.</p>
 
   
 </div>
-<h2>gimp-data<span class="hx-absolute -hx-mt-20" id="gimp-data"></span>
-    <a href="#gimp-data" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>When performing a rebase on a branch that includes submodules, Git may fail with a conflict related to submodule merging. The error may look like this:</p>
+<p>In the following output example, &lsquo;Yes&rsquo; indicates that debug symbols are available for the shared library, while &lsquo;(*)&rsquo; means that debug symbols are missing for that library.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>Failed to merge submodule gimp-data
-</span></span><span style="display:flex;"><span>CONFLICT <span style="color:#f92672">(</span>submodule<span style="color:#f92672">)</span>: Merge conflict in gimp-data
-</span></span><span style="display:flex;"><span>Recursive merging with submodules currently only supports trivial cases.</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<pre><code>Launching GIMP in debug mode.
+Check debug symbols with a breakpoint?
+Type &#39;y&#39; to test or &#39;n&#39; to skip [default: n]: y
+
+Testing debug symbols with a breakpoint at &#39;main&#39;.
+Enter &#39;info sharedlibrary&#39; at the (gdb) prompt to view availablity.
+Enter &#39;continue&#39; at the (gdb) prompt to launch GIMP in debug mode.
+
+Reading symbols from /home/mark/code/gnome/bin/gimp-2.99...
+Breakpoint 1 at 0x154fc1: file ../app/main.c, line 544.
+Starting program: /home/mark/code/gnome/bin/gimp-2.99 
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  &lt;https://debuginfod.debian.net/&gt;
+Enable debuginfod for this session? (y or [n]) y
+Debuginfod has been enabled.
+To make this setting permanent, add &#39;set debuginfod enabled on&#39; to .gdbinit.
+[Thread debugging using libthread_db enabled]                                                                                  
+Using host libthread_db library &#34;/lib/x86_64-linux-gnu/libthread_db.so.1&#34;.
+                                                                                                                               
+Breakpoint 1, main (argc=1, argv=0x7fffffffe5f8) at ../app/main.c:544
+544	  GError         *error = NULL;
+(gdb) info sharedlibrary 
+From                To                  Syms Read   Shared Object Library
+0x00007ffff7fcc060  0x00007ffff7ff0f51  Yes         /lib64/ld-linux-x86-64.so.2
+0x00007ffff7f98560  0x00007ffff7fb0bbe  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpbase-3.0.so.0
+0x00007ffff7f72ca0  0x00007ffff7f8005c  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpcolor-3.0.so.0
+0x00007ffff7f554e0  0x00007ffff7f643d0  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpconfig-3.0.so.0
+0x00007ffff7f44220  0x00007ffff7f47cb7  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpmath-3.0.so.0
+0x00007ffff7f3c490  0x00007ffff7f3e64f  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpmodule-3.0.so.0
+
+...
+0x00007ffff2001040  0x00007ffff20010f9  Yes (*)     /lib/x86_64-linux-gnu/libicudata.so.72
+...
+...
+
+0x00007ffff1fcc6b0  0x00007ffff1fe19be  Yes         /lib/x86_64-linux-gnu/libgpg-error.so.0
+(*): Shared library is missing debugging information.
+(gdb) </code></pre><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -800,13 +956,13 @@ the gegl folder.</p>
 
   
 </div>
-<p>This issue occurs because Git does not handle complex submodule merging automatically during a rebase, especially when the submodule contains conflicting changes. If you encounter this error during a rebase, you can bypass the submodule conflict by restoring the submodule&rsquo;s staged state and continuing with the rebase:</p>
-<h3>Workaround<span class="hx-absolute -hx-mt-20" id="workaround"></span>
-    <a href="#workaround" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>This will remove the submodule (e.g., gimp-data) from the rebase process, allowing you to continue:</p>
+<h2>GDB Server<span class="hx-absolute -hx-mt-20" id="gdb-server"></span>
+    <a href="#gdb-server" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The GDB server is a tool that allows you to debug GIMP remotely, even when the system is frozen. This can be useful when you need to debug a crash or other issue that causes the system to become unresponsive.</p>
+<p>First, install the GDB server:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git restore ---staged gimp-data</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install gdbserver</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -818,11 +974,17 @@ the gegl folder.</p>
 
   
 </div>
-<p>Once you&rsquo;ve restored the submodule&rsquo;s staged state, continue with the rebase process:</p>
+<p>We can use a bash script again, to source our environment variables before running the server. Save it in your bash folder where &ldquo;build_env.sh&rdquo; is also kept, call it &lsquo;gdbserver.sh&rsquo;</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git --continue</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e"># export build variables</span>
+</span></span><span style="display:flex;"><span>script_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>dirname <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>realpath <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source <span style="color:#e6db74">&#34;</span>$script_dir<span style="color:#e6db74">/build_env.sh&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gdbserver :9999 <span style="color:#e6db74">`</span>which gimp-2.99<span style="color:#e6db74">`</span> --g-fatal-warnings</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -834,17 +996,105 @@ the gegl folder.</p>
 
   
 </div>
-<h3>Explanation<span class="hx-absolute -hx-mt-20" id="explanation"></span>
-    <a href="#explanation" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>The git restore &ndash;staged gimp-data command effectively resets the submodule to its previous state, removing it from the list of files that are considered to have conflicts. This allows Git to move forward with the rebase without attempting to handle the submodule as part of the conflict resolution process.</p>
-<p>Please let me know any issues and solutions you discover, thanks.</p>
+<p>open a terminal in your bash folder and run &lsquo;gdbserver.sh&rsquo;:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash gdbserver.sh</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>The server will output something like:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Process /home/mark/code/gnome/bin/gimp-2.99 created; pid <span style="color:#f92672">=</span> <span style="color:#ae81ff">14224</span>
+</span></span><span style="display:flex;"><span>Listening on port <span style="color:#ae81ff">9999</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<h3>Using TTYs in Linux<span class="hx-absolute -hx-mt-20" id="using-ttys-in-linux"></span>
+    <a href="#using-ttys-in-linux" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>TTYs (Teletype terminals) allow you to interact with the Linux system through a text-based interface, which is helpful for troubleshooting.</p>
+<p>To switch to a TTY, use Ctrl + Alt + F1 through F6. To return to the graphical interface, use Ctrl + Alt + F7 (or F2 on some systems).</p>
+<p>To return to the graphical interface, use <code>Ctrl + Alt + F7</code> (or <code>F2</code> on some systems).</p>
+<p>Once in a TTY, log in and run GDB to connect to the GDB server:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gdb /home/mark/code/gnome/bin/gimp-2.99</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>Then, connect to the GDB server and resume execution:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">(</span>gdb<span style="color:#f92672">)</span> target remote localhost:9999
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>gdb<span style="color:#f92672">)</span> <span style="color:#66d9ef">continue</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>Once GIMP is running in debug mode, you can return to the graphical interface by pressing Ctrl + Alt + F7 (or F2, depending on your system). You should now see GIMP open and ready for interaction.</p>
+<p>To simulate the crash, reproduce the steps that lead to the error. Once the crash occurs, switch back to the TTY where GDB is running by pressing Ctrl along with the Function key you used earlier to enter the TTY (e.g., Ctrl + Alt + F1).</p>
+<p>At the GDB prompt (gdb), enter the following command to gather detailed information from all threads:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>thread apply all backtrace full</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>Scroll through the backtrace output until the (gdb) prompt reappears, then type quit to exit GDB.</p>
+<p>Now, return to the graphical interface using Ctrl + Alt + F7 (or F2). You will regain control of your desktop, and both GDB and GIMP will have terminated.</p>
+<p>If you configured GDB with logging via a .gdbinit file as outlined earlier, the crash report will be saved in your home directory under gdb_logs. You can review this file to analyze the crash in detail.</p>
 
         </div>
         <div class="hx-mt-16"></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
-        href="/boxdocs/folder/technical-guide/"
-        title="Technical Guide"
-        class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
-      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Technical Guide</a></div>
+        href="/boxdocs/folder/data/"
+        title="Data"
+        class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left"
+      >Data<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
         
       </main>
     </article>

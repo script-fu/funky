@@ -23,10 +23,9 @@
       <description>
         
         
-        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Linux is a powerful and versatile operating system with a vast community of developers. At its core, a Linux system consists of several key components that work together to provide a seamless user experience. This overview will outline the essential parts of a Linux system, including the kernel, distribution, package manager, display manager, desktop environment, and display server (X11 or Wayland).&lt;/p&gt;
-&lt;h3&gt;Examples of Linux Distribution Configurations&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;examples-of-linux-distribution-configurations&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#examples-of-linux-distribution-configurations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;Linux is a powerful and versatile operating system with a vast community of developers. At its core, a Linux system consists of several key components that work together to provide a seamless user experience. This overview will outline the essential parts of a Linux system, including the kernel, distribution, package manager, display manager, desktop environment, and display server (X11 or Wayland).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples of Linux Distribution Configurations&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
           &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Distribution&lt;/strong&gt;&lt;/th&gt;
@@ -74,8 +73,8 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3&gt;Explanation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;explanation&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#explanation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Kernel&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kernel&#34;&gt;&lt;/span&gt;
+&lt;h3&gt;Key Terms&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;key-terms&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-terms&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Kernel&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kernel&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#kernel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The core of the operating system that interfaces directly with the hardware, usually Linux.&lt;/p&gt;
 &lt;h4&gt;Distribution&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;distribution&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#distribution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The Linux distribution, which packages the kernel along with user space tools, libraries, and software. Examples include Debian, Arch Linux, and Fedora.&lt;/p&gt;
@@ -93,6 +92,434 @@
     
     <item>
       <title></title>
+      <link>http://localhost:1313/guides/folder/building-a-debug-version/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/guides/folder/building-a-debug-version/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;This guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you&amp;rsquo;re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.&lt;/p&gt;
+&lt;p&gt;A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program&amp;rsquo;s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable.&lt;/p&gt;
+&lt;h2&gt;Contents&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;contents&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#contents&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#setting-up-debug-symbols&#34; &gt;Setting Up Debug Symbols&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#creating-a-gdbinit-file&#34; &gt;Configure GDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#build-babl-gegl-and-gimp-debug-versions&#34; &gt;Build BABL, GEGL, and GIMP Debug Versions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#launch-an-app-under-gdb&#34; &gt;Launch an App under GDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#gdb-server&#34; &gt;GDB Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#using-ttys-in-linux&#34; &gt;Using TTYs in Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Important&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;important&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#important&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Be cautious with shell scripts from the internet. Review the script contents thoroughly or use an AI tool to understand its actions.&lt;/p&gt;
+&lt;h2&gt;Setting Up Debug Symbols&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setting-up-debug-symbols&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setting-up-debug-symbols&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To manage and use debug symbols on Debian Stable, Debian offers the &amp;lsquo;debuginfod&amp;rsquo; service, which allows you to download debug symbols on demand.&lt;/p&gt;
+&lt;h3&gt;Installing debuginfod&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;installing-debuginfod&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#installing-debuginfod&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;First, you need to install the debuginfod package, which provides access to debugging information.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install debuginfod&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;Adding Extra Symbols&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;adding-extra-symbols&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#adding-extra-symbols&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In addition to using debuginfod, you’ll need to add the Debian debug repository to your sources list. This repository contains debug symbols for various Debian packages.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;deb http://deb.debian.org/debian-debug/ bookworm-debug main&amp;#34;&lt;/span&gt; | sudo tee -a /etc/apt/sources.list.d/debug.list&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Update your package lists:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Then, install the debug symbols for GIMP, GLib, GTK, and other dependencies:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install gimp-dbgsym
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install libglib2.0-0-dbgsym
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install libgtk-3-0-dbgsym libc6-dbg&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h2&gt;Installing GDB&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;installing-gdb&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#installing-gdb&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;GDB (GNU Debugger) is a powerful tool that allows you to debug and troubleshoot applications. It provides a wide range of features, including the ability to run an application in debug mode, set breakpoints, and inspect variables.&lt;/p&gt;
+&lt;p&gt;Install GDB with:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install gdb&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Note that GDB is a separate tool from debuginfod, which provides access to debugging information. GDB uses this information to provide a more detailed view of the application&amp;rsquo;s execution flow.&lt;/p&gt;
+&lt;h3&gt;Configure GDB&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;configure-gdb&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#configure-gdb&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The .gdbinit file allows you to configure GDB with default options and commands, streamlining the debugging process.&lt;/p&gt;
+&lt;p&gt;Here’s a simple script that creates a .gdbinit file with basic logging settings:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define the path to the .gdbinit file and log folder/file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GDBINIT_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$HOME&lt;span style=&#34;color:#e6db74&#34;&gt;/.gdbinit&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LOG_DIR&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$HOME&lt;span style=&#34;color:#e6db74&#34;&gt;/gdb_logs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LOG_FILE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$LOG_DIR&lt;span style=&#34;color:#e6db74&#34;&gt;/gdb_log.txt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Create the logging directory if it doesn&amp;#39;t exist&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; ! -d &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$LOG_DIR&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Creating logging directory at &lt;/span&gt;$LOG_DIR&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    mkdir -p &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$LOG_DIR&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Create the log file if it doesn&amp;#39;t exist&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; ! -f &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$LOG_FILE&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Creating log file at &lt;/span&gt;$LOG_FILE&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    touch &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$LOG_FILE&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Create or overwrite the .gdbinit file with the necessary GDB settings&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Creating or updating .gdbinit in &lt;/span&gt;$HOME&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat &amp;gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$GDBINIT_PATH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;&amp;lt; EOL
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;set debuginfod enabled on
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;set logging file $LOG_FILE
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;set logging enabled on
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;set logging overwrite on
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;EOL&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.gdbinit file has been created with the following content:&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$GDBINIT_PATH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Default GDB settings have been applied. Logs will be saved to &lt;/span&gt;$LOG_FILE&lt;span style=&#34;color:#e6db74&#34;&gt;.&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;This script sets GDB to automatically log output and enables debuginfod.&lt;/p&gt;
+&lt;h2&gt;Build Debug Versions&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;build-debug-versions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#build-debug-versions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To debug issues with GIMP, it&amp;rsquo;s often necessary to build debug versions of the underlying libraries, including BABL, GEGL, and GIMP itself. This allows you to get more detailed information about the execution flow of the program and identify the source of errors.&lt;/p&gt;
+&lt;p&gt;There is a switch to set when we build these libraries and GIMP that allow the
+debugging to take place. We build debug versions, using the same method as described
+&lt;a href=&#34;https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/Building-Artbox#a-build-script-for-artbox-babl-and-gegl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;, except that &lt;code&gt;build_type=&amp;quot;release&amp;quot;&lt;/code&gt; is set to &lt;code&gt;build_type=&amp;quot;debug&amp;quot;&lt;/code&gt;. Build all
+three with the debug option set before continuing.&lt;/p&gt;
+&lt;p&gt;Also, keep in mind that you&amp;rsquo;ll need to rebuild the libraries with the build_type set to &amp;ldquo;release&amp;rdquo; when you&amp;rsquo;re finished debugging, in order to get the best performance out of GIMP.&lt;/p&gt;
+&lt;h2&gt;Launch an App under GDB&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;launch-an-app-under-gdb&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#launch-an-app-under-gdb&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following bash script helps automate the process of launching GIMP in debug mode using GDB. It checks for necessary files and environment variables before running the debugger. When prompted, if you choose &amp;lsquo;y&amp;rsquo;, the script will break at the main function to check if debug symbols are available. At the GDB prompt, use &amp;lsquo;info sharedlibrary&amp;rsquo; to view the availability of symbols. Missing symbols will be indicated with an asterisk (*).&lt;/p&gt;
+&lt;p&gt;Ensure you have a &amp;lsquo;build_env.sh&amp;rsquo; &lt;a href=&#34;https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/Building-Artbox#environment-variables&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;file&lt;/a&gt; in the same directory. This file should define environment variables, such as GIMP_PREFIX, required for the GIMP build.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# store the folder path for this script&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;script_dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;dirname &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;realpath &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$0&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export DEBUGINFOD_URLS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://debuginfod.debian.net/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Check if &amp;#34;build_env.sh&amp;#34; exists in the same directory as this script, source it&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;definitions_file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$script_dir&lt;span style=&#34;color:#e6db74&#34;&gt;/build_env.sh&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[[&lt;/span&gt; ! -f &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$definitions_file&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Error: file &amp;#39;build_env.sh&amp;#39; not found in &lt;/span&gt;$script_dir&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  read -n &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; -r -s -p &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Press any key to exit...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  exit &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$definitions_file&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Check if GIMP_PREFIX is set and valid&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[[&lt;/span&gt; -z &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$GIMP_PREFIX&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Error: GIMP_PREFIX is not set.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  read -n &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; -r -s -p &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Press any key to exit...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  exit &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Verify GIMP binary path&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gimp_binary&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;GIMP_PREFIX&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/bin/gimp-2.99&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[[&lt;/span&gt; ! -x &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$gimp_binary&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Error: GIMP not found or not executable at &lt;/span&gt;$gimp_binary&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  read -n &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; -r -s -p &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Press any key to exit...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  exit &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Ask user if they want to test debug symbol availability&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Launching GIMP in debug mode.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Check debug symbols with a breakpoint?&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;read -p &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Type &amp;#39;y&amp;#39; to test or &amp;#39;n&amp;#39; to skip [default: n]: &amp;#34;&lt;/span&gt; user_choice
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Default to skipping debug symbol testing if user input is empty&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[[&lt;/span&gt; -z &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$user_choice&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  user_choice&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;n&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Perform action based on user input&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$user_choice&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;y&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\nTesting debug symbols with a breakpoint at &amp;#39;main&amp;#39;.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Enter &amp;#39;info sharedlibrary&amp;#39; at the (gdb) prompt to view availablity.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  echo -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Enter &amp;#39;continue&amp;#39; at the (gdb) prompt to launch GIMP in debug mode.\n&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  gdb -q -ex&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;break main&amp;#34;&lt;/span&gt; -ex&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;run&amp;#34;&lt;/span&gt; --args &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$gimp_binary&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Launching GIMP directly in debug mode.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  gdb -q -ex&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;run&amp;#34;&lt;/span&gt; --args &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$gimp_binary&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;In the following output example, &amp;lsquo;Yes&amp;rsquo; indicates that debug symbols are available for the shared library, while &amp;lsquo;(*)&amp;rsquo; means that debug symbols are missing for that library.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;pre&gt;&lt;code&gt;Launching GIMP in debug mode.
+Check debug symbols with a breakpoint?
+Type &amp;#39;y&amp;#39; to test or &amp;#39;n&amp;#39; to skip [default: n]: y
+
+Testing debug symbols with a breakpoint at &amp;#39;main&amp;#39;.
+Enter &amp;#39;info sharedlibrary&amp;#39; at the (gdb) prompt to view availablity.
+Enter &amp;#39;continue&amp;#39; at the (gdb) prompt to launch GIMP in debug mode.
+
+Reading symbols from /home/mark/code/gnome/bin/gimp-2.99...
+Breakpoint 1 at 0x154fc1: file ../app/main.c, line 544.
+Starting program: /home/mark/code/gnome/bin/gimp-2.99 
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  &amp;lt;https://debuginfod.debian.net/&amp;gt;
+Enable debuginfod for this session? (y or [n]) y
+Debuginfod has been enabled.
+To make this setting permanent, add &amp;#39;set debuginfod enabled on&amp;#39; to .gdbinit.
+[Thread debugging using libthread_db enabled]                                                                                  
+Using host libthread_db library &amp;#34;/lib/x86_64-linux-gnu/libthread_db.so.1&amp;#34;.
+                                                                                                                               
+Breakpoint 1, main (argc=1, argv=0x7fffffffe5f8) at ../app/main.c:544
+544	  GError         *error = NULL;
+(gdb) info sharedlibrary 
+From                To                  Syms Read   Shared Object Library
+0x00007ffff7fcc060  0x00007ffff7ff0f51  Yes         /lib64/ld-linux-x86-64.so.2
+0x00007ffff7f98560  0x00007ffff7fb0bbe  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpbase-3.0.so.0
+0x00007ffff7f72ca0  0x00007ffff7f8005c  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpcolor-3.0.so.0
+0x00007ffff7f554e0  0x00007ffff7f643d0  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpconfig-3.0.so.0
+0x00007ffff7f44220  0x00007ffff7f47cb7  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpmath-3.0.so.0
+0x00007ffff7f3c490  0x00007ffff7f3e64f  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpmodule-3.0.so.0
+
+...
+0x00007ffff2001040  0x00007ffff20010f9  Yes (*)     /lib/x86_64-linux-gnu/libicudata.so.72
+...
+...
+
+0x00007ffff1fcc6b0  0x00007ffff1fe19be  Yes         /lib/x86_64-linux-gnu/libgpg-error.so.0
+(*): Shared library is missing debugging information.
+(gdb) &lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h2&gt;GDB Server&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;gdb-server&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#gdb-server&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The GDB server is a tool that allows you to debug GIMP remotely, even when the system is frozen. This can be useful when you need to debug a crash or other issue that causes the system to become unresponsive.&lt;/p&gt;
+&lt;p&gt;First, install the GDB server:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install gdbserver&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;We can use a bash script again, to source our environment variables before running the server. Save it in your bash folder where &amp;ldquo;build_env.sh&amp;rdquo; is also kept, call it &amp;lsquo;gdbserver.sh&amp;rsquo;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# export build variables&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;script_dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;dirname &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;realpath &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$0&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$script_dir&lt;span style=&#34;color:#e6db74&#34;&gt;/build_env.sh&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gdbserver :9999 &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;which gimp-2.99&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt; --g-fatal-warnings&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;open a terminal in your bash folder and run &amp;lsquo;gdbserver.sh&amp;rsquo;:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bash gdbserver.sh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;The server will output something like:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Process /home/mark/code/gnome/bin/gimp-2.99 created; pid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;14224&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Listening on port &lt;span style=&#34;color:#ae81ff&#34;&gt;9999&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h3&gt;Using TTYs in Linux&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-ttys-in-linux&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-ttys-in-linux&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;TTYs (Teletype terminals) allow you to interact with the Linux system through a text-based interface, which is helpful for troubleshooting.&lt;/p&gt;
+&lt;p&gt;To switch to a TTY, use Ctrl + Alt + F1 through F6. To return to the graphical interface, use Ctrl + Alt + F7 (or F2 on some systems).&lt;/p&gt;
+&lt;p&gt;To return to the graphical interface, use &lt;code&gt;Ctrl + Alt + F7&lt;/code&gt; (or &lt;code&gt;F2&lt;/code&gt; on some systems).&lt;/p&gt;
+&lt;p&gt;Once in a TTY, log in and run GDB to connect to the GDB server:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gdb /home/mark/code/gnome/bin/gimp-2.99&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Then, connect to the GDB server and resume execution:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;gdb&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; target remote localhost:9999
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;gdb&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Once GIMP is running in debug mode, you can return to the graphical interface by pressing Ctrl + Alt + F7 (or F2, depending on your system). You should now see GIMP open and ready for interaction.&lt;/p&gt;
+&lt;p&gt;To simulate the crash, reproduce the steps that lead to the error. Once the crash occurs, switch back to the TTY where GDB is running by pressing Ctrl along with the Function key you used earlier to enter the TTY (e.g., Ctrl + Alt + F1).&lt;/p&gt;
+&lt;p&gt;At the GDB prompt (gdb), enter the following command to gather detailed information from all threads:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;thread apply all backtrace full&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;p&gt;Scroll through the backtrace output until the (gdb) prompt reappears, then type quit to exit GDB.&lt;/p&gt;
+&lt;p&gt;Now, return to the graphical interface using Ctrl + Alt + F7 (or F2). You will regain control of your desktop, and both GDB and GIMP will have terminated.&lt;/p&gt;
+&lt;p&gt;If you configured GDB with logging via a .gdbinit file as outlined earlier, the crash report will be saved in your home directory under gdb_logs. You can review this file to analyze the crash in detail.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://localhost:1313/guides/folder/installing-debian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -100,21 +527,20 @@
       <description>
         
         
-        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This document outlines the steps I took to install &lt;a href=&#34;https://www.debian.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Debian&lt;/a&gt; Stable as the &lt;a href=&#34;https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/home&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Artbox&lt;/a&gt; OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.&lt;/p&gt;
-&lt;h3&gt;Backup Your Data&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;backup-your-data&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#backup-your-data&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost.&lt;/p&gt;
-&lt;h3&gt;Create a Partition&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-a-partition&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#create-a-partition&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create a disk partition on your primary hard drive to install Debian onto. This process has many online guides and various tools, such as GParted. You may need to create a partition from Windows to create a dual-boot machine or reuse an existing partition for Linux. Understand the process specific to your system and needs before proceeding.&lt;/p&gt;
-&lt;h3&gt;Create a USB to Install Debian Stable&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-a-usb-to-install-debian-stable&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#create-a-usb-to-install-debian-stable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Assuming you have created a partition on your primary hard drive for Debian and an appropriate-sized swap partition:&lt;/p&gt;
+        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;This document outlines the steps I took to install &lt;a href=&#34;https://www.debian.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Debian&lt;/a&gt; stable as the Artbox OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.&lt;/p&gt;
+&lt;h2&gt;Backup Your Data&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;backup-your-data&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#backup-your-data&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost.&lt;/p&gt;
+&lt;h2&gt;Create a Partition&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-a-partition&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-a-partition&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Create a disk partition on your primary hard drive to install Debian onto. This process has many online guides and various tools, such as GParted. You may need to create a partition from Windows to create a dual-boot machine or reuse an existing partition for Linux. Understand the process specific to your system and needs before proceeding.&lt;/p&gt;
+&lt;h2&gt;Create a USB to Install Debian Stable&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;create-a-usb-to-install-debian-stable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#create-a-usb-to-install-debian-stable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Assuming you have created a partition on your primary hard drive for Debian and an appropriate-sized swap partition:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Download the Debian ISO from the official &lt;a href=&#34;https://www.debian.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;website&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;On Windows, we can use &lt;a href=&#34;https://etcher.balena.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BalenaEtcher&lt;/a&gt; to put the ISO on a USB drive.&lt;/li&gt;
 &lt;li&gt;On Linux, we can use a command-line tool to create a bootable USB from the ISO.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;Install&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;install&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#install&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;h2&gt;Install&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;install&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#install&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Insert the USB drive into a main USB port.&lt;/li&gt;
 &lt;li&gt;Restart and press F2 on the initial screen to access the boot options.&lt;/li&gt;
 &lt;li&gt;Select the USB drive to boot from.&lt;/li&gt;
@@ -134,9 +560,9 @@
 &lt;li&gt;Add Cinnamon to the install section for a traditional desktop interface.&lt;/li&gt;
 &lt;li&gt;The installation will proceed, and you should have a new Debian Stable OS to set up.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;Setup the System&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setup-the-system&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#setup-the-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Display Scaling&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-scaling&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#display-scaling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;You may have purchased a 4K monitor to use 4K worth of display, at the moment, Debian Stable does not do fractional scaling in a way that allows this.&lt;/p&gt;
+&lt;h2&gt;Setup the System&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;setup-the-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#setup-the-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Display Scaling&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;display-scaling&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#display-scaling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You may have purchased a 4K monitor to use 4K worth of display, at the moment, Debian Stable does not do fractional scaling in a way that allows this.&lt;/p&gt;
 &lt;p&gt;An ideal approach to display scaling would be, where the display resolution is retained, and only the GUI elements are scaled up or down to match the desired size. This is often referred to as &amp;ldquo;resolution-independent&amp;rdquo; or &amp;ldquo;high-DPI&amp;rdquo; scaling.&lt;/p&gt;
 &lt;p&gt;In this approach, the display resolution remains the same (e.g., 4K), and the GUI elements, such as text, icons, and graphics, are scaled up or down to match the desired size. This way, the display resolution is not compromised, and the GUI elements are rendered at a size that&amp;rsquo;s comfortable for the user.&lt;/p&gt;
 &lt;p&gt;Unfortunately, Linux desktop environments have been slower to adopt this approach, and many still use the older method of scaling the display resolution itself, which can lead to the blurriness.&lt;/p&gt;
@@ -213,20 +639,19 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
       <description>
         
         
-        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;It&amp;rsquo;s common to back up your important files to return to earlier versions or replace corrupted data. However, another essential type of backup is a &lt;strong&gt;disk clone&lt;/strong&gt;, a complete backup of your system&amp;rsquo;s state.&lt;/p&gt;
+        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;It&amp;rsquo;s common to back up your important files to return to earlier versions or replace corrupted data. However, another essential type of backup is a &lt;strong&gt;disk clone&lt;/strong&gt;, a complete backup of your system&amp;rsquo;s state.&lt;/p&gt;
 &lt;p&gt;Once you have your system set up and working well, creating a full backup is crucial for restoring your environment in case disaster strikes. This backup complements regularly saving your working data.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://clonezilla.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Clonezilla&lt;/a&gt; is a free and open-source disk imaging and cloning software. It allows users to create and restore full backups of their computer&amp;rsquo;s hard drive, making it a popular tool for IT professionals and home users alike.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s always better to have a backup and not need it than to need a backup and not have it.&lt;/p&gt;
-&lt;h3&gt;Key Features of Clonezilla&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;key-features-of-clonezilla&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#key-features-of-clonezilla&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;h2&gt;Key Features of Clonezilla&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;key-features-of-clonezilla&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-features-of-clonezilla&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Disk Imaging&lt;/strong&gt;: Clonezilla creates an exact copy of a hard drive, including the operating system, applications, and data.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Backup and Restore&lt;/strong&gt;: It enables you to create a backup image of a hard drive and restore it in case of failure or migration to a new drive.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Free and Open Source&lt;/strong&gt;: Clonezilla is completely free to use, and the source code is available for modification and customization.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Using Clonezilla to Backup and Restore a Debian Partition&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-clonezilla-to-backup-and-restore-a-debian-partition&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#using-clonezilla-to-backup-and-restore-a-debian-partition&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Preparation Steps&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;preparation-steps&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#preparation-steps&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;You will need a USB drive for Clonezilla and an external hard drive that is larger than the internal drive you intend to clone.&lt;/p&gt;
+&lt;h2&gt;Using Clonezilla to Backup&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-clonezilla-to-backup&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-clonezilla-to-backup&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Preparation Steps&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;preparation-steps&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#preparation-steps&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You will need a USB drive for Clonezilla and an external hard drive that is larger than the internal drive you intend to clone.&lt;/p&gt;
 &lt;p&gt;These steps simplify the process based on the &lt;a href=&#34;https://clonezilla.org//fine-print-live-doc.php?path=./clonezilla-live/doc/01_Save_disk_image/00-boot-clonezilla-live-cd.doc#00-boot-clonezilla-live-cd.doc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;official guide&lt;/a&gt;. It&amp;rsquo;s a good idea to review the full guide, which includes screenshots for added clarity.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -242,8 +667,8 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
 &lt;p&gt;&lt;strong&gt;Boot from Clonezilla Live USB Drive&lt;/strong&gt;: Restart your computer and boot from the Clonezilla media you created. You may need to access your BIOS/UEFI settings (usually by pressing F2, F12, ESC, or DEL during boot) and adjust the boot order to prioritize the USB drive.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4&gt;Backup with Clonezilla&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;backup-with-clonezilla&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#backup-with-clonezilla&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;h3&gt;Backup with Clonezilla&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;backup-with-clonezilla&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#backup-with-clonezilla&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Select Backup Mode&lt;/strong&gt;: Once Clonezilla boots up, choose &amp;ldquo;device-device&amp;rdquo; mode. This mode allows you to directly clone your internal drive to an external device.&lt;/p&gt;
 &lt;/li&gt;
@@ -261,8 +686,8 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h4&gt;Restoring from Backup&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;restoring-from-backup&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#restoring-from-backup&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;If you need to restore your Debian system from the backup, follow these steps:&lt;/p&gt;
+&lt;h3&gt;Restoring from Backup&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;restoring-from-backup&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#restoring-from-backup&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you need to restore your Debian system from the backup, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Boot from Clonezilla Media&lt;/strong&gt;: Insert the Clonezilla USB and boot from it, following the same steps as during the backup process.&lt;/p&gt;
@@ -281,8 +706,8 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h4&gt;Final Notes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;final-notes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#final-notes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Disk backups with Clonezilla ensure that your entire system—operating system, settings, and applications—is preserved. With minimal effort, you can safeguard your system from catastrophic failure and minimize downtime in the event of a crash.&lt;/p&gt;
+&lt;h2&gt;Final Notes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;final-notes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#final-notes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Disk backups with Clonezilla ensure that your entire system—operating system, settings, and applications—is preserved. With minimal effort, you can safeguard your system from catastrophic failure and minimize downtime in the event of a crash.&lt;/p&gt;
 &lt;p&gt;Remember, &lt;strong&gt;backups are essential&lt;/strong&gt;. Regularly update your backups and periodically test them to ensure you can restore your system when needed.&lt;/p&gt;
 &lt;p&gt;After booting, you can plug in your external backup drive and inspect its partition structure using the Disks utility in Linux. The backup drive should mirror the internal drive’s structure, with the same partitions and some unused space if the external drive is larger.&lt;/p&gt;
 
@@ -298,14 +723,13 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
       <description>
         
         
-        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Welcome to this beginner&amp;rsquo;s guide to using Git on Linux! This guide is designed to help you get started with Git and GitLab, and to provide a basic understanding of how to use these tools.&lt;/p&gt;
-&lt;h3&gt;Git Overview&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git-overview&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#git-overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The code used for making applications is kept in a collection of folders and files on your system. Git is an application that allows us to backup, share, and copy that collection. Git is known as a version control system that allows you to track changes to your code and collaborate with others. It&amp;rsquo;s a powerful tool that&amp;rsquo;s widely used in the open-source community. GitLab is a web-based platform that allows you to host and manage your Git repositories online, making it easy to collaborate with others and track changes to your code.&lt;/p&gt;
-&lt;h3&gt;What is a Repository?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;what-is-a-repository&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#what-is-a-repository&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A &lt;em&gt;repo&lt;/em&gt;, short for repository, is a Git-managed local folder with an online copy. A Git Lab repo is a collection of files and folders that make up a project. It can have &lt;em&gt;branches&lt;/em&gt; that are independent copies of the same project. A branch is a separate version of your project that allows you to make changes without affecting the main version. This is useful for testing new features or fixing bugs without disrupting the main project. There is your local repo, stored on your hard drive, and the remote repo, stored online using Git and GitLab.&lt;/p&gt;
-&lt;h3&gt;Using Git&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-git&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#using-git&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You&amp;rsquo;ll need to install Git on your system. On Debian-based systems, you can use the apt command to install software packages. In this case, we&amp;rsquo;re using it to install Git, which is a package that provides the Git version control system. The sudo command gives the installer permission to install on your system.&lt;/p&gt;
+        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;Welcome to this beginner&amp;rsquo;s guide to using Git on Linux! This guide is designed to help you get started with Git and GitLab, and to provide a basic understanding of how to use these tools.&lt;/p&gt;
+&lt;h2&gt;Git Overview&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git-overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git-overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The code used for making applications is kept in a collection of folders and files on your system. Git is an application that allows us to backup, share, and copy that collection. Git is known as a version control system that allows you to track changes to your code and collaborate with others. It&amp;rsquo;s a powerful tool that&amp;rsquo;s widely used in the open-source community. GitLab is a web-based platform that allows you to host and manage your Git repositories online, making it easy to collaborate with others and track changes to your code.&lt;/p&gt;
+&lt;h2&gt;What is a Repository?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;what-is-a-repository&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-a-repository&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A &lt;em&gt;repo&lt;/em&gt;, short for repository, is a Git-managed local folder with an online copy. A Git Lab repo is a collection of files and folders that make up a project. It can have &lt;em&gt;branches&lt;/em&gt; that are independent copies of the same project. A branch is a separate version of your project that allows you to make changes without affecting the main version. This is useful for testing new features or fixing bugs without disrupting the main project. There is your local repo, stored on your hard drive, and the remote repo, stored online using Git and GitLab.&lt;/p&gt;
+&lt;h2&gt;Using Git&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;using-git&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#using-git&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You&amp;rsquo;ll need to install Git on your system. On Debian-based systems, you can use the apt command to install software packages. In this case, we&amp;rsquo;re using it to install Git, which is a package that provides the Git version control system. The sudo command gives the installer permission to install on your system.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -321,8 +745,8 @@ Configure your Git email: &lt;code&gt;git config --global --edit&lt;/code&gt;&lt
 
   
 &lt;/div&gt;
-&lt;h3&gt;Access GitLab&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;access-gitlab&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#access-gitlab&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Before you can use &lt;a href=&#34;https://gitlab.com/users/sign_up&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitLab&lt;/a&gt;, you&amp;rsquo;ll need to create an account by visiting the GitLab website and completing the registration process.&lt;/p&gt;
+&lt;h2&gt;Access GitLab&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;access-gitlab&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#access-gitlab&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before you can use &lt;a href=&#34;https://gitlab.com/users/sign_up&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitLab&lt;/a&gt;, you&amp;rsquo;ll need to create an account by visiting the GitLab website and completing the registration process.&lt;/p&gt;
 &lt;p&gt;GitLab requires &lt;em&gt;SSH&lt;/em&gt; for secure and authenticated communication between a client (you, for instance) and the GitLab server when performing Git operations like &lt;em&gt;cloning&lt;/em&gt;, &lt;em&gt;pushing&lt;/em&gt;, and &lt;em&gt;fetching&lt;/em&gt; repositories. Cloning is making a local copy of the repo, fetching is bringing any changes made in the repo to your local copy, and pushing is sending changes and content to the server repository. SSH (Secure Shell) is a network protocol that allows secure remote access and uses &lt;em&gt;key pairs&lt;/em&gt; to authenticate and establish secure connections. To generate an SSH key pair, you can use the ssh-keygen command in your terminal.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   

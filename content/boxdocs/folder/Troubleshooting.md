@@ -93,7 +93,7 @@ Recursive merging with submodules currently only supports trivial cases.
 
 This issue occurs because Git does not handle complex submodule merging automatically during a rebase, especially when the submodule contains conflicting changes. If you encounter this error during a rebase, you can bypass the submodule conflict by restoring the submodule's staged state and continuing with the rebase:
 
-Workaround:
+### Workaround
 
 This will remove the submodule (e.g., gimp-data) from the rebase process, allowing you to continue:
 
@@ -107,11 +107,8 @@ Once you've restored the submodule's staged state, continue with the rebase proc
 git --continue
 ```
 
-##### Explanation
+### Explanation
 
 The git restore --staged gimp-data command effectively resets the submodule to its previous state, removing it from the list of files that are considered to have conflicts. This allows Git to move forward with the rebase without attempting to handle the submodule as part of the conflict resolution process.
-
-
-
 
 Please let me know any issues and solutions you discover, thanks.

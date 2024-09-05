@@ -12,7 +12,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 
   <title>Artbox</title>
-  <meta name="description" content="Introduction This guide explains how to manage the ‘gimp-data’ submodule within the Artbox project. A submodule is a repository embedded within another repository. It is not a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.
+  <meta name="description" content="IntroductionThis guide explains how to manage the ‘gimp-data’ submodule within the Artbox project. A submodule is a repository embedded within another repository. It is not a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.
 Artbox Repository: The parent project, it references a commit in gimp-data. gimp-data: The submodule that points to a different repository. Understanding the Submodule Artbox Build Repository: This is the parent repository that contains the ‘gimp-data’ submodule. Artbox Data Submodule: The directory within the Artbox repository that links to the Artbox data repository. Specific Commit in Artbox Data: The submodule is fixed to a specific commit in the Artbox data repository. .gitmodules File: This file in the parent repository specifies the submodule’s repository location. graph LR;subgraph Parent Repo / SuperprojectA([Artbox Build Repository])D([.gitmodules File])endB([Artbox Data Submodule])C([Specific Commit in Artbox Data Repository])A --&gt; BB --&gt; CD -.-&gt; B" />
 
   
@@ -22,8 +22,7 @@ Artbox Repository: The parent project, it references a commit in gimp-data. gimp
   
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="Introduction
-    This guide explains how to manage the &lsquo;gimp-data&rsquo; submodule within the Artbox project. A submodule is a repository embedded within another repository. It is not a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.
+<meta property="og:description" content="IntroductionThis guide explains how to manage the &lsquo;gimp-data&rsquo; submodule within the Artbox project. A submodule is a repository embedded within another repository. It is not a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.
 
 Artbox Repository: The parent project, it references a commit in gimp-data.
 
@@ -56,12 +55,12 @@ graph LR;
 
   
   <meta itemprop="name" content="Artbox">
-  <meta itemprop="description" content="Introduction This guide explains how to manage the ‘gimp-data’ submodule within the Artbox project. A submodule is a repository embedded within another repository. It is not a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.
+  <meta itemprop="description" content="IntroductionThis guide explains how to manage the ‘gimp-data’ submodule within the Artbox project. A submodule is a repository embedded within another repository. It is not a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.
 Artbox Repository: The parent project, it references a commit in gimp-data. gimp-data: The submodule that points to a different repository. Understanding the Submodule Artbox Build Repository: This is the parent repository that contains the ‘gimp-data’ submodule. Artbox Data Submodule: The directory within the Artbox repository that links to the Artbox data repository. Specific Commit in Artbox Data: The submodule is fixed to a specific commit in the Artbox data repository. .gitmodules File: This file in the parent repository specifies the submodule’s repository location. graph LR;subgraph Parent Repo / SuperprojectA([Artbox Build Repository])D([.gitmodules File])endB([Artbox Data Submodule])C([Specific Commit in Artbox Data Repository])A --&gt; BB --&gt; CD -.-&gt; B">
-  <meta itemprop="wordCount" content="902">
+  <meta itemprop="wordCount" content="901">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Artbox">
-  <meta name="twitter:description" content="Introduction This guide explains how to manage the ‘gimp-data’ submodule within the Artbox project. A submodule is a repository embedded within another repository. It is not a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.
+  <meta name="twitter:description" content="IntroductionThis guide explains how to manage the ‘gimp-data’ submodule within the Artbox project. A submodule is a repository embedded within another repository. It is not a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.
 Artbox Repository: The parent project, it references a commit in gimp-data. gimp-data: The submodule that points to a different repository. Understanding the Submodule Artbox Build Repository: This is the parent repository that contains the ‘gimp-data’ submodule. Artbox Data Submodule: The directory within the Artbox repository that links to the Artbox data repository. Specific Commit in Artbox Data: The submodule is fixed to a specific commit in the Artbox data repository. .gitmodules File: This file in the parent repository specifies the submodule’s repository location. graph LR;subgraph Parent Repo / SuperprojectA([Artbox Build Repository])D([.gitmodules File])endB([Artbox Data Submodule])C([Specific Commit in Artbox Data Repository])A --&gt; BB --&gt; CD -.-&gt; B">
 
     <link href="/css/compiled/main.css" rel="stylesheet" />
@@ -265,9 +264,39 @@ Artbox Repository: The parent project, it references a commit in gimp-data. gimp
   
     <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
               <a
-                href="#"
+                href="#understanding-the-submodule"
                 class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              ></a>
+              >Understanding the Submodule</a>
+            </li>
+          <li>
+              <a
+                href="#customizing-the-submodule"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Customizing the Submodule</a>
+            </li>
+          <li>
+              <a
+                href="#remotes"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Remotes</a>
+            </li>
+          <li>
+              <a
+                href="#artbox-data"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Artbox Data</a>
+            </li>
+          <li>
+              <a
+                href="#modifying-or-adding-new-resources"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Modifying or Adding New Resources</a>
+            </li>
+          <li>
+              <a
+                href="#propagating-changed-data-to-feature-branches"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Propagating Changed Data to Feature Branches</a>
             </li>
           </ul>
   
@@ -352,6 +381,14 @@ Artbox Repository: The parent project, it references a commit in gimp-data. gimp
     href="/guides/folder/a-linux-system-overview/"
     
   >A Linux System Overview
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/guides/folder/building-a-debug-version/"
+    
+  >Building a Debug Version
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -583,31 +620,27 @@ Artbox Repository: The parent project, it references a commit in gimp-data. gimp
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">On this page</p><ul>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#introduction">Introduction
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#understanding-the-submodule">Understanding the Submodule
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#understanding-the-submodule">Understanding the Submodule
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#customizing-the-submodule">Customizing the Submodule
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#customizing-the-submodule">Customizing the Submodule
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#remotes">Remotes
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-8 rtl:hx-pr-8 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#remotes">Remotes
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#artbox-data">Artbox Data
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#artbox-data">Artbox Data
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#modifying-or-adding-new-resources">Modifying or Adding New Resources
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#modifying-or-adding-new-resources">Modifying or Adding New Resources
-        </a>
-      </li>
-      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#propagating-changed-data-to-feature-branches">Propagating Changed Data to Feature Branches
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#propagating-changed-data-to-feature-branches">Propagating Changed Data to Feature Branches
         </a>
       </li></ul>
       <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400">
@@ -641,8 +674,7 @@ Artbox Repository: The parent project, it references a commit in gimp-data. gimp
 
         <div class="content">
           <h1></h1>
-          <h3>Introduction<span class="hx-absolute -hx-mt-20" id="introduction"></span>
-    <a href="#introduction" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>This guide explains how to manage the &lsquo;gimp-data&rsquo; submodule within the Artbox project. A submodule is a repository embedded within another repository. It is <em>not</em> a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.</p>
+          <h1>Introduction</h1><p>This guide explains how to manage the &lsquo;gimp-data&rsquo; submodule within the Artbox project. A submodule is a repository embedded within another repository. It is <em>not</em> a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.</p>
 <ul>
 <li><strong>Artbox Repository</strong>: The parent project, it references a commit in gimp-data.
 <ul>
@@ -650,8 +682,8 @@ Artbox Repository: The parent project, it references a commit in gimp-data. gimp
 </ul>
 </li>
 </ul>
-<h3>Understanding the Submodule<span class="hx-absolute -hx-mt-20" id="understanding-the-submodule"></span>
-    <a href="#understanding-the-submodule" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<h2>Understanding the Submodule<span class="hx-absolute -hx-mt-20" id="understanding-the-submodule"></span>
+    <a href="#understanding-the-submodule" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
 <li><strong>Artbox Build Repository</strong>: This is the <a href="https://gitlab.gnome.org/pixelmixer/artbox" target="_blank" rel="noopener">parent repository</a> that contains the &lsquo;gimp-data&rsquo; submodule.</li>
 <li><strong>Artbox Data Submodule</strong>: The directory within the Artbox repository that links to the <a href="https://gitlab.gnome.org/pixelmixer/artbox-data" target="_blank" rel="noopener">Artbox data repository</a>.</li>
 <li><strong>Specific Commit in Artbox Data</strong>: The submodule is fixed to a specific commit in the Artbox data repository.</li>
@@ -668,13 +700,13 @@ Artbox Repository: The parent project, it references a commit in gimp-data. gimp
     A --> B
     B --> C
     D -.-> B</pre><p><em>Diagram 1: This diagram illustrates the relationship between the Artbox build repository (superproject), the gimp-data submodule, and its specific commit. The .gitmodules file specifies the submodule details.</em></p>
-<h3>Customizing the Submodule<span class="hx-absolute -hx-mt-20" id="customizing-the-submodule"></span>
-    <a href="#customizing-the-submodule" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<h2>Customizing the Submodule<span class="hx-absolute -hx-mt-20" id="customizing-the-submodule"></span>
+    <a href="#customizing-the-submodule" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
 <li>Configuration: You can configure the submodule to point to a different repository, such as a modified clone of gimp-data.</li>
 <li>Updating the Superproject: After pushing changes to the new repository, update the parent repository to point to the new commit.</li>
 </ul>
-<h4>Remotes<span class="hx-absolute -hx-mt-20" id="remotes"></span>
-    <a href="#remotes" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Ensure the submodule remotes are correctly set up. For example:</p>
+<h2>Remotes<span class="hx-absolute -hx-mt-20" id="remotes"></span>
+    <a href="#remotes" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Ensure the submodule remotes are correctly set up. For example:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
@@ -715,8 +747,8 @@ Artbox Repository: The parent project, it references a commit in gimp-data. gimp
   
 </div>
 <p><em>The contents of the .gitmodules file in the build/artbox folder.</em></p>
-<h3>Artbox Data<span class="hx-absolute -hx-mt-20" id="artbox-data"></span>
-    <a href="#artbox-data" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>The Artbox &lsquo;gimp-data&rsquo; repository is a clone of the original &lsquo;gimp-data&rsquo; repository, with merged changes specifically for Artbox. Regularly rebasing to the upstream &lsquo;gimp-data&rsquo; repository ensures that you incorporate the latest GIMP updates. Follow these steps to rebase:</p>
+<h2>Artbox Data<span class="hx-absolute -hx-mt-20" id="artbox-data"></span>
+    <a href="#artbox-data" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The Artbox &lsquo;gimp-data&rsquo; repository is a clone of the original &lsquo;gimp-data&rsquo; repository, with merged changes specifically for Artbox. Regularly rebasing to the upstream &lsquo;gimp-data&rsquo; repository ensures that you incorporate the latest GIMP updates. Follow these steps to rebase:</p>
 <ol>
 <li>
 <p><strong>Checkout the &lsquo;convert-to-artbox&rsquo; Branch</strong>: Switch to the branch that integrates the latest changes and serves as the base for your updates.</p>
@@ -829,8 +861,8 @@ Artbox Repository: The parent project, it references a commit in gimp-data. gimp
 </li>
 </ol>
 <p><em>Explanation</em>: By rebasing the Artbox &lsquo;gimp-data&rsquo; repository onto the original &lsquo;gimp-data&rsquo;, you ensure that your project benefits from the latest updates and improvements. Regular rebasing helps avoid conflicts and keeps the repository in sync with upstream changes.</p>
-<h3>Modifying or Adding New Resources<span class="hx-absolute -hx-mt-20" id="modifying-or-adding-new-resources"></span>
-    <a href="#modifying-or-adding-new-resources" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>To change or add new resources in the &lsquo;gimp-data&rsquo; submodule, follow these steps:</p>
+<h2>Modifying or Adding New Resources<span class="hx-absolute -hx-mt-20" id="modifying-or-adding-new-resources"></span>
+    <a href="#modifying-or-adding-new-resources" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>To change or add new resources in the &lsquo;gimp-data&rsquo; submodule, follow these steps:</p>
 <ol>
 <li>
 <p><strong>Checkout the &lsquo;convert-to-artbox&rsquo; Branch</strong>: Ensure you are working on the correct branch that incorporates the latest changes.</p>
@@ -967,8 +999,8 @@ Artbox Repository: The parent project, it references a commit in gimp-data. gimp
 </li>
 </ol>
 <p><em>Explanation</em>: This sequence ensures that changes are correctly made and integrated into both the submodule and the parent repository. By committing and pushing changes in the submodule first, and then updating the parent repository, you maintain proper synchronization and history.</p>
-<h3>Propagating Changed Data to Feature Branches<span class="hx-absolute -hx-mt-20" id="propagating-changed-data-to-feature-branches"></span>
-    <a href="#propagating-changed-data-to-feature-branches" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>To ensure that the changed data in the submodule is reflected in your feature branches, follow these steps:</p>
+<h2>Propagating Changed Data to Feature Branches<span class="hx-absolute -hx-mt-20" id="propagating-changed-data-to-feature-branches"></span>
+    <a href="#propagating-changed-data-to-feature-branches" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>To ensure that the changed data in the submodule is reflected in your feature branches, follow these steps:</p>
 <ol>
 <li>
 <p><strong>Checkout the Feature Branch</strong>: Switch to the branch where you want to propagate the changes.</p>

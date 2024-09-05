@@ -3,11 +3,11 @@ type: docs
 url: "/boxdocs/folder/Installation"
 ---
 
-### Introduction
+# Introduction
 
 Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbox. Artbox does not exist as an individual application, it relies on many parts to function and many apps are used to construct it. You need to create a _build environment_ for it first, like an aquarium for a fish. The following is a guide, for a Debian system. It will be a unique process for your system, and may require further research. Good luck!
 
-### Content
+## Content
 
 * [Git](#git)
 * [Dependencies](#dependencies)
@@ -18,12 +18,12 @@ Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbo
 * [Desktop Launcher (System Specific)](#desktop-launcher-system-specific)
 * [Conclusion](#conclusion)
 
-### Git
+## Git
 
 Before we dive into building Artbox, you'll need to install and learn the basics of Git, a version control system that helps you manage and share source code. Git is an essential tool for any developer, and understanding how to use it will make the rest of the build process much easier. If you're new to Git, take a few minutes to read through [A Beginner's Guide to Using Git on Linux](https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/A-Beginner's-Guide-to-Using-Git-on-Linux) to get up to speed.
 
 
-### Dependencies
+## Dependencies
 
 Here is the [official guide](https://developer.gimp.org/core/setup/build/linux/). The suggestion to look at [this](https://gitlab.gnome.org/GNOME/gimp/-/blob/master/.gitlab-ci.yml) file, that builds GIMP in the GitLab CI environment, is worth following. That file lists all the dependencies the GIMP Dev build process needs. By using that information we can make a bash script to install those packages on our system. Save the following code block to a file called "install-GIMP-dep.sh" and execute it by following the instructions below.
 
@@ -32,7 +32,7 @@ To execute the script:
 - Open a terminal in the script folder.
 - Run the command `bash install-GIMP-dep.sh` to execute the script.
 
-### Important:
+## Important
 
 Be wary about executing shell scripts from the internet, have a look at the contents and try and understand roughly what it is doing. Alternatively copy it into an AI chatbot and ask _that_ what the script is doing.
 
@@ -146,7 +146,7 @@ read -n 1 -r -s -p "Press any key to exit"
 ```
 
 
-### Install Location
+## Install Location
 
 After the Git challenge and package installation, we can proceed with the task. We'll keep the files we need in repository folders on the hard-drive, it's good to call the root folder "code", then put in a sub-folder, like "gnome", then another sub-folder "build" and one called "bash"
 
@@ -193,7 +193,7 @@ The simple folder structure is now populated with thousands of files, and there'
         - artbox
 
 
-### Environment Variables
+## Environment Variables
 
 The software that is about to be built, needs to know a few things about its environment. We do this by exporting some environmental variables. Copy the following into a file, call it **build_env.sh** and save it in the "bash" folder. 
 
@@ -225,7 +225,7 @@ export XDG_DATA_DIRS="${GIMP_PREFIX}/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA
 export GI_TYPELIB_PATH="${GIMP_PREFIX}/${LIB_DIR}/${LIB_SUBDIR}girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
 ```
 
-### A Build Script for Artbox, BABL and GEGL
+## Build Artbox, BABL and GEGL
 
 To build or run the software, we can use another shell script, that uses this file to build, compile or run the software. Copy the following and save it as artbox.sh in the bash folder. Then in your File Manager, right click the artbox.sh file, properties, permissions, "Allow executing file as program".
 
@@ -312,7 +312,7 @@ read -n 1 -r -s -p "Press any key to exit..."
 
 To run the build script you can open a terminal in the bash folder and enter: `bash artbox.sh`
 
-### Desktop Launcher (System Specific)
+## Desktop Launcher (System Specific)
 
 Alternatively you can launch Artbox using a desktop launcher, save the following as a file to your desktop, and then right click it, properties, permissions, "Allow executing file as program". 
 
@@ -333,7 +333,7 @@ gnome-terminal -- /home/mark/code/bash/artbox.sh
 
 It also assumes you are using a specific desktop environment (Cinnamon). My tip would be to look at how to create a desktop launcher for your particular system, or copy and edit an existing one you may have.
 
-### Conclusion
+## Conclusion
 
 At this point you will have the source code for Artbox, a build script and a desktop launcher. Double clicking the launcher should see a terminal and Artbox will open. There are many ways to make a build script, this is a starting point. If you got to this point, congratulations!
 

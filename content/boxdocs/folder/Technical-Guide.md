@@ -2,11 +2,11 @@
 type: docs
 ---
 
-### Introduction
+# Introduction
 
 The diagram illustrates the flow of the development process. The GIMP development branch is the foundation, and the 'convert-to-artbox' branch serves as the common base for all feature branches. These feature branches contribute to the final 'Artbox' branch, which represents the integrated work from all features.
 
-### Contents
+## Contents
 
 - [Updating Artbox to GIMP Dev](#updating-artbox-to-gimp-dev)
    - [Step 1: Construct the Common Base](#step-1-construct-the-common-base)
@@ -19,6 +19,7 @@ The diagram illustrates the flow of the development process. The GIMP developmen
 - [Notes](#notes)
 
 Branch Development Flow for GIMP to Artbox
+
 ---
 ```mermaid
 graph LR;
@@ -82,12 +83,12 @@ The convert branches are:
   - **convert-name:** Manages naming of Artbox.
   - **convert-readme:** Updates the README.md
 
-### Updating Artbox: Identifying Conflicts
+#### Identifying Conflicts
 
 The first stage of updating Artbox to the GIMP development branch involves identifying any conflicts or changes introduced by GIMP that overlap with Artbox changes. These conflicts can then be resolved at this early stage.
 
 
-#### Example of a Compound Convert Branch: convert-paintbrush-all-merged
+#### Example of a Convert Branch
 
 A convert branch like 'convert-paintbrush-all-merged' is itself a combined branch that integrates multiple smaller changes.
 
@@ -107,7 +108,7 @@ These sub-branches implement smaller, specific changes. If a conflict arises bet
 
 A feature branch may also serve as an integration branch to consolidate multiple related changes. For example, the branch feature-paintbrush-options is composed of several smaller branches that have been merged together. This approach allows conflicts to be resolved incrementally, reducing complexity during the final merge into the main branch.
 
-#### Example of a Compound Feature Branch: feature-paintbrush-options
+#### Example of a Feature Branch
 
 - feature-paintbrush-options
   - options-paintbrush-order

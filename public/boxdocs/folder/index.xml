@@ -23,8 +23,7 @@
       <description>
         
         
-        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This guide explains how to manage the &amp;lsquo;gimp-data&amp;rsquo; submodule within the Artbox project. A submodule is a repository embedded within another repository. It is &lt;em&gt;not&lt;/em&gt; a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.&lt;/p&gt;
+        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;This guide explains how to manage the &amp;lsquo;gimp-data&amp;rsquo; submodule within the Artbox project. A submodule is a repository embedded within another repository. It is &lt;em&gt;not&lt;/em&gt; a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Artbox Repository&lt;/strong&gt;: The parent project, it references a commit in gimp-data.
 &lt;ul&gt;
@@ -32,8 +31,8 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Understanding the Submodule&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;understanding-the-submodule&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#understanding-the-submodule&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;h2&gt;Understanding the Submodule&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;understanding-the-submodule&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#understanding-the-submodule&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Artbox Build Repository&lt;/strong&gt;: This is the &lt;a href=&#34;https://gitlab.gnome.org/pixelmixer/artbox&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;parent repository&lt;/a&gt; that contains the &amp;lsquo;gimp-data&amp;rsquo; submodule.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Artbox Data Submodule&lt;/strong&gt;: The directory within the Artbox repository that links to the &lt;a href=&#34;https://gitlab.gnome.org/pixelmixer/artbox-data&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Artbox data repository&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Specific Commit in Artbox Data&lt;/strong&gt;: The submodule is fixed to a specific commit in the Artbox data repository.&lt;/li&gt;
@@ -50,13 +49,13 @@
     A --&gt; B
     B --&gt; C
     D -.-&gt; B&lt;/pre&gt;&lt;p&gt;&lt;em&gt;Diagram 1: This diagram illustrates the relationship between the Artbox build repository (superproject), the gimp-data submodule, and its specific commit. The .gitmodules file specifies the submodule details.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Customizing the Submodule&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;customizing-the-submodule&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#customizing-the-submodule&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;h2&gt;Customizing the Submodule&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;customizing-the-submodule&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#customizing-the-submodule&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Configuration: You can configure the submodule to point to a different repository, such as a modified clone of gimp-data.&lt;/li&gt;
 &lt;li&gt;Updating the Superproject: After pushing changes to the new repository, update the parent repository to point to the new commit.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Remotes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;remotes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#remotes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Ensure the submodule remotes are correctly set up. For example:&lt;/p&gt;
+&lt;h2&gt;Remotes&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;remotes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#remotes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ensure the submodule remotes are correctly set up. For example:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -97,8 +96,8 @@
   
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;The contents of the .gitmodules file in the build/artbox folder.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Artbox Data&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;artbox-data&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#artbox-data&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Artbox &amp;lsquo;gimp-data&amp;rsquo; repository is a clone of the original &amp;lsquo;gimp-data&amp;rsquo; repository, with merged changes specifically for Artbox. Regularly rebasing to the upstream &amp;lsquo;gimp-data&amp;rsquo; repository ensures that you incorporate the latest GIMP updates. Follow these steps to rebase:&lt;/p&gt;
+&lt;h2&gt;Artbox Data&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;artbox-data&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#artbox-data&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Artbox &amp;lsquo;gimp-data&amp;rsquo; repository is a clone of the original &amp;lsquo;gimp-data&amp;rsquo; repository, with merged changes specifically for Artbox. Regularly rebasing to the upstream &amp;lsquo;gimp-data&amp;rsquo; repository ensures that you incorporate the latest GIMP updates. Follow these steps to rebase:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Checkout the &amp;lsquo;convert-to-artbox&amp;rsquo; Branch&lt;/strong&gt;: Switch to the branch that integrates the latest changes and serves as the base for your updates.&lt;/p&gt;
@@ -211,8 +210,8 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;Explanation&lt;/em&gt;: By rebasing the Artbox &amp;lsquo;gimp-data&amp;rsquo; repository onto the original &amp;lsquo;gimp-data&amp;rsquo;, you ensure that your project benefits from the latest updates and improvements. Regular rebasing helps avoid conflicts and keeps the repository in sync with upstream changes.&lt;/p&gt;
-&lt;h3&gt;Modifying or Adding New Resources&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;modifying-or-adding-new-resources&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#modifying-or-adding-new-resources&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To change or add new resources in the &amp;lsquo;gimp-data&amp;rsquo; submodule, follow these steps:&lt;/p&gt;
+&lt;h2&gt;Modifying or Adding New Resources&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;modifying-or-adding-new-resources&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#modifying-or-adding-new-resources&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To change or add new resources in the &amp;lsquo;gimp-data&amp;rsquo; submodule, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Checkout the &amp;lsquo;convert-to-artbox&amp;rsquo; Branch&lt;/strong&gt;: Ensure you are working on the correct branch that incorporates the latest changes.&lt;/p&gt;
@@ -349,8 +348,8 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;Explanation&lt;/em&gt;: This sequence ensures that changes are correctly made and integrated into both the submodule and the parent repository. By committing and pushing changes in the submodule first, and then updating the parent repository, you maintain proper synchronization and history.&lt;/p&gt;
-&lt;h3&gt;Propagating Changed Data to Feature Branches&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;propagating-changed-data-to-feature-branches&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#propagating-changed-data-to-feature-branches&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To ensure that the changed data in the submodule is reflected in your feature branches, follow these steps:&lt;/p&gt;
+&lt;h2&gt;Propagating Changed Data to Feature Branches&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;propagating-changed-data-to-feature-branches&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#propagating-changed-data-to-feature-branches&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To ensure that the changed data in the submodule is reflected in your feature branches, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Checkout the Feature Branch&lt;/strong&gt;: Switch to the branch where you want to propagate the changes.&lt;/p&gt;
@@ -438,10 +437,9 @@
       <description>
         
         
-        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbox. Artbox does not exist as an individual application, it relies on many parts to function and many apps are used to construct it. You need to create a &lt;em&gt;build environment&lt;/em&gt; for it first, like an aquarium for a fish. The following is a guide, for a Debian system. It will be a unique process for your system, and may require further research. Good luck!&lt;/p&gt;
-&lt;h3&gt;Content&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;content&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#content&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbox. Artbox does not exist as an individual application, it relies on many parts to function and many apps are used to construct it. You need to create a &lt;em&gt;build environment&lt;/em&gt; for it first, like an aquarium for a fish. The following is a guide, for a Debian system. It will be a unique process for your system, and may require further research. Good luck!&lt;/p&gt;
+&lt;h2&gt;Content&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;content&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#content&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#git&#34; &gt;Git&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#dependencies&#34; &gt;Dependencies&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#install-location&#34; &gt;Install Location&lt;/a&gt;&lt;/li&gt;
@@ -451,17 +449,17 @@
 &lt;li&gt;&lt;a href=&#34;#desktop-launcher-system-specific&#34; &gt;Desktop Launcher (System Specific)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#conclusion&#34; &gt;Conclusion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Git&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#git&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Before we dive into building Artbox, you&amp;rsquo;ll need to install and learn the basics of Git, a version control system that helps you manage and share source code. Git is an essential tool for any developer, and understanding how to use it will make the rest of the build process much easier. If you&amp;rsquo;re new to Git, take a few minutes to read through &lt;a href=&#34;https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/A-Beginner%27s-Guide-to-Using-Git-on-Linux&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A Beginner&amp;rsquo;s Guide to Using Git on Linux&lt;/a&gt; to get up to speed.&lt;/p&gt;
-&lt;h3&gt;Dependencies&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;dependencies&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#dependencies&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Here is the &lt;a href=&#34;https://developer.gimp.org/core/setup/build/linux/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;official guide&lt;/a&gt;. The suggestion to look at &lt;a href=&#34;https://gitlab.gnome.org/GNOME/gimp/-/blob/master/.gitlab-ci.yml&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; file, that builds GIMP in the GitLab CI environment, is worth following. That file lists all the dependencies the GIMP Dev build process needs. By using that information we can make a bash script to install those packages on our system. Save the following code block to a file called &amp;ldquo;install-GIMP-dep.sh&amp;rdquo; and execute it by following the instructions below.&lt;/p&gt;
+&lt;h2&gt;Git&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;git&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#git&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before we dive into building Artbox, you&amp;rsquo;ll need to install and learn the basics of Git, a version control system that helps you manage and share source code. Git is an essential tool for any developer, and understanding how to use it will make the rest of the build process much easier. If you&amp;rsquo;re new to Git, take a few minutes to read through &lt;a href=&#34;https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/A-Beginner%27s-Guide-to-Using-Git-on-Linux&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A Beginner&amp;rsquo;s Guide to Using Git on Linux&lt;/a&gt; to get up to speed.&lt;/p&gt;
+&lt;h2&gt;Dependencies&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;dependencies&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dependencies&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Here is the &lt;a href=&#34;https://developer.gimp.org/core/setup/build/linux/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;official guide&lt;/a&gt;. The suggestion to look at &lt;a href=&#34;https://gitlab.gnome.org/GNOME/gimp/-/blob/master/.gitlab-ci.yml&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; file, that builds GIMP in the GitLab CI environment, is worth following. That file lists all the dependencies the GIMP Dev build process needs. By using that information we can make a bash script to install those packages on our system. Save the following code block to a file called &amp;ldquo;install-GIMP-dep.sh&amp;rdquo; and execute it by following the instructions below.&lt;/p&gt;
 &lt;p&gt;To execute the script:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Open a terminal in the script folder.&lt;/li&gt;
 &lt;li&gt;Run the command &lt;code&gt;bash install-GIMP-dep.sh&lt;/code&gt; to execute the script.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Important:&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;important&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#important&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Be wary about executing shell scripts from the internet, have a look at the contents and try and understand roughly what it is doing. Alternatively copy it into an AI chatbot and ask &lt;em&gt;that&lt;/em&gt; what the script is doing.&lt;/p&gt;
+&lt;h2&gt;Important&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;important&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#important&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Be wary about executing shell scripts from the internet, have a look at the contents and try and understand roughly what it is doing. Alternatively copy it into an AI chatbot and ask &lt;em&gt;that&lt;/em&gt; what the script is doing.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -582,8 +580,8 @@
 
   
 &lt;/div&gt;
-&lt;h3&gt;Install Location&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;install-location&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#install-location&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After the Git challenge and package installation, we can proceed with the task. We&amp;rsquo;ll keep the files we need in repository folders on the hard-drive, it&amp;rsquo;s good to call the root folder &amp;ldquo;code&amp;rdquo;, then put in a sub-folder, like &amp;ldquo;gnome&amp;rdquo;, then another sub-folder &amp;ldquo;build&amp;rdquo; and one called &amp;ldquo;bash&amp;rdquo;&lt;/p&gt;
+&lt;h2&gt;Install Location&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;install-location&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#install-location&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;After the Git challenge and package installation, we can proceed with the task. We&amp;rsquo;ll keep the files we need in repository folders on the hard-drive, it&amp;rsquo;s good to call the root folder &amp;ldquo;code&amp;rdquo;, then put in a sub-folder, like &amp;ldquo;gnome&amp;rdquo;, then another sub-folder &amp;ldquo;build&amp;rdquo; and one called &amp;ldquo;bash&amp;rdquo;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Home
 &lt;ul&gt;
@@ -665,8 +663,8 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Environment Variables&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;environment-variables&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#environment-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The software that is about to be built, needs to know a few things about its environment. We do this by exporting some environmental variables. Copy the following into a file, call it &lt;strong&gt;build_env.sh&lt;/strong&gt; and save it in the &amp;ldquo;bash&amp;rdquo; folder.&lt;/p&gt;
+&lt;h2&gt;Environment Variables&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;environment-variables&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environment-variables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The software that is about to be built, needs to know a few things about its environment. We do this by exporting some environmental variables. Copy the following into a file, call it &lt;strong&gt;build_env.sh&lt;/strong&gt; and save it in the &amp;ldquo;bash&amp;rdquo; folder.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -706,8 +704,8 @@
 
   
 &lt;/div&gt;
-&lt;h3&gt;A Build Script for Artbox, BABL and GEGL&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;a-build-script-for-artbox-babl-and-gegl&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#a-build-script-for-artbox-babl-and-gegl&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To build or run the software, we can use another shell script, that uses this file to build, compile or run the software. Copy the following and save it as artbox.sh in the bash folder. Then in your File Manager, right click the artbox.sh file, properties, permissions, &amp;ldquo;Allow executing file as program&amp;rdquo;.&lt;/p&gt;
+&lt;h2&gt;Build Artbox, BABL and GEGL&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;build-artbox-babl-and-gegl&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#build-artbox-babl-and-gegl&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To build or run the software, we can use another shell script, that uses this file to build, compile or run the software. Copy the following and save it as artbox.sh in the bash folder. Then in your File Manager, right click the artbox.sh file, properties, permissions, &amp;ldquo;Allow executing file as program&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;Notice that BABL and GEGL are also being built, these two additional packages don&amp;rsquo;t have to be built everytime.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
@@ -799,8 +797,8 @@
   
 &lt;/div&gt;
 &lt;p&gt;To run the build script you can open a terminal in the bash folder and enter: &lt;code&gt;bash artbox.sh&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Desktop Launcher (System Specific)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;desktop-launcher-system-specific&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#desktop-launcher-system-specific&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Alternatively you can launch Artbox using a desktop launcher, save the following as a file to your desktop, and then right click it, properties, permissions, &amp;ldquo;Allow executing file as program&amp;rdquo;.&lt;/p&gt;
+&lt;h2&gt;Desktop Launcher (System Specific)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;desktop-launcher-system-specific&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#desktop-launcher-system-specific&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Alternatively you can launch Artbox using a desktop launcher, save the following as a file to your desktop, and then right click it, properties, permissions, &amp;ldquo;Allow executing file as program&amp;rdquo;.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -838,8 +836,8 @@
   
 &lt;/div&gt;
 &lt;p&gt;It also assumes you are using a specific desktop environment (Cinnamon). My tip would be to look at how to create a desktop launcher for your particular system, or copy and edit an existing one you may have.&lt;/p&gt;
-&lt;h3&gt;Conclusion&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;conclusion&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#conclusion&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;At this point you will have the source code for Artbox, a build script and a desktop launcher. Double clicking the launcher should see a terminal and Artbox will open. There are many ways to make a build script, this is a starting point. If you got to this point, congratulations!&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;conclusion&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#conclusion&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;At this point you will have the source code for Artbox, a build script and a desktop launcher. Double clicking the launcher should see a terminal and Artbox will open. There are many ways to make a build script, this is a starting point. If you got to this point, congratulations!&lt;/p&gt;
 &lt;p&gt;You can also build GIMP in the same manner, replace occurrences of &amp;ldquo;artbox&amp;rdquo; in the build script to &amp;ldquo;gimp&amp;rdquo;.&lt;/p&gt;
 
       </description>
@@ -854,10 +852,9 @@
       <description>
         
         
-        &lt;h3&gt;Introduction&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The diagram illustrates the flow of the development process. The GIMP development branch is the foundation, and the &amp;lsquo;convert-to-artbox&amp;rsquo; branch serves as the common base for all feature branches. These feature branches contribute to the final &amp;lsquo;Artbox&amp;rsquo; branch, which represents the integrated work from all features.&lt;/p&gt;
-&lt;h3&gt;Contents&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;contents&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#contents&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+        &lt;h1&gt;Introduction&lt;/h1&gt;&lt;p&gt;The diagram illustrates the flow of the development process. The GIMP development branch is the foundation, and the &amp;lsquo;convert-to-artbox&amp;rsquo; branch serves as the common base for all feature branches. These feature branches contribute to the final &amp;lsquo;Artbox&amp;rsquo; branch, which represents the integrated work from all features.&lt;/p&gt;
+&lt;h2&gt;Contents&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;contents&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#contents&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#updating-artbox-to-gimp-dev&#34; &gt;Updating Artbox to GIMP Dev&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#step-1-construct-the-common-base&#34; &gt;Step 1: Construct the Common Base&lt;/a&gt;&lt;/li&gt;
@@ -877,8 +874,9 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#notes&#34; &gt;Notes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Branch Development Flow for GIMP to Artbox&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;branch-development-flow-for-gimp-to-artbox&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#branch-development-flow-for-gimp-to-artbox&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;pre class=&#34;mermaid hx-mt-6&#34;&gt;graph LR;
+&lt;p&gt;Branch Development Flow for GIMP to Artbox&lt;/p&gt;
+&lt;hr&gt;
+&lt;pre class=&#34;mermaid hx-mt-6&#34;&gt;graph LR;
     A([GIMP Dev])
     B([Convert to Artbox])
     C([Feature A])
@@ -940,10 +938,10 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Updating Artbox: Identifying Conflicts&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;updating-artbox-identifying-conflicts&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#updating-artbox-identifying-conflicts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The first stage of updating Artbox to the GIMP development branch involves identifying any conflicts or changes introduced by GIMP that overlap with Artbox changes. These conflicts can then be resolved at this early stage.&lt;/p&gt;
-&lt;h4&gt;Example of a Compound Convert Branch: convert-paintbrush-all-merged&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;example-of-a-compound-convert-branch-convert-paintbrush-all-merged&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#example-of-a-compound-convert-branch-convert-paintbrush-all-merged&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;A convert branch like &amp;lsquo;convert-paintbrush-all-merged&amp;rsquo; is itself a combined branch that integrates multiple smaller changes.&lt;/p&gt;
+&lt;h4&gt;Identifying Conflicts&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;identifying-conflicts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#identifying-conflicts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The first stage of updating Artbox to the GIMP development branch involves identifying any conflicts or changes introduced by GIMP that overlap with Artbox changes. These conflicts can then be resolved at this early stage.&lt;/p&gt;
+&lt;h4&gt;Example of a Convert Branch&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;example-of-a-convert-branch&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example-of-a-convert-branch&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;A convert branch like &amp;lsquo;convert-paintbrush-all-merged&amp;rsquo; is itself a combined branch that integrates multiple smaller changes.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;convert-paintbrush-all-merged: Integrates modifications to the paintbrush tool.
 &lt;ul&gt;
@@ -961,8 +959,8 @@
 &lt;p&gt;These sub-branches implement smaller, specific changes. If a conflict arises between convert-paintbrush-all-merged and the GIMP development branch, the sub-branch can be reset to align with the latest GIMP development version, and the minor adjustment can be reapplied as needed.&lt;/p&gt;
 &lt;h3&gt;Feature Branches&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;feature-branches&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#feature-branches&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A feature branch may also serve as an integration branch to consolidate multiple related changes. For example, the branch feature-paintbrush-options is composed of several smaller branches that have been merged together. This approach allows conflicts to be resolved incrementally, reducing complexity during the final merge into the main branch.&lt;/p&gt;
-&lt;h4&gt;Example of a Compound Feature Branch: feature-paintbrush-options&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;example-of-a-compound-feature-branch-feature-paintbrush-options&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#example-of-a-compound-feature-branch-feature-paintbrush-options&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;h4&gt;Example of a Feature Branch&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;example-of-a-feature-branch&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example-of-a-feature-branch&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;feature-paintbrush-options
 &lt;ul&gt;
 &lt;li&gt;options-paintbrush-order&lt;/li&gt;
@@ -1191,8 +1189,8 @@ the gegl folder.&lt;/p&gt;
   
 &lt;/div&gt;
 &lt;p&gt;This issue occurs because Git does not handle complex submodule merging automatically during a rebase, especially when the submodule contains conflicting changes. If you encounter this error during a rebase, you can bypass the submodule conflict by restoring the submodule&amp;rsquo;s staged state and continuing with the rebase:&lt;/p&gt;
-&lt;p&gt;Workaround:&lt;/p&gt;
-&lt;p&gt;This will remove the submodule (e.g., gimp-data) from the rebase process, allowing you to continue:&lt;/p&gt;
+&lt;h3&gt;Workaround&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;workaround&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#workaround&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This will remove the submodule (e.g., gimp-data) from the rebase process, allowing you to continue:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
   
 
@@ -1224,8 +1222,8 @@ the gegl folder.&lt;/p&gt;
 
   
 &lt;/div&gt;
-&lt;h5&gt;Explanation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;explanation&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#explanation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;The git restore &amp;ndash;staged gimp-data command effectively resets the submodule to its previous state, removing it from the list of files that are considered to have conflicts. This allows Git to move forward with the rebase without attempting to handle the submodule as part of the conflict resolution process.&lt;/p&gt;
+&lt;h3&gt;Explanation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;explanation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#explanation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The git restore &amp;ndash;staged gimp-data command effectively resets the submodule to its previous state, removing it from the list of files that are considered to have conflicts. This allows Git to move forward with the rebase without attempting to handle the submodule as part of the conflict resolution process.&lt;/p&gt;
 &lt;p&gt;Please let me know any issues and solutions you discover, thanks.&lt;/p&gt;
 
       </description>

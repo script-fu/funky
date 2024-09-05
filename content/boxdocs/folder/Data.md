@@ -2,14 +2,14 @@
 type: docs
 ---
 
-### Introduction
+# Introduction
 
 This guide explains how to manage the 'gimp-data' submodule within the Artbox project. A submodule is a repository embedded within another repository. It is _not_ a simple nested folder but a distinct repository with its own version control. The parent project is sometimes referred to as a superproject.
 
 - **Artbox Repository**: The parent project, it references a commit in gimp-data.
   - **gimp-data**: The submodule that points to a different repository.
 
-### Understanding the Submodule
+## Understanding the Submodule
 
 - **Artbox Build Repository**: This is the [parent repository](https://gitlab.gnome.org/pixelmixer/artbox) that contains the 'gimp-data' submodule.
 - **Artbox Data Submodule**: The directory within the Artbox repository that links to the [Artbox data repository](https://gitlab.gnome.org/pixelmixer/artbox-data).
@@ -31,12 +31,12 @@ graph LR;
 ```
 _Diagram 1: This diagram illustrates the relationship between the Artbox build repository (superproject), the gimp-data submodule, and its specific commit. The .gitmodules file specifies the submodule details._
 
-### Customizing the Submodule
+## Customizing the Submodule
 
 - Configuration: You can configure the submodule to point to a different repository, such as a modified clone of gimp-data.
 - Updating the Superproject: After pushing changes to the new repository, update the parent repository to point to the new commit.
 
-#### Remotes
+## Remotes
 
 Ensure the submodule remotes are correctly set up. For example:
 ```sh
@@ -60,7 +60,7 @@ The .gitmodules file in the parent repo should be adjusted to point at the Artbo
 _The contents of the .gitmodules file in the build/artbox folder._
 
 
-### Artbox Data
+## Artbox Data
 
 The Artbox 'gimp-data' repository is a clone of the original 'gimp-data' repository, with merged changes specifically for Artbox. Regularly rebasing to the upstream 'gimp-data' repository ensures that you incorporate the latest GIMP updates. Follow these steps to rebase:
 
@@ -98,7 +98,7 @@ The Artbox 'gimp-data' repository is a clone of the original 'gimp-data' reposit
 *Explanation*: By rebasing the Artbox 'gimp-data' repository onto the original 'gimp-data', you ensure that your project benefits from the latest updates and improvements. Regular rebasing helps avoid conflicts and keeps the repository in sync with upstream changes.
 
 
-### Modifying or Adding New Resources
+## Modifying or Adding New Resources
 
 To change or add new resources in the 'gimp-data' submodule, follow these steps:
 
@@ -146,7 +146,7 @@ To change or add new resources in the 'gimp-data' submodule, follow these steps:
 *Explanation*: This sequence ensures that changes are correctly made and integrated into both the submodule and the parent repository. By committing and pushing changes in the submodule first, and then updating the parent repository, you maintain proper synchronization and history.
 
 
-### Propagating Changed Data to Feature Branches
+## Propagating Changed Data to Feature Branches
 
 To ensure that the changed data in the submodule is reflected in your feature branches, follow these steps:
 
@@ -173,4 +173,3 @@ To ensure that the changed data in the submodule is reflected in your feature br
     ```sh
     git push
     ```
-

@@ -12,33 +12,32 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 
   <title>Artbox</title>
-  <meta name="description" content="IntroductionThis document outlines the steps I took to install Debian stable as the Artbox OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.
-Backup Your Data Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost." />
+  <meta name="description" content="IntroductionThis guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you’re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.
+A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program’s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable." />
 
   
-    <link rel="canonical" href="http://localhost:1313/guides/folder/installing-debian/" itemprop="url" />
+    <link rel="canonical" href="http://localhost:1313/guides/folder/building-a-debug-version/" itemprop="url" />
   
 
   
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="IntroductionThis document outlines the steps I took to install Debian stable as the Artbox OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.
-Backup Your Data
-    Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost." />
+<meta property="og:description" content="IntroductionThis guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you&rsquo;re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.
+A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program&rsquo;s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/guides/folder/installing-debian/" /><meta property="article:section" content="guides" />
+<meta property="og:url" content="http://localhost:1313/guides/folder/building-a-debug-version/" /><meta property="article:section" content="guides" />
 
 
 
   
   <meta itemprop="name" content="Artbox">
-  <meta itemprop="description" content="IntroductionThis document outlines the steps I took to install Debian stable as the Artbox OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.
-Backup Your Data Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost.">
-  <meta itemprop="wordCount" content="826">
+  <meta itemprop="description" content="IntroductionThis guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you’re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.
+A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program’s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable.">
+  <meta itemprop="wordCount" content="1622">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Artbox">
-  <meta name="twitter:description" content="IntroductionThis document outlines the steps I took to install Debian stable as the Artbox OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.
-Backup Your Data Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost.">
+  <meta name="twitter:description" content="IntroductionThis guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you’re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.
+A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program’s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable.">
 
     <link href="/css/compiled/main.css" rel="stylesheet" />
 
@@ -321,54 +320,60 @@ Backup Your Data Before installing Debian, make a complete backup of your Home d
   >A Linux System Overview
     </a>
               
-            </li><li class="hx-flex hx-flex-col "><a
+            </li><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/guides/folder/building-a-debug-version/"
     
   >Building a Debug Version
     </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#contents"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Contents</a>
+            </li>
+          <li>
+              <a
+                href="#setting-up-debug-symbols"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Setting Up Debug Symbols</a>
+            </li>
+          <li>
+              <a
+                href="#installing-gdb"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Installing GDB</a>
+            </li>
+          <li>
+              <a
+                href="#build-debug-versions"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Build Debug Versions</a>
+            </li>
+          <li>
+              <a
+                href="#launch-an-app-under-gdb"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Launch an App under GDB</a>
+            </li>
+          <li>
+              <a
+                href="#gdb-server"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >GDB Server</a>
+            </li>
+          </ul>
+  
               
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/guides/folder/installing-debian/"
     
   >Installing Debian
     </a>
-  
-    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
-              <a
-                href="#backup-your-data"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >Backup Your Data</a>
-            </li>
-          <li>
-              <a
-                href="#create-a-partition"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >Create a Partition</a>
-            </li>
-          <li>
-              <a
-                href="#create-a-usb-to-install-debian-stable"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >Create a USB to Install Debian Stable</a>
-            </li>
-          <li>
-              <a
-                href="#install"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >Install</a>
-            </li>
-          <li>
-              <a
-                href="#setup-the-system"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >Setup the System</a>
-            </li>
-          </ul>
-  
               
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
@@ -556,17 +561,17 @@ Backup Your Data Before installing Debian, make a complete backup of your Home d
   >A Linux System Overview
     </a>
               
-            </li><li class="hx-flex hx-flex-col "><a
+            </li><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/guides/folder/building-a-debug-version/"
     
   >Building a Debug Version
     </a>
               
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/guides/folder/installing-debian/"
     
   >Installing Debian
@@ -599,43 +604,47 @@ Backup Your Data Before installing Debian, make a complete backup of your Home d
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">On this page</p><ul>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#backup-your-data">Backup Your Data
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#contents">Contents
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#create-a-partition">Create a Partition
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#important">Important
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#create-a-usb-to-install-debian-stable">Create a USB to Install Debian Stable
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#setting-up-debug-symbols">Setting Up Debug Symbols
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#install">Install
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#installing-debuginfod">Installing debuginfod
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#setup-the-system">Setup the System
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#adding-extra-symbols">Adding Extra Symbols
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#display-scaling">Display Scaling
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#installing-gdb">Installing GDB
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#terminal">Terminal
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#configure-gdb">Configure GDB
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#restore-data---user-specific">Restore Data - User Specific
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#build-debug-versions">Build Debug Versions
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#git">Git
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#launch-an-app-under-gdb">Launch an App under GDB
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-8 rtl:hx-pr-8 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#gitlab-access">GitLab Access
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#gdb-server">GDB Server
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#using-ttys-in-linux">Using TTYs in Linux
         </a>
       </li></ul>
       <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400">
@@ -664,97 +673,33 @@ Backup Your Data Before installing Debian, make a complete backup of your Home d
             <a href="/guides/folder/">Guides</a>
           </div>
           <svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-    <div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Installing Debian</div>
+    <div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Building a Debug Version</div>
   </div>
 
         <div class="content">
           <h1></h1>
-          <h1>Introduction</h1><p>This document outlines the steps I took to install <a href="https://www.debian.org/" target="_blank" rel="noopener">Debian</a> stable as the Artbox OS. It may be useful for others attempting a similar installation. Debian Stable was chosen as the Linux platform because GIMP Dev is built on Debian Testing and aims to support building GIMP on Debian Stable.</p>
-<h2>Backup Your Data<span class="hx-absolute -hx-mt-20" id="backup-your-data"></span>
-    <a href="#backup-your-data" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Before installing Debian, make a complete backup of your Home directory on an external drive. Include any other data folders and files you want to keep. If you have Git repositories, push any wanted changes to the origins to easily restore them after the install. Any unsaved data will be lost.</p>
-<h2>Create a Partition<span class="hx-absolute -hx-mt-20" id="create-a-partition"></span>
-    <a href="#create-a-partition" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Create a disk partition on your primary hard drive to install Debian onto. This process has many online guides and various tools, such as GParted. You may need to create a partition from Windows to create a dual-boot machine or reuse an existing partition for Linux. Understand the process specific to your system and needs before proceeding.</p>
-<h2>Create a USB to Install Debian Stable<span class="hx-absolute -hx-mt-20" id="create-a-usb-to-install-debian-stable"></span>
-    <a href="#create-a-usb-to-install-debian-stable" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Assuming you have created a partition on your primary hard drive for Debian and an appropriate-sized swap partition:</p>
-<ol>
-<li>Download the Debian ISO from the official <a href="https://www.debian.org/" target="_blank" rel="noopener">website</a>.</li>
-<li>On Windows, we can use <a href="https://etcher.balena.io/" target="_blank" rel="noopener">BalenaEtcher</a> to put the ISO on a USB drive.</li>
-<li>On Linux, we can use a command-line tool to create a bootable USB from the ISO.</li>
-</ol>
-<h2>Install<span class="hx-absolute -hx-mt-20" id="install"></span>
-    <a href="#install" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ol>
-<li>Insert the USB drive into a main USB port.</li>
-<li>Restart and press F2 on the initial screen to access the boot options.</li>
-<li>Select the USB drive to boot from.</li>
-<li>Choose a non-graphical install.</li>
-<li>Skip the root password when asked, leaving it blank, and set a user password on the next section.</li>
-<li>Partition manually:
-<ul>
-<li>Set your spare partition as ext4 journaling.</li>
-<li>Set your swap partition.</li>
-<li>Mount point: /</li>
-<li>Label: linux</li>
-<li>Hostname: name (appears to the right of your terminal prompt user@hostname)</li>
-<li>User account: Your Full Name</li>
-<li>User: name (appears to the left of your terminal prompt)</li>
+          <h1>Introduction</h1><p>This guide is intended for those who are familiar with C programming and have a basic understanding of Linux development. If you&rsquo;re new to debugging or Linux development, you may want to start with some additional resources before proceeding with this guide.</p>
+<p>A debug version is a build of a program that includes additional information, known as debug symbols, to aid in troubleshooting and debugging. Debug symbols help developers pinpoint errors and understand the program&rsquo;s execution flow. This guide explains how to install and use debug symbols with the GNU Debugger (GDB) on Debian Stable.</p>
+<h2>Contents<span class="hx-absolute -hx-mt-20" id="contents"></span>
+    <a href="#contents" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li><a href="#setting-up-debug-symbols" >Setting Up Debug Symbols</a></li>
+<li><a href="#creating-a-gdbinit-file" >Configure GDB</a></li>
+<li><a href="#build-babl-gegl-and-gimp-debug-versions" >Build BABL, GEGL, and GIMP Debug Versions</a></li>
+<li><a href="#launch-an-app-under-gdb" >Launch an App under GDB</a></li>
+<li><a href="#gdb-server" >GDB Server</a></li>
+<li><a href="#using-ttys-in-linux" >Using TTYs in Linux</a></li>
 </ul>
-</li>
-<li>Add Cinnamon to the install section for a traditional desktop interface.</li>
-<li>The installation will proceed, and you should have a new Debian Stable OS to set up.</li>
-</ol>
-<h2>Setup the System<span class="hx-absolute -hx-mt-20" id="setup-the-system"></span>
-    <a href="#setup-the-system" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Display Scaling<span class="hx-absolute -hx-mt-20" id="display-scaling"></span>
-    <a href="#display-scaling" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>You may have purchased a 4K monitor to use 4K worth of display, at the moment, Debian Stable does not do fractional scaling in a way that allows this.</p>
-<p>An ideal approach to display scaling would be, where the display resolution is retained, and only the GUI elements are scaled up or down to match the desired size. This is often referred to as &ldquo;resolution-independent&rdquo; or &ldquo;high-DPI&rdquo; scaling.</p>
-<p>In this approach, the display resolution remains the same (e.g., 4K), and the GUI elements, such as text, icons, and graphics, are scaled up or down to match the desired size. This way, the display resolution is not compromised, and the GUI elements are rendered at a size that&rsquo;s comfortable for the user.</p>
-<p>Unfortunately, Linux desktop environments have been slower to adopt this approach, and many still use the older method of scaling the display resolution itself, which can lead to the blurriness.</p>
-<ul>
-<li>Avoid fractional display scaling, as Debian Stable does not support it well.</li>
-<li>Instead, use the following workaround:
-<ul>
-<li>Menu -&gt; Search -&gt; Font Selection -&gt; Font Settings -&gt; Text Scaling Factor -&gt; 2.5</li>
-<li>Menu -&gt; Search -&gt; Font Selection -&gt; Desktop Font 14: affects both monitors</li>
-<li>Menu -&gt; Search -&gt; Panel -&gt; Customize -&gt; Panel Height 60</li>
-<li>Menu -&gt; Search -&gt; Panel -&gt; Panel appearance -&gt; Right Zone: Symbolic Icon Size 48px</li>
-<li>Menu -&gt; Search -&gt; Mouse and Touchpad -&gt; Pointer Size and Speed: affects both monitors</li>
-<li>Right-click the 4K monitor Desktop -&gt; Customize: Icon Size Larger</li>
-<li>Firefox: in the address bar -&gt; about:config -&gt; search: layout.css.devPixelsPerPx -&gt; set the value to 1</li>
-</ul>
-</li>
-</ul>
-<h3>Terminal<span class="hx-absolute -hx-mt-20" id="terminal"></span>
-    <a href="#terminal" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Configure your terminal to your liking:</p>
-<ol>
-<li>Menu -&gt; Search -&gt; Terminal -&gt; Edit -&gt; Preferences</li>
-<li>Text -&gt; Initial Size 140: columns 40 rows</li>
-<li>Text -&gt; Custom font: 140: Monospace 10</li>
-<li>Colours -&gt; Built-in-schemes -&gt; Solarized Dark</li>
-</ol>
-<h3>Restore Data - User Specific<span class="hx-absolute -hx-mt-20" id="restore-data---user-specific"></span>
-    <a href="#restore-data---user-specific" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Restore your backed-up data to the Home directory. For example:</p>
-<ul>
-<li>Backup/Home/Artwork -&gt; Home/Artwork</li>
-<li>Backup/Home/code -&gt; Home/code</li>
-<li>Backup/Home/Desktop -&gt; Home/Desktop</li>
-<li>Backup/Home/.ssh (GitLab keys) -&gt; Home/.ssh (GitLab keys)</li>
-<li>Backup/Home/.config/GIMP -&gt; Home/.config/GIMP</li>
-</ul>
-<h3>Git<span class="hx-absolute -hx-mt-20" id="git"></span>
-    <a href="#git" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Install Git using the terminal command: <code>sudo apt install git</code>
-Configure your Git email: <code>git config --global --edit</code></p>
-<h4>GitLab Access<span class="hx-absolute -hx-mt-20" id="gitlab-access"></span>
-    <a href="#gitlab-access" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Restore repository access to GitLab or GitHub:</p>
-<ol>
-<li>Change the permissions on the SSH key file: <code>chmod 600 ~/.ssh/id_rsa</code></li>
-<li>Add the user to the new Git install: <code>ssh-add ~/.ssh/id_rsa</code></li>
-<li>Test the connection: <code>ssh -T git@ssh.gitlab.gnome.org</code> or <code>ssh -T git@github.com</code></li>
-</ol>
-<p>For each repository, fetch the origins and reset the local branch to match:</p>
+<h3>Important<span class="hx-absolute -hx-mt-20" id="important"></span>
+    <a href="#important" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Be cautious with shell scripts from the internet. Review the script contents thoroughly or use an AI tool to understand its actions.</p>
+<h2>Setting Up Debug Symbols<span class="hx-absolute -hx-mt-20" id="setting-up-debug-symbols"></span>
+    <a href="#setting-up-debug-symbols" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>To manage and use debug symbols on Debian Stable, Debian offers the &lsquo;debuginfod&rsquo; service, which allows you to download debug symbols on demand.</p>
+<h3>Installing debuginfod<span class="hx-absolute -hx-mt-20" id="installing-debuginfod"></span>
+    <a href="#installing-debuginfod" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>First, you need to install the debuginfod package, which provides access to debugging information.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
   
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git reset --hard remote-name/branch-name
-</span></span><span style="display:flex;"><span>git clean -df</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install debuginfod</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -766,20 +711,400 @@ Configure your Git email: <code>git config --global --edit</code></p>
 
   
 </div>
-<p>A <code>git status</code> report on the updated repo should now look normal. This may also need to be done on any submodules.</p>
-<p>We now have a new OS with any data and repositories restored. This process is fairly specific to my usage and knowledge of Linux, feel free to offer any suggestions for improving it as a guide.</p>
+<h3>Adding Extra Symbols<span class="hx-absolute -hx-mt-20" id="adding-extra-symbols"></span>
+    <a href="#adding-extra-symbols" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>In addition to using debuginfod, you’ll need to add the Debian debug repository to your sources list. This repository contains debug symbols for various Debian packages.</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb http://deb.debian.org/debian-debug/ bookworm-debug main&#34;</span> | sudo tee -a /etc/apt/sources.list.d/debug.list</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>Update your package lists:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>Then, install the debug symbols for GIMP, GLib, GTK, and other dependencies:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install gimp-dbgsym
+</span></span><span style="display:flex;"><span>sudo apt install libglib2.0-0-dbgsym
+</span></span><span style="display:flex;"><span>sudo apt install libgtk-3-0-dbgsym libc6-dbg</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<h2>Installing GDB<span class="hx-absolute -hx-mt-20" id="installing-gdb"></span>
+    <a href="#installing-gdb" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>GDB (GNU Debugger) is a powerful tool that allows you to debug and troubleshoot applications. It provides a wide range of features, including the ability to run an application in debug mode, set breakpoints, and inspect variables.</p>
+<p>Install GDB with:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install gdb</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>Note that GDB is a separate tool from debuginfod, which provides access to debugging information. GDB uses this information to provide a more detailed view of the application&rsquo;s execution flow.</p>
+<h3>Configure GDB<span class="hx-absolute -hx-mt-20" id="configure-gdb"></span>
+    <a href="#configure-gdb" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>The .gdbinit file allows you to configure GDB with default options and commands, streamlining the debugging process.</p>
+<p>Here’s a simple script that creates a .gdbinit file with basic logging settings:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define the path to the .gdbinit file and log folder/file</span>
+</span></span><span style="display:flex;"><span>GDBINIT_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.gdbinit&#34;</span>
+</span></span><span style="display:flex;"><span>LOG_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/gdb_logs&#34;</span>
+</span></span><span style="display:flex;"><span>LOG_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$LOG_DIR<span style="color:#e6db74">/gdb_log.txt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create the logging directory if it doesn&#39;t exist</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d <span style="color:#e6db74">&#34;</span>$LOG_DIR<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Creating logging directory at </span>$LOG_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    mkdir -p <span style="color:#e6db74">&#34;</span>$LOG_DIR<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create the log file if it doesn&#39;t exist</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Creating log file at </span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    touch <span style="color:#e6db74">&#34;</span>$LOG_FILE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create or overwrite the .gdbinit file with the necessary GDB settings</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Creating or updating .gdbinit in </span>$HOME<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat &gt; <span style="color:#e6db74">&#34;</span>$GDBINIT_PATH<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&lt;&lt; EOL
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set debuginfod enabled on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set logging file $LOG_FILE
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set logging enabled on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set logging overwrite on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOL</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;.gdbinit file has been created with the following content:&#34;</span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&#34;</span>$GDBINIT_PATH<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Default GDB settings have been applied. Logs will be saved to </span>$LOG_FILE<span style="color:#e6db74">.&#34;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>This script sets GDB to automatically log output and enables debuginfod.</p>
+<h2>Build Debug Versions<span class="hx-absolute -hx-mt-20" id="build-debug-versions"></span>
+    <a href="#build-debug-versions" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>To debug issues with GIMP, it&rsquo;s often necessary to build debug versions of the underlying libraries, including BABL, GEGL, and GIMP itself. This allows you to get more detailed information about the execution flow of the program and identify the source of errors.</p>
+<p>There is a switch to set when we build these libraries and GIMP that allow the
+debugging to take place. We build debug versions, using the same method as described
+<a href="https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/Building-Artbox#a-build-script-for-artbox-babl-and-gegl" target="_blank" rel="noopener">here</a>, except that <code>build_type=&quot;release&quot;</code> is set to <code>build_type=&quot;debug&quot;</code>. Build all
+three with the debug option set before continuing.</p>
+<p>Also, keep in mind that you&rsquo;ll need to rebuild the libraries with the build_type set to &ldquo;release&rdquo; when you&rsquo;re finished debugging, in order to get the best performance out of GIMP.</p>
+<h2>Launch an App under GDB<span class="hx-absolute -hx-mt-20" id="launch-an-app-under-gdb"></span>
+    <a href="#launch-an-app-under-gdb" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The following bash script helps automate the process of launching GIMP in debug mode using GDB. It checks for necessary files and environment variables before running the debugger. When prompted, if you choose &lsquo;y&rsquo;, the script will break at the main function to check if debug symbols are available. At the GDB prompt, use &lsquo;info sharedlibrary&rsquo; to view the availability of symbols. Missing symbols will be indicated with an asterisk (*).</p>
+<p>Ensure you have a &lsquo;build_env.sh&rsquo; <a href="https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/Building-Artbox#environment-variables" target="_blank" rel="noopener">file</a> in the same directory. This file should define environment variables, such as GIMP_PREFIX, required for the GIMP build.</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># store the folder path for this script</span>
+</span></span><span style="display:flex;"><span>script_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>dirname <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>realpath <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export DEBUGINFOD_URLS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://debuginfod.debian.net/&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if &#34;build_env.sh&#34; exists in the same directory as this script, source it</span>
+</span></span><span style="display:flex;"><span>definitions_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$script_dir<span style="color:#e6db74">/build_env.sh&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -f <span style="color:#e6db74">&#34;</span>$definitions_file<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Error: file &#39;build_env.sh&#39; not found in </span>$script_dir<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  read -n <span style="color:#ae81ff">1</span> -r -s -p <span style="color:#e6db74">&#34;Press any key to exit...&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>source <span style="color:#e6db74">&#34;</span>$definitions_file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if GIMP_PREFIX is set and valid</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span>$GIMP_PREFIX<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Error: GIMP_PREFIX is not set.&#34;</span>
+</span></span><span style="display:flex;"><span>  read -n <span style="color:#ae81ff">1</span> -r -s -p <span style="color:#e6db74">&#34;Press any key to exit...&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify GIMP binary path</span>
+</span></span><span style="display:flex;"><span>gimp_binary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>GIMP_PREFIX<span style="color:#e6db74">}</span><span style="color:#e6db74">/bin/gimp-2.99&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -x <span style="color:#e6db74">&#34;</span>$gimp_binary<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Error: GIMP not found or not executable at </span>$gimp_binary<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  read -n <span style="color:#ae81ff">1</span> -r -s -p <span style="color:#e6db74">&#34;Press any key to exit...&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ask user if they want to test debug symbol availability</span>
+</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;Launching GIMP in debug mode.&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Check debug symbols with a breakpoint?&#34;</span>
+</span></span><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Type &#39;y&#39; to test or &#39;n&#39; to skip [default: n]: &#34;</span> user_choice
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Default to skipping debug symbol testing if user input is empty</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -z <span style="color:#e6db74">&#34;</span>$user_choice<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  user_choice<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;n&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Perform action based on user input</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$user_choice<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo -e <span style="color:#e6db74">&#34;\nTesting debug symbols with a breakpoint at &#39;main&#39;.&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Enter &#39;info sharedlibrary&#39; at the (gdb) prompt to view availablity.&#34;</span>
+</span></span><span style="display:flex;"><span>  echo -e <span style="color:#e6db74">&#34;Enter &#39;continue&#39; at the (gdb) prompt to launch GIMP in debug mode.\n&#34;</span>
+</span></span><span style="display:flex;"><span>  gdb -q -ex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;break main&#34;</span> -ex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run&#34;</span> --args <span style="color:#e6db74">&#34;</span>$gimp_binary<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Launching GIMP directly in debug mode.&#34;</span>
+</span></span><span style="display:flex;"><span>  gdb -q -ex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run&#34;</span> --args <span style="color:#e6db74">&#34;</span>$gimp_binary<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>In the following output example, &lsquo;Yes&rsquo; indicates that debug symbols are available for the shared library, while &lsquo;(*)&rsquo; means that debug symbols are missing for that library.</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<pre><code>Launching GIMP in debug mode.
+Check debug symbols with a breakpoint?
+Type &#39;y&#39; to test or &#39;n&#39; to skip [default: n]: y
+
+Testing debug symbols with a breakpoint at &#39;main&#39;.
+Enter &#39;info sharedlibrary&#39; at the (gdb) prompt to view availablity.
+Enter &#39;continue&#39; at the (gdb) prompt to launch GIMP in debug mode.
+
+Reading symbols from /home/mark/code/gnome/bin/gimp-2.99...
+Breakpoint 1 at 0x154fc1: file ../app/main.c, line 544.
+Starting program: /home/mark/code/gnome/bin/gimp-2.99 
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  &lt;https://debuginfod.debian.net/&gt;
+Enable debuginfod for this session? (y or [n]) y
+Debuginfod has been enabled.
+To make this setting permanent, add &#39;set debuginfod enabled on&#39; to .gdbinit.
+[Thread debugging using libthread_db enabled]                                                                                  
+Using host libthread_db library &#34;/lib/x86_64-linux-gnu/libthread_db.so.1&#34;.
+                                                                                                                               
+Breakpoint 1, main (argc=1, argv=0x7fffffffe5f8) at ../app/main.c:544
+544	  GError         *error = NULL;
+(gdb) info sharedlibrary 
+From                To                  Syms Read   Shared Object Library
+0x00007ffff7fcc060  0x00007ffff7ff0f51  Yes         /lib64/ld-linux-x86-64.so.2
+0x00007ffff7f98560  0x00007ffff7fb0bbe  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpbase-3.0.so.0
+0x00007ffff7f72ca0  0x00007ffff7f8005c  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpcolor-3.0.so.0
+0x00007ffff7f554e0  0x00007ffff7f643d0  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpconfig-3.0.so.0
+0x00007ffff7f44220  0x00007ffff7f47cb7  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpmath-3.0.so.0
+0x00007ffff7f3c490  0x00007ffff7f3e64f  Yes         /home/mark/code/gnome/lib/x86_64-linux-gnu/libgimpmodule-3.0.so.0
+
+...
+0x00007ffff2001040  0x00007ffff20010f9  Yes (*)     /lib/x86_64-linux-gnu/libicudata.so.72
+...
+...
+
+0x00007ffff1fcc6b0  0x00007ffff1fe19be  Yes         /lib/x86_64-linux-gnu/libgpg-error.so.0
+(*): Shared library is missing debugging information.
+(gdb) </code></pre><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<h2>GDB Server<span class="hx-absolute -hx-mt-20" id="gdb-server"></span>
+    <a href="#gdb-server" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The GDB server is a tool that allows you to debug GIMP remotely, even when the system is frozen. This can be useful when you need to debug a crash or other issue that causes the system to become unresponsive.</p>
+<p>First, install the GDB server:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install gdbserver</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>We can use a bash script again, to source our environment variables before running the server. Save it in your bash folder where &ldquo;build_env.sh&rdquo; is also kept, call it &lsquo;gdbserver.sh&rsquo;</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e"># export build variables</span>
+</span></span><span style="display:flex;"><span>script_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>dirname <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>realpath <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source <span style="color:#e6db74">&#34;</span>$script_dir<span style="color:#e6db74">/build_env.sh&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gdbserver :9999 <span style="color:#e6db74">`</span>which gimp-2.99<span style="color:#e6db74">`</span> --g-fatal-warnings</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>open a terminal in your bash folder and run &lsquo;gdbserver.sh&rsquo;:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash gdbserver.sh</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>The server will output something like:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Process /home/mark/code/gnome/bin/gimp-2.99 created; pid <span style="color:#f92672">=</span> <span style="color:#ae81ff">14224</span>
+</span></span><span style="display:flex;"><span>Listening on port <span style="color:#ae81ff">9999</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<h3>Using TTYs in Linux<span class="hx-absolute -hx-mt-20" id="using-ttys-in-linux"></span>
+    <a href="#using-ttys-in-linux" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>TTYs (Teletype terminals) allow you to interact with the Linux system through a text-based interface, which is helpful for troubleshooting.</p>
+<p>To switch to a TTY, use Ctrl + Alt + F1 through F6. To return to the graphical interface, use Ctrl + Alt + F7 (or F2 on some systems).</p>
+<p>To return to the graphical interface, use <code>Ctrl + Alt + F7</code> (or <code>F2</code> on some systems).</p>
+<p>Once in a TTY, log in and run GDB to connect to the GDB server:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gdb /home/mark/code/gnome/bin/gimp-2.99</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>Then, connect to the GDB server and resume execution:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">(</span>gdb<span style="color:#f92672">)</span> target remote localhost:9999
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>gdb<span style="color:#f92672">)</span> <span style="color:#66d9ef">continue</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>Once GIMP is running in debug mode, you can return to the graphical interface by pressing Ctrl + Alt + F7 (or F2, depending on your system). You should now see GIMP open and ready for interaction.</p>
+<p>To simulate the crash, reproduce the steps that lead to the error. Once the crash occurs, switch back to the TTY where GDB is running by pressing Ctrl along with the Function key you used earlier to enter the TTY (e.g., Ctrl + Alt + F1).</p>
+<p>At the GDB prompt (gdb), enter the following command to gather detailed information from all threads:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>thread apply all backtrace full</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+
+  
+</div>
+<p>Scroll through the backtrace output until the (gdb) prompt reappears, then type quit to exit GDB.</p>
+<p>Now, return to the graphical interface using Ctrl + Alt + F7 (or F2). You will regain control of your desktop, and both GDB and GIMP will have terminated.</p>
+<p>If you configured GDB with logging via a .gdbinit file as outlined earlier, the crash report will be saved in your home directory under gdb_logs. You can review this file to analyze the crash in detail.</p>
 
         </div>
         <div class="hx-mt-16"></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
-        href="/guides/folder/building-a-debug-version/"
-        title="Building a Debug Version"
+        href="/guides/folder/a-linux-system-overview/"
+        title="A Linux System Overview"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
-      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Building a Debug Version</a><a
-        href="/guides/folder/system-backup-clonezilla/"
-        title="System Backup Clonezilla"
+      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>A Linux System Overview</a><a
+        href="/guides/folder/installing-debian/"
+        title="Installing Debian"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left"
-      >System Backup Clonezilla<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+      >Installing Debian<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
         
       </main>
     </article>

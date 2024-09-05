@@ -2,11 +2,11 @@
 type: docs
 ---
 
-### Introduction
+# Introduction
 
 Linux is a powerful and versatile operating system with a vast community of developers. At its core, a Linux system consists of several key components that work together to provide a seamless user experience. This overview will outline the essential parts of a Linux system, including the kernel, distribution, package manager, display manager, desktop environment, and display server (X11 or Wayland).
 
-### Examples of Linux Distribution Configurations
+**Examples of Linux Distribution Configurations**
 
 | **Distribution**   | **Package Manager** | **Display Manager** | **Desktop Environment** | **Display Server** |
 |--------------------|----------------------|----------------------|-------------------------|--------------------|
@@ -16,7 +16,7 @@ Linux is a powerful and versatile operating system with a vast community of deve
 | Fedora             | DNF                  | GDM                  | GNOME                   | Wayland            |
 | Arch Linux         | Pacman               | SDDM                 | KDE Plasma              | X11                |
 
-### Explanation
+### Key Terms
 
 #### Kernel
 The core of the operating system that interfaces directly with the hardware, usually Linux.
