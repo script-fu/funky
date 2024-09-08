@@ -3,7 +3,7 @@ title: Themes
 type: docs
 ---
 
-### Introduction
+## Introduction
 
 Personalize your creative experience with a selection of custom themes for GIMP and Artbox! Whether you prefer a high-contrast interface for easy visibility, a warm and cozy palette, or a dark theme for a more focused environment, these themes offer a variety of options to suit your style. Easy to install and compatible with multiple platforms, these themes will help you tailor the look and feel of your Artbox interface to match your preferences. 
 

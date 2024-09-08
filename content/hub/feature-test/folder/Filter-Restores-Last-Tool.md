@@ -2,21 +2,21 @@
 type: docs
 ---
 
-### Objective
+# Objective
 
 Removes a longstanding GUI issue.
 
-### Key Concepts and Definitions
+## Key Concepts and Definitions
 
 - **Filter**: A plug-in that processes pixels in a drawable, Hue, Blur etc.
 - **Tool Palette**: The grid of tool buttons, Move Tool, Paintbrush Tool ect.
 
-### Related Links
+## Related Links
 
 - Branches: Artbox and [feature-filter-restores-last-tool](https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-filter-restores-last-tool?ref_type=heads)
 - old [Merge Request](https://gitlab.gnome.org/GNOME/gimp/-/merge_requests/1572)
 
-### Design Revisions
+## Design Revisions
 
 | **Revision**  | **Current Design**  | **Issues**  | **Changes** |
 |--------------------------------------------|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------|

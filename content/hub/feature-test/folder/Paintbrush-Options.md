@@ -2,21 +2,21 @@
 type: docs
 ---
 
-### Objective
+# Objective
 
 Improve the usability of the Paintbrush GUI.
 
-### Key Concepts and Definitions
+## Key Concepts and Definitions
 
 - **Reset Brush Option**: Resets the slider to a default value.
 - **Brush Link Button**: Links the paintbrush options to the brush editor options.
 - **Expander**: A collapsible GUI section for organizing lesser-used options.
 
-### Related Links
+## Related Links
 
 - Branches: Artbox and [feature-paintbrush-options](https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-paintbrush-options?ref_type=heads)
 
-### Design Revisions
+## Design Revisions
 
 | **Revision**  | **Current Design**  | **Issues**  | **Changes** |
 |--------------------------------------------|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------|

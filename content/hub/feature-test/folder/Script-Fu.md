@@ -2,18 +2,19 @@
 type: docs
 ---
 
-### Objective
+# Objective
 
 Extend Script-Fu to include additional functions that help the user.
 
-### Key Concepts and Definitions
+## Key Concepts and Definitions
 
 - **Script-Fu**: A scripting language based on Scheme 
 
-### Related Links
+## Related Links
+
 - Branches: Artbox and [feature-additional-script-fu](https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-additional-script-fu?ref_type=heads)
 
-### Additional Procedures
+## Additional Procedures
 
 | **Command** | **Purpose** |
 | --- | --- |

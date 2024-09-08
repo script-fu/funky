@@ -2,20 +2,21 @@
 type: docs
 ---
 
-### Objective
+# Objective
 
 Improve the usability of the Toolbox.
 
-### Key Concepts and Definitions
+## Key Concepts and Definitions
 
 - **Flowbox**: A flexible container that one to three widgets are arranged in. The FG/BG colour area, the active resources and active image.
 - **Tool Palette**: The grid of tool buttons, Move Tool, Paintbrush Tool ect.
 - **FG/BG**: The active foreground & background colour widget.
 
-### Related Links
+## Related Links
+
 - Branches: Artbox and [feature-toolbox](https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-toolbox?ref_type=heads)
 
-### Revised Preferences
+## Revised Preferences
 
 - Preferences -> Toolbox -> Appearance
   - Show colour, active resources and active image
@@ -27,7 +28,7 @@ Improve the usability of the Toolbox.
       - Right
   - Scale the colour widget
 
-### Design Revisions
+## Design Revisions
 
 | **Revision**  | **Current Design**  | **Issues**  | **Changes** |
 |--------------------------------------------|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------|

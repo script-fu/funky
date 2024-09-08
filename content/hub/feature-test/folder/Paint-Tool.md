@@ -2,15 +2,15 @@
 type: docs
 ---
 
-### Objective
+# Objective
 
 Improve the quality of the painting experience in Artbox
 
-### Related Links
+## Related Links
 
 - Branches: Artbox and [feature-painttool](https://gitlab.gnome.org/pixelmixer/artbox/-/tree/feature-painttool?ref_type=heads)
 
-### Design Revisions
+## Design Revisions
 
 | **Revision**  | **Current Design**  | **Issues**  | **Changes** |
 |--------------------------------------------|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------|
@@ -19,6 +19,6 @@ Improve the quality of the painting experience in Artbox
 | **3. Simple Brush Boundary**   | Image brushes are drawn as complex outlines based on the image | They can make a distracting paintbrush when the image is large and noisy  | Draw a simple circular boundary if the 'Simple Brush Boundary' option is checked in the Paintbrush Options |
 
 
-### Notes
+## Notes
 
 This feature branch only works when merged with the 'artbox' branch or rebased onto the 'options-paintbrush-simple-boundary' branch

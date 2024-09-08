@@ -2,17 +2,17 @@
 type: docs
 ---
 
-## Install and Build
+# Install and Build
 
-### Deleting the _build directory Causes a Meson Fail
+## Deleting the _build directory Causes a Meson Fail
 
 Occasionally, to get GIMP building correctly, you may need to delete the **_build** directory Meson creates, note the '_'. Do not delete the 'build' directory! This clears all the old build data and allows a fresh try. However, if you use `--wipe` or `--reconfigure` in your build process, and the _build directory is not present or empty, Meson may fail. This could be because Meson requires the _build directory to be present and contain a valid build configuration in order to reconfigure or wipe the build.
 
-#### Avoiding the Issue
+### Avoiding the Issue
 
 To avoid this issue, make sure to create the _build directory and run Meson at least once without --wipe or --reconfigure before attempting to change the compiler. This will ensure that the _build directory contains a valid build configuration, and Meson will be able to reconfigure or wipe the build successfully. Alternatively, we can do a check in the build script for this event.
 
-#### load error: libavcodec.so.61:
+### load error: libavcodec.so.61:
 
 If you see error messages like this during start up, it's because we need a newer version of a particular
 library than the one packaged with the Linux distribution we are using.
@@ -60,6 +60,7 @@ the gegl folder.
 A build error may occur if we haven't built BABL or GEGL for a while and there is a new feature used by GIMP, and therefore Artbox, that is not available locally.  We need to get the latest version of BABL and GEGL then rebuild those libraries.
 
 This sequence of git instructions will reset your local babl and gegl folders to be a clone of the remote folders. WARNING: Any changes you made locally in the master folder, will be lost.
+
 ```Bash
 cd $GIMP_PREFIX/build/gegl
 git checkout master
@@ -73,9 +74,11 @@ git fetch origin
 git reset --hard origin/master
 git clean -df
 ```
+
 Remember to be careful when resetting your local repositories, as any local changes you may have made will be lost.
 
 Rebuild BABL and GEGL using the previously described build script:
+
 ```shell
 build_babl="true"
 build_gegl="true"
