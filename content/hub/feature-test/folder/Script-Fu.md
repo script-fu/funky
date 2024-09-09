@@ -19,6 +19,5 @@ Extend Script-Fu to include additional functions that help the user.
 | **Command** | **Purpose** |
 | --- | --- |
 | (gimp-context-get-display) | Get the active display ID |
-| (gimp-context-erase-paint-mode-toggle) | Toggle the paint mode to erase |
 | (gimp-context-eraser-toggle) | Toggle the tool to the eraser. |
 | (gimp-items-set-visible) | Set the visibility of a vector list of items |
