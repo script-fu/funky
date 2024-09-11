@@ -14,7 +14,7 @@ Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbo
 * [Install Location](#install-location)
 * [Clone the Source Code Repositories](#clone-the-source-code-repositories)
 * [Environment Variables](#environment-variables)
-* [A Build Script for Artbox, BABL and GEGL](#a-build-script-for-artbox-babl-and-gegl)
+* [Build Artbox, BABL and GEGL](#build-artbox-babl-and-gegl)
 * [Desktop Launcher (System Specific)](#desktop-launcher-system-specific)
 * [Conclusion](#conclusion)
 
@@ -282,7 +282,12 @@ cd ${GIMP_PREFIX}/build/
 # Build and install Artbox
 if [ $build_artbox == "true" ]; then
   mkdir -p artbox/_build
-  cd artbox/_build
+
+   # update the gimp-data submodule
+  cd ${GIMP_PREFIX}/build/artbox
+  git submodule update
+
+  cd ${GIMP_PREFIX}/build/artbox/_build
 
   # Construct a build command
   MESON_SETUP="meson setup .. -Dprefix=${GIMP_PREFIX} --buildtype=$build_type"
@@ -301,13 +306,17 @@ fi
 
 # compile
 if [ $compile_artbox == "true" ]; then
+
+ # update the gimp-data submodule
+  cd ${GIMP_PREFIX}/build/artbox
+  git submodule update
+
   cd ${GIMP_PREFIX}/build/artbox/_build
+
   ninja
   ninja install
   echo -e "\n*** Compiled Artbox ***\n"
 fi
-
-read -n 1 -r -s -p "Press any key to exit..."
 ```
 
 To run the build script you can open a terminal in the bash folder and enter: `bash artbox.sh`
