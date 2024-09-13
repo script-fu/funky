@@ -229,94 +229,102 @@ export GI_TYPELIB_PATH="${GIMP_PREFIX}/${LIB_DIR}/${LIB_SUBDIR}girepository-1.0$
 
 To build or run the software, we can use another shell script, that uses this file to build, compile or run the software. Copy the following and save it as artbox.sh in the bash folder. Then in your File Manager, right click the artbox.sh file, properties, permissions, "Allow executing file as program".
 
-Notice that BABL and GEGL are also being built, these two additional packages don't have to be built everytime.
-
+Notice that BABL and GEGL are also being built, these two additional packages don't have to be built every time. When
+COMPILE_ONLY is set to "true", after a full build perhaps, they are skipped.
 
 ```shell
 #!/usr/bin/env bash
+# This script automates the build process for either Artbox (a GIMP fork) or
+# GIMP itself. It includes optional steps to build libraries like BABL and GEGL
+# It DEPENDS on "build_env.sh" being available in the same script directory
 
-# sets the type of build "release" or "debug
-build_type="release"
+# Default configuration
+COMPILE_ONLY="true"    # Set to "true" to compile without a full build
 
-# set to "false" to skip the build
-build_babl="true"
-build_gegl="true"
-build_artbox="true"
+BUILD_BABL="true"       # Set to "false" to skip building BABL
+BUILD_GEGL="true"       # Set to "false" to skip building GEGL
+BUILD_FORK="artbox"     # Set to "gimp"  to build GIMP instead
 
-# code changes can be compiled and tested, rather than building everything
-compile_artbox="false"
+# Find the directory where this script is located
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
-# find the directory this script was run in
-script_dir="$(dirname "$(realpath "$0")")"
+# Load the environment variables
+source "$SCRIPT_DIR/build_env.sh"
 
-# load the environment variables
-source "$script_dir/build_env.sh"
+# Start in the build directory
+cd "${GIMP_PREFIX}/build/"
 
-# start in the build directory
-cd ${GIMP_PREFIX}/build/
+# A fast compile if requested, skip other the other builds
+if [ "$COMPILE_ONLY" == "true" ]; then
+  echo -e "\n*** Compiling $BUILD_FORK ***\n"
 
-# Build and install BABL
-if [ $build_babl == "true" ]; then
-  mkdir -p babl/_build && cd babl/_build
-  meson setup .. -Dprefix="${GIMP_PREFIX}"
-  ninja
-  ninja install
-  echo -e "\n*** Built BABL ***\n"
-fi
-
-# start in the build directory
-cd ${GIMP_PREFIX}/build/
-
-# Build and install GEGL
-if [ $build_gegl == "true" ]; then
-  mkdir -p gegl/_build && cd gegl/_build
-  meson setup .. -Dprefix="${GIMP_PREFIX}"
-  ninja
-  ninja install
-  echo -e "\n*** Built GEGL ***\n"
-fi
-
-# start in the build directory
-cd ${GIMP_PREFIX}/build/
-
-# Build and install Artbox
-if [ $build_artbox == "true" ]; then
-  mkdir -p artbox/_build
-
-   # update the gimp-data submodule
-  cd ${GIMP_PREFIX}/build/artbox
+  # Update the git submodule for the chosen fork
+  cd "${GIMP_PREFIX}/build/$BUILD_FORK"
   git submodule update
 
-  cd ${GIMP_PREFIX}/build/artbox/_build
+  # Create and navigate to the build directory
+  mkdir -p "${GIMP_PREFIX}/build/$BUILD_FORK/_build"
+  cd "${GIMP_PREFIX}/build/$BUILD_FORK/_build"
 
-  # Construct a build command
-  MESON_SETUP="meson setup .. -Dprefix=${GIMP_PREFIX} --buildtype=$build_type"
-
-  # if the build directory has configuration files, then wipe for a clean build
-  if [ -e meson-logs ]; then
-    MESON_SETUP+=" --wipe"
-  fi
-
-  $MESON_SETUP
+  # Run Ninja to compile
   ninja
   ninja install
 
-  echo -e "\n*** Built Artbox ***\n"
+  echo -e "\n*** Finished compiling $BUILD_FORK ***\n"
+  exit 0 # Early exit after compiling
 fi
 
-# compile
-if [ $compile_artbox == "true" ]; then
+# Build BABL if enabled
+if [ "$BUILD_BABL" == "true" ]; then
+  echo -e "\n*** Building BABL ***\n"
 
- # update the gimp-data submodule
-  cd ${GIMP_PREFIX}/build/artbox
-  git submodule update
+  # Create and navigate to the build directory for BABL
+  mkdir -p babl/_build
+  cd babl/_build
 
-  cd ${GIMP_PREFIX}/build/artbox/_build
-
+  # Run Meson setup and build commands
+  meson setup .. -Dprefix="${GIMP_PREFIX}"  --buildtype="release"
   ninja
   ninja install
-  echo -e "\n*** Compiled Artbox ***\n"
+
+  echo -e "\n*** Finished building BABL ***\n"
+  cd "${GIMP_PREFIX}/build/"
 fi
+
+# Build GEGL if enabled
+if [ "$BUILD_GEGL" == "true" ]; then
+  echo -e "\n*** Building GEGL ***\n"
+
+  # Create and navigate to the build directory for GEGL
+  mkdir -p gegl/_build
+  cd gegl/_build
+
+  # Run Meson setup and build commands
+  meson setup .. -Dprefix="${GIMP_PREFIX}" --buildtype="release"
+  ninja
+  ninja install
+
+  echo -e "\n*** Finished building GEGL ***\n"
+  cd "${GIMP_PREFIX}/build/"
+fi
+
+# Build the chosen version of GIMP (Artbox or GIMP)
+echo -e "\n*** Building $BUILD_FORK ***\n"
+
+# Update the git submodule for the chosen fork
+cd "${GIMP_PREFIX}/build/$BUILD_FORK"
+git submodule update
+
+# Create and navigate to the build directory
+mkdir -p "${GIMP_PREFIX}/build/$BUILD_FORK/_build"
+cd "${GIMP_PREFIX}/build/$BUILD_FORK/_build"
+
+# Run Meson setup and build commands
+meson setup .. -Dprefix="${GIMP_PREFIX}" --buildtype="release"
+ninja
+ninja install
+
+echo -e "\n*** Finished building $BUILD_FORK ***\n"
 ```
 
 To run the build script you can open a terminal in the bash folder and enter: `bash artbox.sh`
@@ -338,13 +346,10 @@ You'll have to change "your-home" to get it to work, this is a Linux thing, on m
 
 ```sh
 gnome-terminal -- /home/mark/code/bash/artbox.sh
-``` 
+```
 
 It also assumes you are using a specific desktop environment (Cinnamon). My tip would be to look at how to create a desktop launcher for your particular system, or copy and edit an existing one you may have.
 
 ## Conclusion
 
 At this point you will have the source code for Artbox, a build script and a desktop launcher. Double clicking the launcher should see a terminal and Artbox will open. There are many ways to make a build script, this is a starting point. If you got to this point, congratulations!
-
-You can also build GIMP in the same manner, replace occurrences of "artbox" in the build script to "gimp".
-
