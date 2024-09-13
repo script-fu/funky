@@ -1,11 +1,11 @@
 ---
 type: docs
-url: "/boxdocs/folder/Installation"
+url: "hub/docs/folder/Installation"
 ---
 
 # Introduction
 
-Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbox. Artbox does not exist as an individual application, it relies on many parts to function and many apps are used to construct it. You need to create a _build environment_ for it first, like an aquarium for a fish. The following is a guide, for a Debian system. It will be a unique process for your system, and may require further research. Good luck!
+Artbox has an [AppImage](https://script-fu.github.io/artbox/hub/docs/folder/AppImage/) and is available to download. If you are interested in building your own version from the source code then read on. Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbox. The program relies on many parts to function and many apps are used to construct it. You need to create a _build environment_ for it first, like an aquarium for a fish. The following is a guide, for a Debian system. It will be a unique process for your system, and may require further research. Good luck!
 
 ## Content
 
@@ -22,15 +22,14 @@ Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbo
 
 Before we dive into building Artbox, you'll need to install and learn the basics of Git, a version control system that helps you manage and share source code. Git is an essential tool for any developer, and understanding how to use it will make the rest of the build process much easier. If you're new to Git, take a few minutes to read through [A Beginner's Guide to Using Git on Linux](https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/A-Beginner's-Guide-to-Using-Git-on-Linux) to get up to speed.
 
-
 ## Dependencies
 
 Here is the [official guide](https://developer.gimp.org/core/setup/build/linux/). The suggestion to look at [this](https://gitlab.gnome.org/GNOME/gimp/-/blob/master/.gitlab-ci.yml) file, that builds GIMP in the GitLab CI environment, is worth following. That file lists all the dependencies the GIMP Dev build process needs. By using that information we can make a bash script to install those packages on our system. Save the following code block to a file called "install-GIMP-dep.sh" and execute it by following the instructions below.
 
 To execute the script:
 
-- Open a terminal in the script folder.
-- Run the command `bash install-GIMP-dep.sh` to execute the script.
+* Open a terminal in the script folder.
+* Run the command `bash install-GIMP-dep.sh` to execute the script.
 
 ## Important
 
@@ -145,7 +144,6 @@ fi
 read -n 1 -r -s -p "Press any key to exit"
 ```
 
-
 ## Install Location
 
 After the Git challenge and package installation, we can proceed with the task. We'll keep the files we need in repository folders on the hard-drive, it's good to call the root folder "code", then put in a sub-folder, like "gnome", then another sub-folder "build" and one called "bash"
@@ -155,7 +153,6 @@ After the Git challenge and package installation, we can proceed with the task. 
     * bash
     * gnome
       * build
-
 
 These shell commands will create that little structure when run in a terminal, or you can do it using the File Manager.
 
@@ -182,20 +179,19 @@ git clone https://gitlab.gnome.org/pixelmixer/artbox.git
 
 The simple folder structure is now populated with thousands of files, and there's more to be made automatically by the build process.
 
-- Home
-  - code
-    - bash
-    - gnome
-      - build
-        - babl
-        - gegl
-        - gimp
-        - artbox
-
+* Home
+  * code
+    * bash
+    * gnome
+      * build
+        * babl
+        * gegl
+        * gimp
+        * artbox
 
 ## Environment Variables
 
-The software that is about to be built, needs to know a few things about its environment. We do this by exporting some environmental variables. Copy the following into a file, call it **build_env.sh** and save it in the "bash" folder. 
+The software that is about to be built, needs to know a few things about its environment. We do this by exporting some environmental variables. Copy the following into a file, call it **build_env.sh** and save it in the "bash" folder.
 
 ```bash
 #!/usr/bin/env bash
@@ -239,7 +235,7 @@ COMPILE_ONLY is set to "true", after a full build perhaps, they are skipped.
 # It DEPENDS on "build_env.sh" being available in the same script directory
 
 # Default configuration
-COMPILE_ONLY="true"    # Set to "true" to compile without a full build
+COMPILE_ONLY="false"    # Set to "true" to compile without a full build
 
 BUILD_BABL="true"       # Set to "false" to skip building BABL
 BUILD_GEGL="true"       # Set to "false" to skip building GEGL
@@ -342,7 +338,7 @@ Type=Application
 Name[en_GB]=Artbox
 ```
 
-You'll have to change "your-home" to get it to work, this is a Linux thing, on my system the line would be: 
+You'll have to change "your-home" to get it to work, this is a Linux thing, on my system the line would be:
 
 ```sh
 gnome-terminal -- /home/mark/code/bash/artbox.sh

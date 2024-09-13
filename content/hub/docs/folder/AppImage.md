@@ -1,6 +1,6 @@
 ---
 type: docs
-url: "/boxdocs/folder/AppImage"
+url: "hub/docs/folder/AppImage"
 ---
 
 # Introduction
