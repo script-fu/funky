@@ -40,3 +40,95 @@ Log in to your GitLab account and navigate to your user settings. Click on 'SSH 
  $ ssh -T git@ssh.gitlab.gnome.org
  Welcome to GitLab, @username!
 ```
+
+## Basic Git Commands
+
+Now that you've got Git installed and have set up your SSH key with GitLab, let's go through some essential Git commands for managing repositories. These commands will help you work with existing projects, keeping them up-to-date and making changes safely.
+
+### 1. **Cloning a Repository**
+
+Cloning is the process of creating a local copy of a remote repository. This is useful when you want to work on a project that already exists on GitLab. To clone a repository, use the `git clone` command followed by the repository URL:
+
+```sh
+git clone https://gitlab.com/username/repository.git
+```
+
+Replace `https://gitlab.com/username/repository.git` with the URL of the repository you want to clone. This command will create a local copy of the repository in a new directory.
+
+### 2. **Checking Repository Status**
+
+To see if your local repository has any changes or to view its current state, use:
+
+```sh
+git status
+```
+
+This command will show you which files have been modified, added, or deleted in your local copy of the repository.
+
+### 3. **Remote Repositories**
+
+Remote repositories are versions of your project that are hosted online, such as on GitLab. They serve as the central location where your code is stored and can be accessed by others. The default remote repository that Git creates when you clone a project is called `origin`. You can add, remove, or list remote repositories using the following commands:
+
+- **Listing Remotes:**
+
+  To see which remote repositories are linked to your local project, use:
+
+  ```sh
+  git remote -v
+  ```
+
+  This command lists all the remotes and their URLs. Typically, you'll see `origin` listed here.
+
+- **Adding a Remote:**
+
+  If you need to add a new remote repository, you can do so with:
+
+  ```sh
+  git remote add <name> <url>
+  ```
+
+  Replace `<name>` with a name for the remote, and `<url>` with the URL of the repository.
+
+- **Removing a Remote:**
+
+  To remove a remote repository, use:
+
+  ```sh
+  git remote remove <name>
+  ```
+
+  Replace `<name>` with the name of the remote you want to remove.
+
+### 4. **Fetching Changes from the Remote Repository**
+
+If you want to see what changes have been made to the remote repository without applying them to your local copy, use:
+
+```sh
+git fetch origin
+```
+
+This command fetches the latest changes from the remote repository but does not merge them into your local branch. It's a way to check for updates before deciding to incorporate them.
+
+### 5. **Resetting Your Local Repository**
+
+If you want to reset your local repository to match the remote repository exactly, you can use a 'hard' reset. **Warning:** This will overwrite any local changes you've made.
+
+```sh
+git reset --hard origin/branch-name
+```
+
+Replace `branch-name` with the name of the branch you want to reset. This command will discard any local changes and make your local repository identical to the remote repository.
+
+### 6. **Viewing Commit History**
+
+To see a list of changes made to the repository over time, use:
+
+```sh
+git log
+```
+
+This command displays a history of commits, including the author, date, and message for each change. It's useful for understanding what changes have been made and when.
+
+### Summary
+
+These basic Git commands will help you work with repositories, keeping your local copies up-to-date and ensuring you can safely manage remote repositories. Cloning repositories, checking the status of your local copy, and managing remote repositories are key skills for managing projects using Git.

@@ -20,7 +20,7 @@ Artbox has an [AppImage](https://script-fu.github.io/artbox/hub/docs/folder/AppI
 
 ## Git
 
-Before we dive into building Artbox, you'll need to install and learn the basics of Git, a version control system that helps you manage and share source code. Git is an essential tool for any developer, and understanding how to use it will make the rest of the build process much easier. If you're new to Git, take a few minutes to read through [A Beginner's Guide to Using Git on Linux](https://gitlab.gnome.org/pixelmixer/artbox/-/wikis/A-Beginner's-Guide-to-Using-Git-on-Linux) to get up to speed.
+Before we dive into building Artbox, you'll need to install and learn the basics of Git, a version control system that helps you manage and share source code. Git is an essential tool for any developer, and understanding how to use it will make the rest of the build process much easier. If you're new to Git, take a few minutes to read through [Using Git on Linux](https://script-fu.github.io/artbox/hub/guides/folder/using-git-on-linux/) to get up to speed.
 
 ## Dependencies
 
@@ -167,7 +167,7 @@ We are now ready to download from the internet, the source code files we need fo
 
 ## Clone the Source Code Repositories
 
-In a terminal we can download the sources to our build directory:
+In a terminal we can download the sources to our build directory using the Git 'clone' command:
 
 ```shell
 cd $HOME/code/gnome/build
@@ -244,6 +244,9 @@ BUILD_FORK="artbox"     # Set to "gimp"  to build GIMP instead
 # Find the directory where this script is located
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
+# Save the initial directory to return to it later
+INITIAL_DIR="$(pwd)"
+
 # Load the environment variables
 source "$SCRIPT_DIR/build_env.sh"
 
@@ -267,6 +270,11 @@ if [ "$COMPILE_ONLY" == "true" ]; then
   ninja install
 
   echo -e "\n*** Finished compiling $BUILD_FORK ***\n"
+
+  # Return to the initial directory and pause before the exit
+  cd "$INITIAL_DIR"
+  sleep 3
+
   exit 0 # Early exit after compiling
 fi
 
@@ -321,6 +329,10 @@ ninja
 ninja install
 
 echo -e "\n*** Finished building $BUILD_FORK ***\n"
+
+# Return to the initial directory and pause before the exit
+cd "$INITIAL_DIR"
+sleep 3
 ```
 
 To run the build script you can open a terminal in the bash folder and enter: `bash artbox.sh`
@@ -345,6 +357,33 @@ gnome-terminal -- /home/mark/code/bash/artbox.sh
 ```
 
 It also assumes you are using a specific desktop environment (Cinnamon). My tip would be to look at how to create a desktop launcher for your particular system, or copy and edit an existing one you may have.
+
+## Updating to the Latest Development Version
+
+To update Artbox or GIMP to the latest development version, you can perform a 'hard' reset of the local repository to match the remote repository. **Warning:** This process will overwrite any local changes you have made to the code.
+
+### Steps to Update
+
+1. **Navigate to the Local Repository:** First, go to the directory of the repository you want to update.
+2. **Checkout the Desired Branch:** Switch to the branch you want to update. Make sure this is the branch you intend to reset.
+3. **Fetch the Latest Data:** Retrieve the latest changes from the remote repository (origin).
+4. **Reset to the Remote Branch:** Perform a hard reset to align your local branch with the remote branch. This will discard any local changes.
+5. **Rebuild:** Repeat the [building](#build-artbox-babl-and-gegl) process by running the 'artbox.sh' script.
+
+```bash
+cd ${HOME}/code/gnome/build/artbox/
+git checkout artbox
+git fetch origin
+git reset --hard origin/artbox
+```
+
+### Explanation of Commands
+
+* `git checkout artbox`: Switches to the 'artbox' branch. Replace 'artbox' with the name of the branch you want to update if different.
+
+* `git fetch origin`: Downloads the latest changes from the remote repository (`origin`) but does not merge them into your local branch.
+
+* `git reset --hard origin/artbox`: Resets your current branch to match the state of the `origin/artbox` branch. This is a 'hard' reset, meaning any local changes will be lost.
 
 ## Conclusion
 
