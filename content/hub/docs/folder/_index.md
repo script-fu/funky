@@ -5,6 +5,8 @@ type: docs
 
 ## Introduction
 
-Welcome to this series of guides designed for those who are new to Linux and want to explore its capabilities. Whether you're wondering what Linux is, how to navigate its different distributions, or looking to learn about essential tools like Git, Debian, and Clonezilla for backups, these guides will help you get started. Each guide provides a clear, step-by-step approach to understanding and using Linux, breaking down complex concepts into simple terms.
+This series of guides is designed for those interested in building Artbox or GIMP locally. You'll find detailed instructions for installing Artbox, complete with example Bash scripts to guide you through the process.
+
+For those looking to dive deeper, the 'Technical Guide' provides an in-depth look at the structure of an Artbox build and how it relates to GIMP. Additionally, the 'Data Guide' offers a closer examination of the GIMP 'gimp-data' folder. These technical guides are more advanced and aim to give you a comprehensive understanding of the intricacies involved in building and customizing these applications.
 
 ![seaside](/images/gallery/at_the_seaside_tlined_final.webp)

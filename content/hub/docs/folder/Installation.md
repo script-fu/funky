@@ -5,7 +5,7 @@ url: "hub/docs/folder/Installation"
 
 # Introduction
 
-Artbox has an [AppImage](https://script-fu.github.io/artbox/hub/docs/folder/AppImage/) and is available to download. If you are interested in building your own version from the source code then read on. Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbox. The program relies on many parts to function and many apps are used to construct it. You need to create a _build environment_ for it first, like an aquarium for a fish. The following is a guide, for a Debian system. It will be a unique process for your system, and may require further research. Good luck!
+Artbox has an [AppImage](https://script-fu.github.io/artbox/hub/docs/folder/AppImage/) made for a Debian based system, that is available to download. If you are interested in building your own version from the source code then read on. Artbox is a modified version of GIMP, if you can build GIMP, you can build Artbox. The program relies on many parts to function and many apps are used to construct it. You need to create a _build environment_ for it first, like an aquarium for a fish. The following is a guide, for a Debian system. It will be a unique process for your system, and may require further research. Good luck!
 
 ## Content
 
@@ -387,4 +387,4 @@ git reset --hard origin/artbox
 
 ## Conclusion
 
-At this point you will have the source code for Artbox, a build script and a desktop launcher. Double clicking the launcher should see a terminal and Artbox will open. There are many ways to make a build script, this is a starting point. If you got to this point, congratulations!
+At this point you will have the source code for Artbox, a build script and a desktop launcher. Double clicking the launcher should see a terminal and Artbox will open. There are many ways to make a build script, this is a starting point. If you got this far, congratulations!
