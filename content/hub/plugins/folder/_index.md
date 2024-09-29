@@ -17,6 +17,5 @@ The AppImage does not include them at the moment, for the AppImage version:
 
 ## Related Sites
 
-[Script Fu Plugins](https://script-fu.github.io/2023/08/13/Getting-Started.html)  
 [GIMP documentation](https://docs.gimp.org/en/gimp-concepts-script-fu.html)  
 [Scheme](https://www.scheme.org/)
