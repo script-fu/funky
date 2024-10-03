@@ -3,10 +3,22 @@ title: "About"
 type: docs
 ---
 
-Artbox is a digital painting and illustration application for Linux, specifically designed to cater to the needs of artists. It is an open-sourced, artist-adjusted version of GIMP, which allows for more flexibility and customization. The intention behind Artbox is to add new features and modify GUI interactions to make the application more fun and productive for artists. While GIMP is a powerful and versatile tool, its broad user base and design requirements can make it difficult to introduce significant changes. Artbox addresses this limitation by building on top of the GIMP codebase, adding new features that can do more than traditional plug-ins. However, managing these changes carefully is crucial to ensure that Artbox remains stable and compatible with the underlying GIMP codebase.
+## Ongoing Development: A Journey in Iteration
 
-**Use at your own risk**, it's _not_ GIMP stable. When working in Artbox I use [incremental saving](https://script-fu.github.io/2024/05/16/IncrementalSave.html) and an [auto-save](https://script-fu.github.io/2023/04/26/AlmostAutosave.html). Artbox is hardcoded to use a different .config folder called 'Artbox'.
+This site is very much a **work in progress**, evolving as I continue to learn and refine my understanding of Script-Fu and functional programming. I'll be adding content **slowly and carefully**, following an **iterative approach**, much like writing functional code. There may not be much here at first, but I hope you’ll check back from time to time to see how things are progressing.
 
-Artbox is powered by the [GNU Image Manipulation Program](https://www.gimp.org/) open source project.
+To kick things off, here are a couple of **functional-style plugins** I’ve developed:
 
-![artbox-logo](/images/artbox-logo.webp)
+- **Autosave**: Automatically saves your work at regular intervals.
+- **Incremental Save**: Creates sequentially numbered backups of your file, ensuring you never lose progress.
+
+Both the plug-ins utilize a set up plug-in, they help the main plug in do its core task. For the plug-in to function the set-up plug-in needs to be installed as well. Feel free to download, experiment, and even modify these plug-ins as you start your own Script-Fu journey!
+
+These plug-ins currently only work in the latest [**GIMP development version**](https://gitlab.gnome.org/GNOME/gimp/-/commits/master?ref_type=heads) or [**Artbox**](https://script-fu.github.io/artbox/), my custom GIMP build. Once **GIMP 3** is officially released as a Flatpak, they should work fine there too. They may not work on Windows—I've shifted to Linux for development—but with a small tweak or two, they might work just fine.
+
+### How to Install the Plugins
+
+1. **Locate or create a plug-ins folder**: In GIMP, go to **Edit → Preferences → Folders → Plug-ins**.
+2. **Download and extract** the [plugins.zip](/funky/downloads/plugins.zip) to that folder.
+3. **Enable execution permissions**: Right-click the `<plugin-name.scm>` inside the extracted plugin folder, select **Properties**, then go to **Permissions** and check "Allow executing file as program."
+4. **Restart GIMP**.
