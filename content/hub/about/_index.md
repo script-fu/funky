@@ -22,3 +22,15 @@ These plug-ins currently only work in the latest [**GIMP development version**](
 2. **Download and extract** the [plugins.zip](/funky/downloads/plugins.zip) to that folder.
 3. **Enable execution permissions**: Right-click the `<plugin-name.scm>` inside the extracted plugin folder, select **Properties**, then go to **Permissions** and check "Allow executing file as program."
 4. **Restart GIMP**.
+
+## Keyboard Shortcut
+
+This forces GIMP to save the shortcut for the next session. First, search for the plugin name, and assign a shortcut.
+
+_Edit -> Keyboard Shortcuts_
+
+Once the shortcut is working as you like, save your work then;  
+
+_File -> Quit_
+
+When GIMP restarts, your plugin should be activated by the assigned key.
