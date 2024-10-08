@@ -66,8 +66,23 @@ categoryId = "<category ID>"
 
 [[menu.main]]
 name = "Plug-ins"
-pageRef = "hub/about/"
+pageRef = "hub/plug-ins/folder"
 weight = 1
+
+[[menu.main]]
+name = "Tools"
+pageRef = "hub/tools/folder"
+weight = 2
+
+[[menu.main]]
+name = "About"
+pageRef = "hub/about/"
+weight = 3
+
+[[menu.main]]
+name = "Patreon"
+pageRef = "hub/about/Patreon"
+weight = 4
 
 [[menu.main]]
 name = "Search"

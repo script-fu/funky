@@ -18,5 +18,8 @@ So if you're here, it’s because you’re curious—not just about making GIMP 
 
 
 {{< cards >}}
+  {{< card link="hub/tools/folder" title="Tools" icon="clipboard-check" >}}
   {{< card link="hub/about/" title="About" icon="information-circle" >}}
+  {{< card link="hub/plug-ins/folder" title="Plug-ins" icon="puzzle" >}}
+  {{< card link="hub/about/Patreon" title="Patreon" title="Patreon" icon="heart" >}}
 {{< /cards >}}

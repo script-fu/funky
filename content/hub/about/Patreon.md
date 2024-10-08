@@ -13,5 +13,3 @@ I've been on a creative journey with pixels and code since 1984, starting with t
 {{< cards >}}
   {{< card link="https://www.patreon.com/pixelmixer/membership" title="Patreon" icon="heart" >}}
 {{< /cards >}}
-
-![coffee](/images/gallery/cup.webp)
