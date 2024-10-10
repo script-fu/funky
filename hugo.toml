@@ -1,10 +1,11 @@
 baseURL = 'https://script-fu.github.io/funky/'
 languageCode = 'en-GB'
-title = 'funky'
+title = 'Funky'
 theme = 'hextra'
 
 [params]
 description = "Functional Programming using Script-Fu"
+keywords = "GIMP, Artbox, plugins, plug-ins, Linux, Git, tutorials, Script-Fu, functional programming"
 
 [params.theme]
 default = "dark"  # light | dark | system
