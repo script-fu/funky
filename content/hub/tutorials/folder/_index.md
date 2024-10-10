@@ -5,14 +5,18 @@ type: docs
 
 ## Introduction
 
-Let's learn how to write a Script-Fu plug-in for GIMP! Slay those repetitive tasks with a little bit of logic and strategy. We'll be going from the traditional starting point, a "Hello world!" script to deliciously complex processes.
+Let's dive into creating a Script-Fu plug-in for GIMP! Say goodbye to repetitive tasks with a little bit of logic and strategy. We'll start with the classic "Hello world!" script and gradually move toward more complex and satisfying solutions.
 
-Managing that complexity requires a solid foundation, so let's begin with the functional concepts that will be our toolkit to tackle any kind of organizational and image processing task. These include:
+To manage that complexity, we’ll take inspiration from functional programming. This means **breaking down tasks into smaller, reusable parts**, keeping things simple, and using clear function names to make the code more understandable and maintainable. By following these principles, we’ll create efficient, flexible plug-ins that are easy to work with.
 
-- Immutability: Once data is created, it can’t be changed, which helps avoid unexpected side effects.
-- Pure Functions: Functions that always produce the same output for the same input and have no external side effects.
-- Recursion: Solving problems by having functions call themselves.
-- Higher-order Functions: Functions that can take other functions as arguments or return them as results.
-- First-class Functions: Treating functions like any other data, meaning you can assign them to variables or pass them as arguments.
+Along the way, you’ll learn how to add **debug messages** to your code to help you spot issues as you work, allowing you to diagnose problems yourself. Plus, we’ll implement **validation testing** to ensure your code is reliable and behaves as expected.
 
-These concepts might sound a bit intense, but don’t worry, we’ll break them down with practical examples and apply them with ease. Think of them as guiding principles to simplify our work, and we’ll master them step by step!
+The guiding ideas include:
+
+- **Extraction**: Breaking down tasks into small, focused functions, making the code more modular and reusable.
+- **Minimalism**: Writing only what’s needed, avoiding unnecessary complexity.
+- **Reuse**: Creating functions that can be applied in different situations to reduce duplication.
+- **Readable Naming**: Using clear, descriptive names for functions, which leads to more logical and easy-to-follow code execution.
+
+These principles—common in functional programming—will help us build robust, flexible plug-ins while keeping everything simple. Each step will be practical and clear, and by the end, you'll see just how manageable and effective this approach can be!
+
