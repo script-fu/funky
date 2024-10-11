@@ -1,8 +1,9 @@
 ---
+title: Incremental Save
 type: docs
 ---
 
-# Introduction
+## Introduction
 
 This is an incremental save feature. It saves a numbered version of the active file into a named sub-folder. It does not save over the opened file. Each image can have a unique number of saves, before the saves wrap around. Useful to save stages of progress, before committing to a proper save. Also good for recovering an earlier version.
 
@@ -10,7 +11,7 @@ This plug-in utilizes a set up plug-in, it helps the main plug-in do its core ta
 
 [incremental-save.zip](/funky/downloads/incremental-save.zip)
 
-## Save Folder and File Structure
+### Save Folder and File Structure
 
 * Image Folder
   * FileName_saves
@@ -19,6 +20,6 @@ This plug-in utilizes a set up plug-in, it helps the main plug-in do its core ta
     * FileName_3.xcf
     ...
 
-## Plug-in Menu Location
+### Plug-in Menu Location
 
 _File -> Incremental Save_

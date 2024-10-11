@@ -7,7 +7,7 @@ type: docs
 
 These plug-ins currently only work in the latest [**GIMP development version**](https://gitlab.gnome.org/GNOME/gimp/-/commits/master?ref_type=heads) or [**Artbox**](https://script-fu.github.io/artbox/), my custom GIMP build. Once **GIMP 3** is officially released as a Flatpak, they should work fine there too. They may not work on Windows, I've shifted to Linux for development, but with a small tweak or two, they might work just fine.
 
-## Installation
+### Installation
 
 - Find or add a plug-ins folder; GIMP -> Edit -> Preferences -> Folders -> Plug-ins
 - Extract a <plug-in-name.zip> to that folder, keeping the plug-in inside its own named folder.
@@ -17,7 +17,7 @@ These plug-ins currently only work in the latest [**GIMP development version**](
 - Repeat for any other supporting plug-ins.
 - Restart GIMP.
 
-## Keyboard Shortcut
+### Keyboard Shortcut
 
 This forces GIMP to save the shortcut for the next session. First, search for the plug-in name, and assign a shortcut.
 
