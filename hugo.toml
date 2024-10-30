@@ -71,6 +71,11 @@ pageRef = "hub/tutorials/folder"
 weight = 1
 
 [[menu.main]]
+name = "Artbox"
+url = "https://script-fu.github.io/artbox/"
+weight = 1
+
+[[menu.main]]
 name = "Plug-ins"
 pageRef = "hub/plug-ins/folder"
 weight = 1
