@@ -1,6 +1,7 @@
 ---
 title: First Steps
 type: docs
+weight: 1
 ---
 
 ## Introduction
