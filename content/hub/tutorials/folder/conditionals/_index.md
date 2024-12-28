@@ -1,4 +1,9 @@
-## Introduction to Conditionals in Script-Fu
+---
+title: Conditionals
+type: docs
+---
+
+## Introduction
 
 Conditionals are a fundamental part of programming, allowing scripts to make decisions and control their flow based on specific criteria. In Script-Fu, which is based on the Scheme programming language, conditionals enable you to create dynamic and intelligent scripts that adapt to changing inputs, environments, or user actions.
 

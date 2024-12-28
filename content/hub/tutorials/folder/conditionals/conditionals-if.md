@@ -4,7 +4,7 @@ type: docs
 weight: 4
 ---
 
-## The if Conditional
+## Introduction
 
 In its simplest form, the `if` conditional in Scheme evaluates a test and, based on the result, executes one of two possible code blocks. The simplest form looks like this:
 

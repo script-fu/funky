@@ -4,7 +4,7 @@ type: docs
 weight: 2
 ---
 
-## The Filter Plug-in
+## Introduction
 
 We used a _procedure_ plug-in for the [First Step](https://script-fu.github.io/funky/hub/tutorials/folder/first-step/) tutorial. These plug-ins work without needing an image or drawable as input. Usually, we use a plug-in to change an image and its drawables. Plug-ins like this are called _filter_ plug-ins.
 

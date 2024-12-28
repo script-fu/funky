@@ -4,7 +4,7 @@ type: docs
 weight: 5
 ---
 
-## The `cond` Conditional
+## Introduction
 
 In Scheme, the `cond` conditional is used for selecting one of several possible blocks of code to execute, based on multiple tests. It is like a multi-branch `if`, where each branch is checked in order until a match is found.
 
