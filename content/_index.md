@@ -16,6 +16,7 @@ This site is more than a guide to Script-Fu; it's an invitation to experiment, l
 {{< cards >}}
   {{< card link="hub/tools/folder" title="Tools" icon="clipboard-check" >}}
   {{< card link="hub/tutorials/folder" title="Tutorials" icon="collection" >}}
+  {{< card link="hub/fundamentals/folder" title="Fundamentals" icon="academic-cap" >}}
   {{< card link="hub/about/" title="About" icon="information-circle" >}}
   {{< card link="hub/plug-ins/folder" title="Plug-ins" icon="puzzle" >}}
   {{< card link="hub/about/Patreon" title="Patreon" icon="heart" >}}
