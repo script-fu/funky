@@ -1,6 +1,7 @@
 ---
 title: Conditionals
 type: docs
+weight: 2
 ---
 
 ## Introduction

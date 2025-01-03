@@ -1,13 +1,12 @@
 ---
 title: Data Structures
 type: docs
+weight: 3
 ---
 
 ## Introduction
 
 In Script-Fu, **data structures** are essential tools for organizing, storing, and manipulating data. They enable developers to build efficient, readable, and reusable scripts. By choosing the right data structure for a specific problem, you can optimize both the performance and clarity of your code.
-
----
 
 ## Key Data Structures in Script-Fu
 

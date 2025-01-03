@@ -1,6 +1,7 @@
 ---
 title: Variables and Scope
 type: docs
+weight: 1
 ---
 
 ## Introduction
