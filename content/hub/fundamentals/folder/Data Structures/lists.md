@@ -36,6 +36,7 @@ Elements in a list are accessed using the `car` and `cdr` procedures:
 ```
 
 Result:
+
 - `(car my-list)` returns `1`
 - `(cdr my-list)` returns `(2 3)`
 
@@ -68,6 +69,7 @@ Here’s a simple recursive function to print every element in a list:
 ```
 
 Output:
+
 - `"1"`
 - `"2"`
 - `"3"`
@@ -133,7 +135,7 @@ The `list?` procedure checks whether a given value is a list.
 (list? value)
 ```
 
-#### Example
+#### Example: list?
 
 ```scheme
 (list? (list 1 2 3))  ; Checks if (list 1 2 3) is a list
@@ -141,6 +143,7 @@ The `list?` procedure checks whether a given value is a list.
 ```
 
 Result:
+
 - `(list? (list 1 2 3))` returns `#t` (true)
 - `(list? 42)` returns `#f` (false)
 
@@ -154,8 +157,6 @@ Scheme provides several built-in procedures for working with lists, including:
 - `append`: Combines two or more lists into one.
 - `reverse`: Returns a new list with elements in reverse order.
 
-#### Examples
-
 ```scheme
 (length (list 1 2 3))          ; Returns 3
 (append (list 1 2) (list 3 4)) ; Returns (1 2 3 4)
@@ -163,9 +164,29 @@ Scheme provides several built-in procedures for working with lists, including:
 ```
 
 Result:
+
 - `(length (list 1 2 3))` returns `3`
 - `(append (list 1 2) (list 3 4))` returns `(1 2 3 4)`
 - `(reverse (list 1 2 3))` returns `(3 2 1)`
+
+#### Using `list-ref`
+
+The `list-ref` procedure retrieves the element at a specified index of a list (zero-based index).
+
+```scheme
+(list-ref lst index)
+```
+
+- **`lst`**: The list from which to retrieve the element.
+- **`index`**: A zero-based index indicating which element to return.
+
+##### Example: list-ref
+
+```scheme
+(list-ref (list 10 20 30 40) 2)  ; Retrieves the element at index 2
+```
+
+Result: `30`
 
 ---
 
@@ -227,10 +248,9 @@ To access elements within a nested list, you can use combinations of `car` and `
 
 This approach allows you to systematically navigate and access specific elements in a nested list, providing powerful flexibility for working with hierarchical data.
 
-
 ### Summary
 
 - **Lists** in Scheme are versatile and essential data structures.
 - Use `list` to create a list, `car` and `cdr` to access elements, and `cons` to construct lists.
-- Built-in procedures like `con` `length` and `append` make list operations easy and efficient.
+- Built-in procedures like `length`, `append`, `reverse`, and `list-ref` make list operations easy and efficient.
 - Lists can be nested, enabling complex data structures for advanced use cases.
