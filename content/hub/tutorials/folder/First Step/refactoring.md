@@ -118,6 +118,9 @@ Extracting the logic:
   "<Image>/Funky")
 ```
 
+#### Symbols
+In the example above, a data type called a symbol is used, such as 'gui. Symbols are passed as parameters to the send-message function and can be used to make simple conditional decisions. Like symbolic keys, they are unique identifiers. For more information on symbols, visit [this page.](https://script-fu.github.io/funky/hub/fundamentals/folder/variables-and-scope/symbols/)
+
 ### Simplifying the Main Function
 
 In the original (script-fu-hello-world) function, all the logic for sending messages to different outputs (GUI, Error Console, Terminal) was mixed into the main function. After refactoring, the main function simply focuses on **what needs to be done**, sending the message to different destinations.
