@@ -1,0 +1,8 @@
+html.dark body {
+  background-color: #242424; /* Dark mode background */
+}
+
+html.dark pre,
+html.dark code {
+  background-color: #171717 !important; /* Add !important to enforce the style */
+}

@@ -53,9 +53,9 @@ Code tends to have little rules around how to place items in a line, so that we 
 Code may arrange things in a similar manner, which may look odd at first:
 
 ```scheme
-(define (function-name input
-                       input
-                       input))
+(define (function-name input-a
+                       input-b
+                       input-c))
 ```
 
 ## Example Code
