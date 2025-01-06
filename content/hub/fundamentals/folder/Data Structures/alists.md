@@ -8,14 +8,12 @@ weight: 6
 
 An **association list** (or **alist**) is a fundamental data structure in Scheme used to represent collections of key-value pairs. It is implemented as a list of pairs, where each pair associates a key (typically a symbol) with a value. Alists are simple, flexible, and well-suited for small to medium-sized datasets.
 
-## Structure of an Association List
+### Structure of an Association List
 
 An alist is a list where each element is a **pair** (constructed with `cons`). Each pair consists of:
 
 - **Key**: The first element (typically a symbol).
 - **Value**: The second element, which can be of any data type.
-
-### Example
 
 ```scheme
 (define alist '((name . "Alice") (age . 30) (city . "Paris")))
@@ -26,11 +24,13 @@ An alist is a list where each element is a **pair** (constructed with `cons`). E
 - **Structure**: A list of pairs:  
   `((name . "Alice") (age . 30) (city . "Paris"))`
 
-## Creating an Alist
+### Creating an Alist
 
 You can create an alist by manually constructing pairs or programmatically building it using `cons`.
 
-### Example
+#### Using the Single Quote (`'`)
+
+The single quote (`'`) is shorthand for **quoting**, which prevents Scheme from evaluating the expression. This makes it ideal for creating static alists where all keys and values are hardcoded.
 
 ```scheme
 ;; Manually define an alist
@@ -43,13 +43,39 @@ You can create an alist by manually constructing pairs or programmatically build
 **Result**:  
 `((country . "France") (name . "Alice") (age . 30) (city . "Paris"))`
 
----
+#### Using the Backquote (`` ` ``) and Comma (`,`)
 
-## Accessing Data in an Alist
+The backquote (`` ` ``) is similar to the single quote but allows you to dynamically insert evaluated expressions using the comma (`,`) operator. This is useful for creating alists where keys or values are computed at runtime.
 
-### Using `assoc`
+```scheme
+(define key 'name)
+(define value "Alice")
 
-The `assoc` function retrieves a pair from an alist based on the key.
+(define alist `((,key . ,value) (age . 30) (city . "Paris")))
+```
+
+**Result**:  
+`((name . "Alice") (age . 30) (city . "Paris"))`
+
+### Example Comparison
+
+Static alist using `'`:
+
+```scheme
+(define alist '((name . "Alice") (age . 30) (city . "Paris")))
+```
+
+Dynamic alist using `` ` `` and `,`:
+
+```scheme
+(define key 'name)
+(define value "Alice")
+(define alist `((,key . ,value) (age . 30) (city . "Paris")))
+```
+
+### Accessing Data in an Alist
+
+To retrieve a value from an alist, you can use the `assoc` function, which looks up a pair by its key.
 
 ```scheme
 (assoc 'name alist)   ; Returns (name . "Alice")
@@ -58,10 +84,14 @@ The `assoc` function retrieves a pair from an alist based on the key.
 
 ### Extracting the Value
 
-Use `cdr` to extract the value from the pair returned by `assoc`:
+Once you retrieve a pair using `assoc`, use `cdr` to extract the value:
 
 ```scheme
 (cdr (assoc 'name alist))   ; Returns "Alice"
 ```
 
-If the key does not exist, `cdr` will return an error, so handle missing keys appropriately.
+### Summary of Key Features
+
+- **Single Quote (`'`)**: Creates a static alist where all elements are literal data.
+- **Backquote (`` ` ``)**: Allows dynamic creation of alists by mixing static elements with evaluated expressions (using `,`).
+- **Dot Notation (`.`)**: Used to construct pairs, associating a key with a value in an alist.
