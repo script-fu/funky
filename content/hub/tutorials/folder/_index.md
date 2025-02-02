@@ -17,6 +17,7 @@ The guiding ideas include:
 - **Minimalism**: Writing only what’s needed, avoiding unnecessary complexity.
 - **Reuse**: Creating functions that can be applied in different situations to reduce duplication.
 - **Readable Naming**: Using clear, descriptive names for functions, which leads to more logical and easy-to-follow code execution.
+- **Wrapping** : Creating enhanced versions of functions for ease of use and to enable debugging.
 
 These principles—common in functional programming—will help us build robust, flexible plug-ins while keeping everything simple. Each step will be practical and clear, and by the end, you'll see just how manageable and effective this approach can be!
 

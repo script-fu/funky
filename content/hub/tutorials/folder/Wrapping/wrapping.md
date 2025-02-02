@@ -1,5 +1,5 @@
 ---
-title: Wrapping Functions
+title: Wrapping
 type: docs
 weight: 4
 ---
