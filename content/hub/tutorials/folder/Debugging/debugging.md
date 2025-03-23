@@ -215,7 +215,7 @@ When developing Script-Fu plug-ins, wrapping functions in this manner significan
 
 In this debug stream, function calls are marked with an asterisk (*), making it easier to track script execution and pinpoint failures, particularly in complex plug-ins. This visibility helps us understand the flow of operations and diagnose unexpected behaviors efficiently.
 
-A wrapper for our message function to use a `*` rather than a `>`
+A wrapper for our message function to use a `*`
 
 ```scheme
 (define (call . items)
