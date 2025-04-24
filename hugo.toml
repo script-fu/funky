@@ -81,6 +81,11 @@ pageRef = "hub/plug-ins/folder"
 weight = 1
 
 [[menu.main]]
+name = "Practical Applications"
+pageRef = "hub/practical-applications"
+weight = 3
+
+[[menu.main]]
 name = "Tools"
 pageRef = "hub/tools/folder"
 weight = 3

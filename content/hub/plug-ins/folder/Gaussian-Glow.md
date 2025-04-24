@@ -1,6 +1,7 @@
 ---
 title: Gaussian Glow
 type: docs
+url: "/hub/plug-ins/folder/Gaussian-Glow"
 ---
 
 ## Introduction

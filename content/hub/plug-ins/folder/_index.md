@@ -5,7 +5,16 @@ type: docs
 
 ## Introduction
 
-These plug-ins currently only work in the latest [**GIMP development version**](https://gitlab.gnome.org/GNOME/gimp/-/commits/master?ref_type=heads) or [**Artbox**](https://script-fu.github.io/artbox/), my custom GIMP build. Once **GIMP 3** is officially released as a Flatpak, they should work fine there too. They may not work on Windows, I've shifted to Linux for development, but with a small tweak or two, they might work just fine.
+These plug-ins currently only work in [**GIMP 3**](https://www.gimp.org/news/2025/03/16/gimp-3-0-released/) or [**Artbox**](https://script-fu.github.io/artbox/), my custom GIMP build. 
+
+
+{{< cards >}}
+
+{{< card link="Almost-Autosave" title="Almost Autosave" icon="cake" >}}
+{{< card link="Incremental-Save" title="Incremental Save" icon="cake" >}}
+{{< card link="Gaussian-Glow" title="Gaussian Glow" icon="cake" >}}
+
+{{< /cards >}}
 
 ### Installation
 

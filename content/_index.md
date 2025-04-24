@@ -19,6 +19,7 @@ This site is more than a guide to Script-Fu; it's an invitation to experiment, l
   {{< card link="hub/fundamentals/folder" title="Fundamentals" icon="academic-cap" >}}
   {{< card link="hub/about/" title="About" icon="information-circle" >}}
   {{< card link="hub/plug-ins/folder" title="Plug-ins" icon="puzzle" >}}
+  {{< card link="hub/practical-applications" title="Practical Applications" icon="cake" >}}
   {{< card link="hub/about/Patreon" title="Patreon" icon="heart" >}}
   {{< card link="https://www.reddit.com/r/FunkyFu/" title="Reddit" icon="chat" >}}
 {{< /cards >}}

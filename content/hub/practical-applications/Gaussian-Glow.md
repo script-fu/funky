@@ -1,6 +1,7 @@
 ---
 title: Gaussian Glow
 type: docs
+url: "/hub/practical-applications/Gaussian-Glow"
 ---
 
 ## Introduction
@@ -20,7 +21,7 @@ Here’s a look at the **top-level function** of the Gaussian Glow plug-in:
 Even if you’re new to Script-Fu, this top-level logic is fairly readable, each line is practically self-documenting. Here's what happens, step by step:
 
 1. **Get the image and the active layer**
-2. **Copy the active layer and resize it** to match the image size
+2. **Duplicate the active layer, resize it and copy it to the buffer**
 3. **Paste the copied layer into a new image**, optionally showing it in a display
 4. **Grab the active layer** from the new image
 5. **Create glow layers**
@@ -30,16 +31,51 @@ Even if you’re new to Script-Fu, this top-level logic is fairly readable, each
 
 ## GUI Parameters Technique
 
-When working with a more complex plug-in, like this one, which involves many input parameters, I've found it helpful to package those parameters into a _global_ **associative list**.
+When working with a more complex plug-in, like this one, which involves many input parameters, I've found it helpful to package those parameters into a _global_ **[associative list](https://script-fu.github.io/funky/hub/fundamentals/folder/data-structures/alists/)**.
 
 I declare the list in my library file `common.scm` like so:
 ```scheme
 (define config '())
 ```
+
+The list is populated immediately after the registered Script-Fu function parameter list
+
+```scheme
+(define (script-fu-glow-layer image drawables
+                              pass-count
+                              initial-opacity
+                              final-opacity
+                              opacity-exponent
+                              final-gauss
+                              gauss-exponent
+                              final-spread
+                              spread-exponent
+                              post-gauss
+                              keep-construction
+                              show-info)
+  ;; Populate the global `config` alist with these GUI parameters for easy passing
+  (set! config
+    `((image . ,image)
+      (drawables . ,drawables)
+      (pass-count . ,pass-count)
+      (initial-opacity . ,initial-opacity)
+      (final-opacity . ,final-opacity)
+      (opacity-exponent . ,opacity-exponent)
+      (final-gauss . ,final-gauss)
+      (gauss-exponent . ,gauss-exponent)
+      (final-spread . ,final-spread)
+      (spread-exponent . ,spread-exponent)
+      (post-gauss . ,post-gauss)
+      (keep-construction . ,keep-construction)
+      (show-info . ,show-info)))
+      ...
+```
+
 This approach allows any *local* function within the script to access the GUI parameters directly. It eliminates the need to pass them down through multiple layers of function calls, making the code cleaner and easier to maintain.
 
 As a **bonus feature**, when I'm running in `debug` mode, I output the parameter value to the Error Console each time I `get` it from the associative list. This makes it much easier to trace how values are being used and catch unexpected behavior during development.
 
+A custom made `get` function added to my `common.scm`
 ```scheme
 ;; Purpose: Returns the value from a global config alist pair if the parameter exists,
 ;;          otherwise returns a special "not found" marker.
@@ -50,6 +86,20 @@ As a **bonus feature**, when I'm running in `debug` mode, I output the parameter
         (when debug (message "> " parameter " : " (cdr result)))
         (cdr result))
         'not-found))) ;; Use a distinct value to indicate "not found"
+```
+
+An example of using the `get` function to fetch a GUI parameter from the global alist.
+```scheme
+(define (calculate-glow-params i pass-count initial-gauss)
+  (let* ((initial-spread  (* initial-gauss 0.5))
+         (initial-opacity (get 'initial-opacity))
+         (final-opacity   (get 'final-opacity))
+         (final-gauss     (get 'final-gauss))
+         (final-spread    (get 'final-spread))
+         (opacity-exp     (get 'opacity-exponent))
+         (gauss-exp       (get 'gauss-exponent))
+         (spread-exp      (get 'spread-exponent))
+         ...
 ```
 
 ## Debug Mode
