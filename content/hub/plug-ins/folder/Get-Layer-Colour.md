@@ -1,20 +1,18 @@
 ---
-title: Set Layer Modes
+title: Get Layer Colour
 type: docs
-url: "/hub/plug-ins/folder/Layer-Mode"
+url: "/hub/plug-ins/folder/Get-Layer-Colour"
 ---
 
 ## Introduction
 
-This plug-in is a set of plug-ins that sets the selected layers to a particular blend mode.
+This plugin calculates the average color of a layer's content and sets it as the foreground color.
 
-[layer-mode.zip](/funky/downloads/layer-mode.zip)
+[get-layer-colour.zip](/funky/downloads/get-layer-colour.zip)
 
 ### Plug-in Menu Location
 
-_Layer > Stack > Layer Mode Multiply_  
-_Layer > Stack > Layer Mode Normal_  
-_Layer > Stack > Layer Composite Space Auto_  
+_Tools -> Paint Tools -> Get Layer Color_
 
 ### Keyboard Shortcut
 
