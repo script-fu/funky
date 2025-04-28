@@ -1,6 +1,7 @@
 ---
 title: Layer Group To New Image
 type: docs
+url: "/hub/plug-ins/folder/Layer-Group-To-New-Image"
 ---
 
 ## Introduction

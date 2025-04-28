@@ -1,6 +1,7 @@
 ---
 title: Set Layer Modes
 type: docs
+url: "/hub/plug-ins/folder/Layer-Mode"
 ---
 
 ## Introduction
@@ -13,6 +14,7 @@ This plug-in is a set of plug-ins that sets the selected layers to a particular 
 
 _Layer > Stack > Layer Mode Multiply_  
 _Layer > Stack > Layer Mode Normal_
+_Layer > Stack > Layer Composite Space Auto_
 
 ### Keyboard Shortcut
 

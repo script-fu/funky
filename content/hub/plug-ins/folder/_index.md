@@ -5,14 +5,20 @@ type: docs
 
 ## Introduction
 
-These plug-ins currently only work in [**GIMP 3**](https://www.gimp.org/news/2025/03/16/gimp-3-0-released/) or [**Artbox**](https://script-fu.github.io/artbox/), my custom GIMP build. 
-
+These plug-ins currently only work in [**GIMP 3**](https://www.gimp.org/news/2025/03/16/gimp-3-0-released/) or [**Artbox**](https://script-fu.github.io/artbox/), my custom GIMP build.
 
 {{< cards >}}
 
 {{< card link="Almost-Autosave" title="Almost Autosave" icon="cake" >}}
 {{< card link="Incremental-Save" title="Incremental Save" icon="cake" >}}
 {{< card link="Gaussian-Glow" title="Gaussian Glow" icon="cake" >}}
+{{< card link="New-Layer-From-Selection" title="New Layer from Selection" icon="cake" >}}
+{{< card link="Layer-Group" title="Layer Group" icon="cake" >}}
+{{< card link="Rename-Layers" title="Rename Layers" icon="cake" >}}
+{{< card link="Get-Layer-Colour" title="Get Layer Colour" icon="cake" >}}
+{{< card link="Layer-Group-To-New-Image" title="Layer Group to New Image" icon="cake" >}}
+{{< card link="Layer-Mode" title="Layer Mode" icon="cake" >}}
+{{< card link="Select-All-Layers" title="Select All Layers" icon="cake" >}}
 
 {{< /cards >}}
 

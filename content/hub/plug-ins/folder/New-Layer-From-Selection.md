@@ -1,6 +1,7 @@
 ---
 title: New Layer From Selection
 type: docs
+url: "/hub/plug-ins/folder/New-Layer-From-Selection"
 ---
 
 ## Introduction

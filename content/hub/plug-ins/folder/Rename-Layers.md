@@ -1,6 +1,7 @@
 ---
 title: Rename Layers
 type: docs
+url: "/hub/plug-ins/folder/Rename-Layers"
 ---
 
 ## Introduction

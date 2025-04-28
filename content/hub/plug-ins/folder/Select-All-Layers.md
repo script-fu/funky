@@ -1,6 +1,7 @@
 ---
 title: Select All Layers
 type: docs
+url: "/hub/plug-ins/folder/Select-All-Layers"
 ---
 
 ## Introduction

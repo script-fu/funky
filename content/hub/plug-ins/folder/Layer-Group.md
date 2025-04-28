@@ -1,6 +1,7 @@
 ---
 title: Group Selected Layers
 type: docs
+url: "/hub/plug-ins/folder/Layer-Group"
 ---
 
 ## Introduction
