@@ -1,7 +1,7 @@
 ---
 title: Incremental Save
 type: docs
-url: "/hub/plug-ins/folder/Incremental-Save"
+url: "/hub/plug-ins/folder/incremental-save"
 ---
 
 ## Introduction

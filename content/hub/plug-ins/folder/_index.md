@@ -9,8 +9,8 @@ These plug-ins currently only work in [**GIMP 3**](https://www.gimp.org/news/202
 
 {{< cards >}}
 
-{{< card link="Almost-Autosave" title="Almost Autosave" icon="cake" >}}
-{{< card link="Incremental-Save" title="Incremental Save" icon="cake" >}}
+{{< card link="almost-autosave" title="Almost Autosave" icon="cake" >}}
+{{< card link="incremental-save" title="Incremental Save" icon="cake" >}}
 {{< card link="Gaussian-Glow" title="Gaussian Glow" icon="cake" >}}
 {{< card link="New-Layer-From-Selection" title="New Layer from Selection" icon="cake" >}}
 {{< card link="Layer-Group" title="Layer Group" icon="cake" >}}
