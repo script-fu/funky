@@ -6,7 +6,7 @@ weight: 5
 
 ## Introduction
 
-The `do` construct in Scheme is a looping mechanism that allows iteration with initialization, update, and termination conditions. It is particularly useful when you need to perform a sequence of operations a specific number of times or until a condition is met.
+The `do` function in Scheme is a looping mechanism that allows iteration with initialization, update, and termination conditions. It is particularly useful when you need to perform a sequence of operations a specific number of times or until a condition is met.
 
 The general form of `do` is:
 
