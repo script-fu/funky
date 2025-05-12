@@ -8,20 +8,11 @@ url: "/hub/plug-ins/folder/Select-All-Layers"
 
 This plug-in select all the layers in the stack.
 
-[select-all-layers.zip](/funky/downloads/select-all-layers.zip)
+Edit: Recently discovered `Ctrl and /` does the same thing! I'll leave the plug-in here, as it's a simple starting point to do _something_ with all the layers via Script-Fu.
+
+[select-all-layers.zip](/funky/downloads/select-all-layers.zip)  
+[Installation](https://script-fu.github.io/funky/hub/plug-ins/folder/#installation)  
 
 ### Plug-in Menu Location
 
 _Layer > Stack > Select All Layers_
-
-### Keyboard Shortcut
-
-This forces Artbox to save the shortcut for the next session. First, search for the plug-in name, and assign a shortcut.
-
-_Edit > Keyboard Shortcuts_
-
-Once the shortcut is working as you like, save your work then;  
-
-_File > Quit_
-
-When Artbox restarts, your plug-in should be activated by the assigned key.

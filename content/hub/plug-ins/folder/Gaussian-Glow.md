@@ -8,9 +8,9 @@ url: "/hub/plug-ins/folder/Gaussian-Glow"
 
    Generate a multi‑layered glow by cloning the source and applying successive blurs & spread (noise) with varying strength.
 
-   [glow-layer.zip](/funky/downloads/glow-layer.zip)
-
-   [YouTube-video-demo](https://youtu.be/g4PkjFQsZ_k)
+   [glow-layer.zip](/funky/downloads/glow-layer.zip)  
+   [Installation](https://script-fu.github.io/funky/hub/plug-ins/folder/#installation)  
+   [YouTube-video-demo](https://youtu.be/g4PkjFQsZ_k)  
 
 ### Parameters
 
@@ -41,14 +41,3 @@ url: "/hub/plug-ins/folder/Gaussian-Glow"
 
 _Filters -> Light and Shadow -> Gaussian Glow_
 
-### Keyboard Shortcut
-
-This forces Artbox to save the shortcut for the next session. First, search for the plug-in name, and assign a shortcut.
-
-_Edit > Keyboard Shortcuts_
-
-Once the shortcut is working as you like, save your work then;  
-
-_File > Quit_
-
-When Artbox restarts, your plug-in should be activated by the assigned key.

@@ -12,7 +12,8 @@ When the plug-in is used in [**Artbox**](https://script-fu.github.io/artbox/), t
 
 This plug-in utilizes a set up plug-in, it helps the main plug-in do its core task. For the plug-in to function the set-up plug-in needs to be installed as well.
 
-[almost-autosave.zip](/funky/downloads/almost-autosave.zip)
+[almost-autosave.zip](/funky/downloads/almost-autosave.zip)  
+[Installation](https://script-fu.github.io/funky/hub/plug-ins/folder/#installation)
 
 ### Back-up Folder and File Structure
 

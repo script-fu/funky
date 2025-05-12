@@ -10,7 +10,8 @@ This is an incremental save feature. It saves a numbered version of the active f
 
 This plug-in utilizes a set up plug-in, it helps the main plug-in do its core task. For the plug-in to function the set-up plug-in needs to be installed as well.
 
-[incremental-save.zip](/funky/downloads/incremental-save.zip)
+[incremental-save.zip](/funky/downloads/incremental-save.zip)  
+[Installation](https://script-fu.github.io/funky/hub/plug-ins/folder/#installation)  
 
 ### Save Folder and File Structure
 
