@@ -19,6 +19,7 @@ These plug-ins currently only work in [**GIMP 3**](https://www.gimp.org/news/202
 {{< card link="Layer-Group-To-New-Image" title="Layer Group to New Image" icon="cake" >}}
 {{< card link="Layer-Mode" title="Layer Mode" icon="cake" >}}
 {{< card link="Select-All-Layers" title="Select All Layers" icon="cake" >}}
+{{< card link="Alpha-To-Show-Mask" title="Alpha to Show Mask" icon="cake" >}}
 
 {{< /cards >}}
 

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://script-fu.github.io/funky/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/about/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/practical-applications/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tools/folder/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/about/Patreon/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/script-fu/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/script-fu/libscriptfu/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/script-fu/pdb/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/script-fu/script-fu-interpreter/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/script-fu/tinyscheme/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/variables-and-scope/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/variables-and-scope/define/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/variables-and-scope/let/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/variables-and-scope/let-vs-define/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/variables-and-scope/symbols/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/conditionals/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/conditionals/conditionals-if/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/conditionals/conditionals-cond/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/conditionals/conditionals-when/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/data-structures/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/data-structures/lists/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/data-structures/vectors/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/data-structures/alists/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/iteration/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/iteration/map/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/iteration/do/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/iteration/for-each/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/iteration/recursion/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/functions/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/functions/lambda/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/fundamentals/folder/functions/variadic/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/almost-autosave/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/Alpha-To-Show-Mask/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/Gaussian-Glow/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/Get-Layer-Colour/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/Layer-Group/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/incremental-save/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/Layer-Group-To-New-Image/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/New-Layer-From-Selection/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/Rename-Layers/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/Select-All-Layers/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/plug-ins/folder/Layer-Mode/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/practical-applications/Gaussian-Glow/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tools/folder/git/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tools/folder/visual-studio-code/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/hello-world/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/the-procedure-browser-copy/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/refactoring/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/loading/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/validation/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/refactor-again/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/messaging-library/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/reworking/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/return-values/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/first-step/final-thoughts/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/filter-plug-in/filter-plug-ins/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/wrapping/wrapping/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/debugging/debugging/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/files/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://script-fu.github.io/funky/hub/tutorials/folder/files/finding-and-making-directories/</loc>
+  <lastmod>2025-05-17T17:26:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
