@@ -73,38 +73,37 @@ weight = 4
 [[menu.main]]
 name = "Artbox"
 url = "https://script-fu.github.io/artbox/"
-weight = 2
+weight = 7
 
 [[menu.main]]
 name = "Plug-ins"
 pageRef = "hub/plug-ins/folder"
-weight = 1
+weight = 6
 
 [[menu.main]]
 name = "Practical Applications"
 pageRef = "hub/practical-applications"
-weight = 3
+weight = 5
 
 [[menu.main]]
 name = "Tools"
 pageRef = "hub/tools/folder"
-weight = 3
+weight = 4
 
 [[menu.main]]
 name = "About"
 pageRef = "hub/about/"
+weight = 2
+
+[[menu.main]]
+name = "sweeneyworks"
+url = "https://sweeneyworks.com/"
 weight = 1
 
 [[menu.main]]
 name = "Fundamentals"
 pageRef = "hub/fundamentals/folder"
 weight = 6
-
-[[menu.main]]
-name = "Patreon"
-pageRef = "hub/about/Patreon"
-weight = 7
-
 
 [[menu.main]]
 name = "Search"
