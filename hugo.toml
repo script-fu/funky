@@ -81,7 +81,7 @@ pageRef = "hub/plug-ins/folder"
 weight = 6
 
 [[menu.main]]
-name = "Practical Applications"
+name = "Practicals"
 pageRef = "hub/practical-applications"
 weight = 5
 
