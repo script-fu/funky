@@ -6,3 +6,29 @@ html.dark pre,
 html.dark code {
   background-color: #171717 !important; /* Add !important to enforce the style */
 }
+
+/* Make cards slightly brighter with warmer gray */
+.hextra-card {
+  background: rgb(254, 252, 251) !important;
+  border: 1px solid rgb(231, 229, 228) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Dark mode adjustments with warmer gray */
+.dark .hextra-card {
+  background: rgb(44, 42, 41) !important;
+  border: 1px solid rgb(54, 52, 51) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Card hover effects with slightly warmer hue */
+.hextra-card:hover {
+  background: rgb(252, 249, 248) !important;
+  border-color: rgb(227, 224, 221) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02) !important;
+}
+
+.dark .hextra-card:hover {
+  background: rgb(48, 46, 45) !important;
+  border-color: rgb(62, 60, 59) !important;
+}
