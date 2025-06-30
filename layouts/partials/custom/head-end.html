@@ -1,0 +1,10 @@
+<!-- Custom CSS and JS for sidebar fixes -->
+{{- $sidebarFixesCSS := resources.Get "css/scrollbar-fix.css" -}}
+{{- if $sidebarFixesCSS }}
+<link href="{{ $sidebarFixesCSS.RelPermalink }}" rel="stylesheet" />
+{{- end }}
+
+{{- $sidebarFixesJS := resources.Get "js/sidebar-scroll-fix.js" -}}
+{{- if $sidebarFixesJS }}
+<script src="{{ $sidebarFixesJS.RelPermalink }}"></script>
+{{- end }}

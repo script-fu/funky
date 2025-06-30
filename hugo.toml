@@ -121,3 +121,8 @@ index = "content"  # index page by: content | summary | heading | title
 [services.googleAnalytics]
 ID = "G-MEASUREMENT_ID"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+

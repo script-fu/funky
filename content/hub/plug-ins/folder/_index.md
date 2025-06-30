@@ -10,17 +10,17 @@ These plug-ins currently only work in [**GIMP 3**](https://www.gimp.org/news/202
 
 {{< cards >}}
 
-{{< card link="almost-autosave" title="Almost Autosave" icon="cake" >}}
-{{< card link="incremental-save" title="Incremental Save" icon="cake" >}}
-{{< card link="Gaussian-Glow" title="Gaussian Glow" icon="cake" >}}
-{{< card link="New-Layer-From-Selection" title="New Layer from Selection" icon="cake" >}}
-{{< card link="Layer-Group" title="Layer Group" icon="cake" >}}
-{{< card link="Rename-Layers" title="Rename Layers" icon="cake" >}}
-{{< card link="Get-Layer-Colour" title="Get Layer Colour" icon="cake" >}}
-{{< card link="Layer-Group-To-New-Image" title="Layer Group to New Image" icon="cake" >}}
-{{< card link="Layer-Mode" title="Layer Mode" icon="cake" >}}
-{{< card link="Select-All-Layers" title="Select All Layers" icon="cake" >}}
-{{< card link="Alpha-To-Show-Mask" title="Alpha to Show Mask" icon="cake" >}}
+{{< card link="almost-autosave" title="Almost Autosave" icon="archive" >}}
+{{< card link="incremental-save" title="Incremental Save" icon="folder-add" >}}
+{{< card link="Gaussian-Glow" title="Gaussian Glow" icon="light-bulb" >}}
+{{< card link="New-Layer-From-Selection" title="New Layer from Selection" icon="document-add" >}}
+{{< card link="Layer-Group" title="Layer Group" icon="collection" >}}
+{{< card link="Rename-Layers" title="Rename Layers" icon="tag" >}}
+{{< card link="Get-Layer-Colour" title="Get Layer Colour" icon="cursor-click" >}}
+{{< card link="Layer-Group-To-New-Image" title="Layer Group to New Image" icon="document-duplicate" >}}
+{{< card link="Layer-Mode" title="Layer Mode" icon="adjustments" >}}
+{{< card link="Select-All-Layers" title="Select All Layers" icon="view-list" >}}
+{{< card link="Alpha-To-Show-Mask" title="Alpha to Show Mask" icon="selector" >}}
 
 {{< /cards >}}
 

@@ -1,0 +1,23 @@
+{{/* Core scripts (theme, menu, tabs, etc.) */}}
+{{- partial "scripts/core.html" . -}}
+
+{{/* Search */}}
+{{- partial "scripts/search.html" . -}}
+
+{{/* Custom sidebar navigation fix for long content */}}
+<script>
+// Fix for extremely long sidebar content glitch (Features section)
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarScrollbar = document.querySelector("aside.sidebar-container > .hextra-scrollbar");
+  
+  if (sidebarScrollbar) {
+    // Disable any problematic instant scroll behavior that causes glitches with long content
+    if (window.scrollToActiveItem) {
+      window.scrollToActiveItem = function() {
+        // Do nothing - prevents glitches on extremely long sidebars
+        return;
+      };
+    }
+  }
+});
+</script>

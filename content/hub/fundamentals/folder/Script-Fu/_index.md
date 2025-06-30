@@ -10,11 +10,11 @@ Script-Fu is built on the [Scheme](https://www.scheme.org/) programming language
 
 {{< cards >}}
 
-{{< card link="pdb" title="PDB" icon="cog" >}}
-{{< card link="libscriptfu" title="libscriptfu" icon="cog" >}}
-{{< card link="script-fu-interpreter" title="Script-Fu Interpreter" icon="cog" >}}
-{{< card link="tinyscheme" title="TinyScheme" icon="cog" >}}
-{{< card link="https://conservatory.scheme.org/schemers/Documents/Standards/R5RS/HTML/" title="Scheme Programming Language" icon="cog" >}}
+{{< card link="pdb" title="PDB" icon="database" >}}
+{{< card link="libscriptfu" title="libscriptfu" icon="library" >}}
+{{< card link="script-fu-interpreter" title="Script-Fu Interpreter" icon="terminal" >}}
+{{< card link="tinyscheme" title="TinyScheme" icon="code" >}}
+{{< card link="https://conservatory.scheme.org/schemers/Documents/Standards/R5RS/HTML/" title="Scheme Programming Language" icon="book-open" >}}
 
 {{< /cards >}}
 

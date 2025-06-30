@@ -10,27 +10,29 @@ html.dark code {
 /* Make cards slightly brighter with warmer gray (15% brighter) */
 .hextra-card {
   background: rgb(255, 255, 254) !important;
-  border: 1px solid rgb(240, 238, 237) !important;
+  border: 1px solid transparent !important;
+  border-color: transparent !important;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.02) !important;
 }
 
 /* Dark mode adjustments with warmer gray (15% brighter) */
 .dark .hextra-card {
   background: rgb(51, 48, 47) !important;
-  border: 1px solid rgb(62, 60, 59) !important;
+  border: 1px solid transparent !important;
+  border-color: transparent !important;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Card hover effects with warmer hue (15% warmer) */
 .hextra-card:hover {
   background: rgb(255, 250, 247) !important;
-  border-color: rgb(235, 230, 225) !important;
+  border-color: rgba(235, 230, 225, 0.3) !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02) !important;
 }
 
 .dark .hextra-card:hover {
   background: rgb(57, 51, 49) !important;
-  border-color: rgb(73, 67, 65) !important;
+  border-color: rgba(73, 67, 65, 0.3) !important;
 }
 
 /* Custom breadcrumb colors with specific RGB values */
@@ -45,3 +47,165 @@ html.dark code {
 .breadcrumb-current {
   color: rgb(170, 170, 170) !important;
 }
+
+/* Improved back-to-top button styling */
+#backToTop {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.7;
+}
+
+#backToTop:hover {
+  background: transparent !important;
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+#backToTop span {
+  font-size: 0.75rem;
+  color: inherit;
+}
+
+#backToTop svg {
+  width: 14px;
+  height: 14px;
+  background: rgba(59, 130, 246, 0.08) !important;
+  padding: 2px;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid rgba(156, 163, 175, 0.3) !important;
+}
+
+#backToTop:hover svg {
+  background: rgba(59, 130, 246, 0.15) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+.dark #backToTop {
+  opacity: 0.8;
+}
+
+.dark #backToTop svg {
+  background: rgba(59, 130, 246, 0.12) !important;
+  border-color: rgba(107, 114, 128, 0.4) !important;
+}
+
+.dark #backToTop:hover svg {
+  background: rgba(59, 130, 246, 0.2) !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+/* Remove heavy styling from TOC bottom container - Nuclear approach */
+.hextra-toc * {
+  box-shadow: none !important;
+}
+
+.hextra-toc div[class*="shadow-"],
+.hextra-toc div[class*="bg-white"],
+.hextra-toc div[class*="dark:bg-dark"],
+.hextra-toc .hx\:bg-white,
+.hextra-toc .hx\:dark\:bg-dark {
+  box-shadow: none !important;
+  background: transparent !important;
+  border-top: 1px solid rgba(209, 213, 219, 0.15) !important;
+}
+
+.dark .hextra-toc div[class*="shadow-"],
+.dark .hextra-toc div[class*="bg-white"], 
+.dark .hextra-toc div[class*="dark:bg-dark"],
+.dark .hextra-toc .hx\:bg-white,
+.dark .hextra-toc .hx\:dark\:bg-dark {
+  box-shadow: none !important;
+  background: transparent !important;
+  border-top: 1px solid rgba(75, 85, 99, 0.2) !important;
+}
+
+/* Force override all shadow effects in TOC */
+.hextra-toc [class*="shadow"] {
+  box-shadow: none !important;
+}
+
+/* Ensure the sticky bottom container is transparent */
+.hextra-toc .hx\:sticky {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Make the entire TOC container less obtrusive */
+.hextra-toc {
+  opacity: 0.9;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.hextra-toc:hover {
+  opacity: 1;
+}
+
+/* Improve TOC link styling */
+.hextra-toc a {
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: -2px -6px;
+}
+
+.hextra-toc a:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.dark .hextra-toc a:hover {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+/* ================================ */
+/* Sidebar Navigation Glitch Fixes */
+/* ================================ */
+
+/* Fix for extremely long sidebar content glitch (like Features section) */
+@media (min-width: 768px) {
+  .sidebar-container .hextra-scrollbar {
+    /* Force stable height instead of complex viewport calculations */
+    max-height: 90vh !important;
+    /* Ensure smooth scrolling for long content */
+    scroll-behavior: smooth !important;
+  }
+}
+
+/* ====================================== */
+/* Fix white separator line after cards */
+/* ====================================== */
+
+/* Hide hr elements that appear immediately after card grids */
+.hextra-cards + hr {
+    display: none !important;
+}
+
+
+
+
+
+/* ====================================== */
+/* ASCII diagram styling and centering */
+/* ====================================== */
+
+/* Center ASCII diagrams in code blocks for better visual presentation */
+pre code {
+  text-align: center !important;
+}
+
+/* Alternative: specifically for ASCII diagrams if you want to be more selective */
+.ascii-diagram {
+  text-align: center !important;
+  font-family: 'Courier New', Consolas, 'Liberation Mono', monospace !important;
+  white-space: pre !important;
+  display: block !important;
+  margin: 1rem auto !important;
+}
+
+/* Custom CSS overrides for Funky site */

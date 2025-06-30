@@ -1,0 +1,57 @@
+/* Sidebar navigation smoothing - fixes desktop navigation glitch */
+.sidebar-container {
+  /* Prevent layout thrashing on mouse events - DESKTOP ONLY */
+  will-change: auto;
+}
+
+.sidebar-container li > div {
+  /* Smooth height transitions for collapsible content */
+  transition: height 0.2s ease-out, padding 0.2s ease-out;
+  overflow: hidden;
+}
+
+.sidebar-container li.open > div {
+  /* Prevent jarring height jumps */
+  transition: height 0.2s ease-in, padding 0.2s ease-in;
+}
+
+.sidebar-container li > a {
+  /* Prevent hover state flickering */
+  transition: background-color 0.15s ease-out, color 0.15s ease-out;
+}
+
+.sidebar-container li > a > span > svg > path {
+  /* Smooth rotation for expand/collapse icons */
+  transition: transform 0.2s ease-out;
+}
+
+/* Prevent mouse release glitches */
+.sidebar-container li > a:active {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Ensure consistent rendering */
+.sidebar-container * {
+  box-sizing: border-box;
+}
+
+/* Desktop-specific sidebar navigation glitch fix */
+@media (min-width: 768px) {
+  .sidebar-container {
+    /* Stabilize desktop sidebar positioning only */
+    contain: layout style;
+    transform: translateZ(0); /* Hardware acceleration for desktop only */
+    backface-visibility: hidden;
+  }
+  
+  .sidebar-container li > a {
+    /* Reduce visual feedback delays on desktop */
+    transition: background-color 0.1s ease-out, color 0.1s ease-out;
+  }
+  
+  /* Prevent mouse release glitches on desktop */
+  .sidebar-container li > a:active {
+    transform: none !important;
+  }
+}

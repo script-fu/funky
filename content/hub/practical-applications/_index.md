@@ -10,6 +10,6 @@ Let's look at how the concepts and examples we've covered can be used to create 
 
 {{< cards >}}
 
-{{< card link="Gaussian-Glow" title="Gaussian Glow" icon="cake" >}}
+{{< card link="Gaussian-Glow" title="Gaussian Glow" icon="light-bulb" >}}
 
 {{< /cards >}}

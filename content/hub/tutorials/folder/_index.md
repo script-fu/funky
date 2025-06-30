@@ -9,11 +9,11 @@ url: "hub/tutorials/folder"
 Let's dive into creating a Script-Fu plug-in for GIMP! Say goodbye to repetitive tasks with a little bit of logic and strategy. We'll start with the classic "Hello world!" script and gradually move toward more complex and satisfying solutions.
 
 {{< cards >}}
-  {{< card link="first-step" title="First Step" subtitle="Hello world! and basic Script-Fu setup" >}}
-  {{< card link="filter-plug-in" title="Filter Plug-in" subtitle="Creating your first filter plug-in" >}}
-  {{< card link="files" title="Files" subtitle="Working with files in Script-Fu" >}}
-  {{< card link="debugging" title="Debugging" subtitle="Debugging techniques for Script-Fu" >}}
-  {{< card link="wrapping" title="Wrapping" subtitle="Advanced wrapping techniques" >}}
+  {{< card link="first-step" title="First Step" icon="sparkles" subtitle="Hello world! and basic Script-Fu setup" >}}
+  {{< card link="filter-plug-in/filter-plug-ins" title="Filter Plug-in" icon="photograph" subtitle="Creating your first filter plug-in" >}}
+  {{< card link="files" title="Files" icon="folder" subtitle="Working with files in Script-Fu" >}}
+  {{< card link="debugging" title="Debugging" icon="search" subtitle="Debugging techniques for Script-Fu" >}}
+  {{< card link="wrapping/wrapping" title="Wrapping" icon="cube" subtitle="Advanced wrapping techniques" >}}
 {{< /cards >}}
 
 ## Approach

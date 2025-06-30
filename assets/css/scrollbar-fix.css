@@ -1,0 +1,34 @@
+/* Fix for sidebar navigation glitch - prevents scrollbar disappearing */
+html, body {
+  /* Ensure scrollbars are stable during sidebar interactions */
+  overflow-x: auto !important;
+  overflow-y: scroll !important;
+}
+
+/* Prevent sidebar scroll container from affecting main page scrollbars */
+.sidebar-container .hextra-scrollbar {
+  /* Isolate sidebar scrolling from main page */
+  contain: layout style paint;
+  will-change: auto;
+}
+
+/* Prevent layout shifts on mouse interactions */
+.sidebar-container li > a:active,
+.sidebar-container li > a:focus {
+  /* Prevent any transforms that could affect layout */
+  transform: none !important;
+  contain: layout !important;
+}
+
+/* Desktop-specific stability fixes */
+@media (min-width: 768px) {
+  .sidebar-container {
+    /* Ensure sidebar doesn't affect main layout */
+    contain: layout style;
+  }
+  
+  /* Prevent any transitions that could cause reflow */
+  .sidebar-container * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important;
+  }
+}
