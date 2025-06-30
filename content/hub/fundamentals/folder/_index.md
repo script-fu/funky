@@ -10,12 +10,12 @@ weight: 2
 In Script-Fu, every piece of code is an **expression** that evaluates to a value. This includes operations, function calls, and even control structures.
 
 {{< cards >}}
-  {{< card link="Script-Fu" title="Script-Fu" subtitle="Introduction to Script-Fu basics" >}}
-  {{< card link="Variables%20and%20Scope" title="Variables and Scope" subtitle="Understanding variables and scope in Script-Fu" >}}
-  {{< card link="Functions" title="Functions" subtitle="Creating and using functions" >}}
-  {{< card link="Data%20Structures" title="Data Structures" subtitle="Lists, arrays, and data manipulation" >}}
-  {{< card link="Conditionals" title="Conditionals" subtitle="If/then logic and decision making" >}}
-  {{< card link="Iteration" title="Iteration" subtitle="Loops and repetitive operations" >}}
+  {{< card link="script-fu" title="Script-Fu" subtitle="Introduction to Script-Fu basics" >}}
+  {{< card link="variables-and-scope" title="Variables and Scope" subtitle="Understanding variables and scope in Script-Fu" >}}
+  {{< card link="functions" title="Functions" subtitle="Creating and using functions" >}}
+  {{< card link="data-structures" title="Data Structures" subtitle="Lists, arrays, and data manipulation" >}}
+  {{< card link="conditionals" title="Conditionals" subtitle="If/then logic and decision making" >}}
+  {{< card link="iteration" title="Iteration" subtitle="Loops and repetitive operations" >}}
 {{< /cards >}}
 
 ```scheme

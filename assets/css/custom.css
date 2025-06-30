@@ -32,3 +32,16 @@ html.dark code {
   background: rgb(57, 51, 49) !important;
   border-color: rgb(73, 67, 65) !important;
 }
+
+/* Custom breadcrumb colors with specific RGB values */
+.breadcrumb-inactive {
+  color: rgb(120, 120, 120) !important;
+}
+
+.breadcrumb-hover:hover {
+  color: rgb(140, 140, 140) !important;
+}
+
+.breadcrumb-current {
+  color: rgb(170, 170, 170) !important;
+}

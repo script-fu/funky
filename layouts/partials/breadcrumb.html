@@ -1,0 +1,16 @@
+{{- if (default true .Params.breadcrumbs) }}
+  <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:contrast-more:text-current">
+    {{- range .Ancestors.Reverse }}
+      {{- $title := partial "utils/title" . }}
+      {{- if and (not .IsHome) (not (or (eq $title "Hub") (eq $title "Hubs"))) }}
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis breadcrumb-inactive breadcrumb-hover">
+          <a href="{{ .RelPermalink }}">{{ $title }}</a>
+        </div>
+        {{- partial "utils/icon.html" (dict "name" "chevron-right" "attributes" "class=\"hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180 breadcrumb-inactive\"") -}}
+      {{ end -}}
+    {{ end -}}
+    <div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:contrast-more:font-bold hx:contrast-more:text-current breadcrumb-current">
+      {{- partial "utils/title" . -}}
+    </div>
+  </div>
+{{ end -}}

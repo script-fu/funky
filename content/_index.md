@@ -1,6 +1,6 @@
 ---
 toc: false
-type: default
+type: docs
 ---
 
 # Welcome to Script-Fu Adventures
