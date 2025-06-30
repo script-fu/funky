@@ -1,6 +1,7 @@
 ---
 title: Plug-ins
 type: docs
+url: "hub/plug-ins/folder"
 ---
 
 ## Introduction

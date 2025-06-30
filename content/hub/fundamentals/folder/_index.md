@@ -1,12 +1,22 @@
 ---
 title: Fundamentals
 type: docs
+url: "hub/fundamentals/folder"
 weight: 2
 ---
 
 ## Introduction
 
-In Script-Fu, every piece of code is an **expression** that evaluates to a value. This includes operations, function calls, and even control structures. For example:
+In Script-Fu, every piece of code is an **expression** that evaluates to a value. This includes operations, function calls, and even control structures.
+
+{{< cards >}}
+  {{< card link="Script-Fu" title="Script-Fu" subtitle="Introduction to Script-Fu basics" >}}
+  {{< card link="Variables%20and%20Scope" title="Variables and Scope" subtitle="Understanding variables and scope in Script-Fu" >}}
+  {{< card link="Functions" title="Functions" subtitle="Creating and using functions" >}}
+  {{< card link="Data%20Structures" title="Data Structures" subtitle="Lists, arrays, and data manipulation" >}}
+  {{< card link="Conditionals" title="Conditionals" subtitle="If/then logic and decision making" >}}
+  {{< card link="Iteration" title="Iteration" subtitle="Loops and repetitive operations" >}}
+{{< /cards >}}
 
 ```scheme
 (+ 1 2)         ; Adds 1 and 2, resulting in 3  

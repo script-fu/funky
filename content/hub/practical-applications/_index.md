@@ -1,6 +1,7 @@
 ---
 title: Practical Applications
 type: docs
+url: "hub/practical-applications"
 ---
 
 ## Introduction

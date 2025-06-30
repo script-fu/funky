@@ -13,19 +13,18 @@ displayToggle = false
 
 [params.navbar]
 displayTitle = true
-displayLogo = false
+displayLogo = true
 
 [params.navbar.logo]
-path = "images/logo.svg"
-dark = "images/logo-dark.svg"
+path = "images/favicon/android-chrome-192x192.png"
 link = "/funky/"
 width = 40
-height = 20
+height = 40
  
 [page]
 width = "normal"
 
-[footer]
+[params.footer]
 enable = false
 displayCopyright = false
 displayPoweredBy = false

@@ -7,28 +7,28 @@ html.dark code {
   background-color: #171717 !important; /* Add !important to enforce the style */
 }
 
-/* Make cards slightly brighter with warmer gray */
+/* Make cards slightly brighter with warmer gray (15% brighter) */
 .hextra-card {
-  background: rgb(254, 252, 251) !important;
-  border: 1px solid rgb(231, 229, 228) !important;
+  background: rgb(255, 255, 254) !important;
+  border: 1px solid rgb(240, 238, 237) !important;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.02) !important;
 }
 
-/* Dark mode adjustments with warmer gray */
+/* Dark mode adjustments with warmer gray (15% brighter) */
 .dark .hextra-card {
-  background: rgb(44, 42, 41) !important;
-  border: 1px solid rgb(54, 52, 51) !important;
+  background: rgb(51, 48, 47) !important;
+  border: 1px solid rgb(62, 60, 59) !important;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Card hover effects with slightly warmer hue */
+/* Card hover effects with warmer hue (15% warmer) */
 .hextra-card:hover {
-  background: rgb(252, 249, 248) !important;
-  border-color: rgb(227, 224, 221) !important;
+  background: rgb(255, 250, 247) !important;
+  border-color: rgb(235, 230, 225) !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02) !important;
 }
 
 .dark .hextra-card:hover {
-  background: rgb(48, 46, 45) !important;
-  border-color: rgb(62, 60, 59) !important;
+  background: rgb(57, 51, 49) !important;
+  border-color: rgb(73, 67, 65) !important;
 }
