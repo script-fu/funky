@@ -6,13 +6,12 @@ url: "/hub/practical-applications/Gaussian-Glow"
 
 ## Introduction
 
-The [**Gaussian Glow**](https://script-fu.github.io/funky/hub/plug-ins/folder/gaussian-glow/) plug-in is a solid example of putting the techniques we've discussed into practice. At first glance, the stand-alone version can look intimidating, it’s close to **1,000 lines of code**!
+The [**Gaussian Glow**](../../plug-ins/folder/Gaussian-Glow/) plug-in is a solid example of putting the techniques we've discussed into practice. At first glance, the stand-alone version can look intimidating, it's close to **1,000 lines of code**!
 
-That larger version includes all required library functions **inline**. But the local version I use for testing and modifications is only **300 lines**. Of those, the high-level function, the one that “runs the show”, is just **17 lines** long.
+That larger version includes all required library functions **inline**. But the local version I use for testing and modifications is only **300 lines**. Of those, the high-level function, the one that "runs the show", is just **17 lines** long.
 
-This means roughly **70% of the code** is shared utility logic that’s stable and doesn’t change often. So when I revisit the plug-in to fix a bug or add a feature, I can quickly scan those 17 lines to get a clear sense of how the plug-in works.
+This means roughly **70% of the code** is shared utility logic that's stable and doesn't change often. So when I revisit the plug-in to fix a bug or add a feature, I can quickly scan those 17 lines to get a clear sense of how the plug-in works.
 
-## Top Level Overview
 
 Here’s a look at the **top-level function** of the Gaussian Glow plug-in:
 
@@ -31,7 +30,7 @@ Even if you’re new to Script-Fu, this top-level logic is fairly readable, each
 
 ## GUI Parameters Technique
 
-When working with a more complex plug-in, like this one, which involves many input parameters, I've found it helpful to package those parameters into a _global_ **[associative list](https://script-fu.github.io/funky/hub/fundamentals/folder/data-structures/alists/)**.
+When working with a more complex plug-in, like this one, which involves many input parameters, I've found it helpful to package those parameters into a _global_ **[associative list](../../fundamentals/folder/data-structures/alists/)**.
 
 I declare the list in my library file `common.scm` like so:
 ```scheme

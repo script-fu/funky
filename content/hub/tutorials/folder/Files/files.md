@@ -2,6 +2,7 @@
 title: Files
 type: docs
 weight: 7
+url: "hub/tutorials/folder/files"
 ---
 
 ## Introduction
@@ -123,7 +124,7 @@ The ```SF-DIRNAME``` provides a browser to a directory, and the ```SF-STRING``` 
 
 Here we process those inputs. If the path is invalid or left blank, we assign it the user's home directory. Same deal for the folder name. These commands are simply wrappers for functions. The _how_ of what they do can be seen in the full plug-in download here:
 
-[https://script-fu.github.io/funky/hub/plug-ins/folder/almost-autosave/](https://script-fu.github.io/funky/hub/plug-ins/folder/almost-autosave/)
+[/hub/plug-ins/folder/almost-autosave/](/hub/plug-ins/folder/almost-autosave/)
 
 If you're interested in the implementation details, search the plug-in source for _path-is-invalid?_ or _folder-name-is-invalid?_ to see how those checks are performed.
 

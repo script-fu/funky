@@ -1,6 +1,7 @@
 ---
 title: Git
 type: docs
+url: "hub/tools/folder/git"
 ---
 
 ## Introduction

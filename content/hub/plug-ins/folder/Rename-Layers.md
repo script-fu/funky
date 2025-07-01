@@ -8,8 +8,8 @@ url: "/hub/plug-ins/folder/Rename-Layers"
 
 This tool changes the names of the selected layers and their child layers. You can also choose to rename all the layers in the image.
 
-[rename-layers.zip](/funky/downloads/rename-layers.zip)  
-[Installation](https://script-fu.github.io/funky/hub/plug-ins/folder/#installation)  
+[rename-layers.zip](../../../../downloads/rename-layers.zip)  
+[Installation](../#installation)  
 
 ### Plug-in Menu Location
 

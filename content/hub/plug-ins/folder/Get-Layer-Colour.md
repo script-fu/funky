@@ -8,8 +8,8 @@ url: "/hub/plug-ins/folder/Get-Layer-Colour"
 
 This plugin calculates the average color of a layer's content and sets it as the foreground color.
 
-[get-layer-colour.zip](/funky/downloads/get-layer-colour.zip)  
-[Installation](https://script-fu.github.io/funky/hub/plug-ins/folder/#installation)  
+[get-layer-colour.zip](../../../../downloads/get-layer-colour.zip)  
+[Installation](../#installation)  
 
 ### Plug-in Menu Location
 

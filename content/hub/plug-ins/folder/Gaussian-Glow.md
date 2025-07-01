@@ -8,8 +8,8 @@ url: "/hub/plug-ins/folder/Gaussian-Glow"
 
    Generate a multi‑layered glow by cloning the source and applying successive blurs & spread (noise) with varying strength.
 
-   [glow-layer.zip](/funky/downloads/glow-layer.zip)  
-   [Installation](https://script-fu.github.io/funky/hub/plug-ins/folder/#installation)  
+   [glow-layer.zip](../../../../downloads/glow-layer.zip)  
+   [Installation](../#installation)  
    [YouTube-video-demo](https://youtu.be/g4PkjFQsZ_k)  
 
 ### Parameters

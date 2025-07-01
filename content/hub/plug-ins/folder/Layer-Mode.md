@@ -8,8 +8,8 @@ url: "/hub/plug-ins/folder/Layer-Mode"
 
 This plug-in is a set of plug-ins that sets the selected layers to a particular blend mode.
 
-[layer-mode.zip](/funky/downloads/layer-mode.zip)  
-[Installation](https://script-fu.github.io/funky/hub/plug-ins/folder/#installation)  
+[layer-mode.zip](../../../../downloads/layer-mode.zip)  
+[Installation](../#installation)  
 
 ### Plug-in Menu Location
 

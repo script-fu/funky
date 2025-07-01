@@ -126,5 +126,5 @@ Take your time, experiment with the code, and keep iterating—you’ll find tha
 
 Good luck on your journey!
 
-[hello-world.zip](/funky/downloads/hello-world-final.zip)  
-[funky-library.zip](/funky/downloads/funky-library.zip)  
+[hello-world.zip](../../../../../downloads/hello-world-final.zip)  
+[funky-library.zip](../../../../../downloads/funky-library.zip)  

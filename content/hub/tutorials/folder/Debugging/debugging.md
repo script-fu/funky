@@ -2,6 +2,7 @@
 title: Debugging
 type: docs
 weight: 5
+url: "hub/tutorials/folder/debugging"
 ---
 
 ## Introduction

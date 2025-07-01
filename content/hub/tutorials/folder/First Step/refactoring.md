@@ -119,7 +119,7 @@ Extracting the logic:
 ```
 
 #### Symbols
-In the example above, a data type called a symbol is used, such as 'gui. Symbols are passed as parameters to the send-message function and can be used to make simple conditional decisions. Like symbolic keys, they are unique identifiers. For more information on symbols, visit [this page.](https://script-fu.github.io/funky/hub/fundamentals/folder/variables-and-scope/symbols/)
+In the example above, a data type called a symbol is used, such as 'gui. Symbols are passed as parameters to the send-message function and can be used to make simple conditional decisions. Like symbolic keys, they are unique identifiers. For more information on symbols, visit [this page.](../../../../fundamentals/folder/variables-and-scope/symbols/)
 
 ### Simplifying the Main Function
 

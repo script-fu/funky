@@ -2,6 +2,7 @@
 title: First Steps
 type: docs
 weight: 1
+url: "hub/tutorials/folder/first-step"
 ---
 
 ## Introduction
@@ -22,7 +23,7 @@ Throughout First Steps, you'll learn key concepts of functional programming and 
 {{< cards >}}
   {{< card link="reworking" title="Reworking" icon="adjustments" subtitle="Advanced code restructuring techniques" >}}
   {{< card link="refactor-again" title="Refactor Again" icon="arrow-sm-right" subtitle="Iterative improvement and optimization" >}}
-  {{< card link="the procedure-browser copy" title="Procedure Browser" icon="book-open" subtitle="Exploring GIMP's procedure database" >}}
+  {{< card link="the-procedure-browser" title="Procedure Browser" icon="book-open" subtitle="Exploring GIMP's procedure database" >}}
   {{< card link="final-thoughts" title="Final Thoughts" icon="academic-cap" subtitle="Summary and next steps in development" >}}
 {{< /cards >}}
 
@@ -43,5 +44,5 @@ By the end, you'll have built your own custom messaging library and have a solid
 Before you get started, ensure you have the following:
 
 - GIMP installed: [**GIMP development version**](https://gitlab.gnome.org/GNOME/gimp/-/commits/master?ref_type=heads) or [**Artbox**](https://script-fu.github.io/artbox/),
-- A text editor: You'll be writing and modifying code in .scm files. I recommend [Visual Studio Code](/funky/hub/tools/folder/visual-studio-code)
-- [Git](/funky/hub/tools/folder/git) to keep your code backed-up and version controlled.
+- A text editor: You'll be writing and modifying code in .scm files. I recommend [Visual Studio Code](../../../tools/folder/visual-studio-code)
+- [Git](../../../../hub/tools/folder/git/) to keep your code backed-up and version controlled.

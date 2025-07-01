@@ -6,7 +6,7 @@ weight: 2
 
 ## Introduction
 
-We used a _procedure_ plug-in for the [First Step](https://script-fu.github.io/funky/hub/tutorials/folder/first-step/) tutorial. Those types of plug-ins work without needing an image or drawable as input. Usually, we use a plug-in to change an image and its drawables. Plug-ins like these are called _filter_ plug-ins.
+We used a _procedure_ plug-in for the [First Step](../../first-step/) tutorial. Those types of plug-ins work without needing an image or drawable as input. Usually, we use a plug-in to change an image and its drawables. Plug-ins like these are called _filter_ plug-ins.
 
 ### What is a Drawable?
 

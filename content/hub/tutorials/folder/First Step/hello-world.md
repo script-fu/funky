@@ -91,12 +91,12 @@ Okay, now let's see that working together as a practical example. Script-Fu has 
   "<Image>/Funky")
 ```
 
-[hello-world.zip](/funky/downloads/hello-world.zip)
+[hello-world.zip](../../../../../downloads/hello-world.zip)
 
 ### Install the Plug-in
 
 1. Go to **GIMP -> Edit -> Preferences -> Folders -> Plug-ins**.
-2. Add your [repo](/funky/hub/tools/folder/git) plug-ins folder to the list.
+2. Add your [repo](../../../../tools/folder/git) plug-ins folder to the list.
 3. Extract the **hello-world.zip** file into this folder, keeping the plug-in inside its own named folder:
    - `your-plug-ins-repo/hello-world/hello-world.scm`
 4. Right-click on the `hello-world.scm` file inside the extracted folder.
