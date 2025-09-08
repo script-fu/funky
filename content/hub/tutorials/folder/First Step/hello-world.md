@@ -18,11 +18,7 @@ Now, let’s get down to business, we need to do a few things: define a function
 
 A function, also known as a _procedure_, is a chunk of code with a name and purpose, it takes an input and produces output.
 
-```mermaid
-graph LR;
-    A([Input]) --> B([Function]);
-    B --> C([Output]);
-```
+**Input** > **_Function_** > **Output** 
 
 ### Register the Function
 
