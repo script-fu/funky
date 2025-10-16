@@ -12,6 +12,7 @@ These plug-ins currently only work in [**GIMP 3**](https://www.gimp.org/news/202
 
 {{< card link="almost-autosave" title="Almost Autosave" icon="archive" >}}
 {{< card link="incremental-save" title="Incremental Save" icon="folder-add" >}}
+{{< card link="Batch-Process" title="Batch Process" icon="cog" >}}
 {{< card link="Gaussian-Glow" title="Gaussian Glow" icon="light-bulb" >}}
 {{< card link="New-Layer-From-Selection" title="New Layer from Selection" icon="document-add" >}}
 {{< card link="Layer-Group" title="Layer Group" icon="collection" >}}
@@ -41,7 +42,7 @@ This forces GIMP to save the shortcut for the next session. First, search for th
 
 _Edit -> Keyboard Shortcuts_
 
-Once the shortcut is working as you like, save your work then;  
+Once the shortcut is working as you like, save your work then;
 
 _File -> Quit_
 
