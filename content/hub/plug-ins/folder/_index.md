@@ -23,6 +23,7 @@ These plug-ins currently only work in [**GIMP 3**](https://www.gimp.org/news/202
 {{< card link="Select-All-Layers" title="Select All Layers" icon="view-list" >}}
 {{< card link="Alpha-To-Show-Mask" title="Alpha to Show Mask" icon="selector" >}}
 {{< card link="Crop-Layer-To-Mask" title="Crop Layer To Mask" icon="selector" >}}
+{{< card link="Manage-Parasites" title="Manage Parasites" icon="annotation" >}}
 
 {{< /cards >}}
 

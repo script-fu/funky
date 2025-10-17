@@ -11,4 +11,5 @@ Let's look at how the concepts and examples we've covered can be used to create 
 {{< cards >}}
 {{< card link="Gaussian-Glow" title="Gaussian Glow" icon="light-bulb" >}}
 {{< card link="Batch-Process" title="Batch Process" icon="cog" >}}
+{{< card link="Manage-Parasites" title="Manage Parasites" icon="annotation" >}}
 {{< /cards >}}
